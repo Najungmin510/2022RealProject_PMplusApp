@@ -14,7 +14,21 @@
         android:theme="@style/Theme.2022RealProject_PMplusApp"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-
+        <activity
+            android:name=".MainActivity_Notice"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity_ShipdataResult"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity_Setting"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity_message_board"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity_ChatBot"
+            android:exported="false" />
         <activity
             android:name=".MainActivity_Weather"
             android:exported="false" />

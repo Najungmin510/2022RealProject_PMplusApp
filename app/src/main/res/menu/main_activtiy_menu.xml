@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/LoginandMembership"
+        android:title = "로그인/회원가입"
+        android:icon="@drawable/baseline_login_black_24dp"/>
+    <item
+        android:id="@+id/DatagetShip"
+        android:title="선박 입출항 조회"
+        android:icon="@drawable/baseline_directions_boat_black_24dp"/>
+
+    <item
+        android:id="@+id/DataControlShip"
+        android:title="선박 관제 현황"
+        android:icon="@drawable/baseline_desktop_windows_black_24dp"/>
+
+    <item
+        android:id="@+id/WeatherData"
+        android:title="날씨 현황"
+        android:icon="@drawable/baseline_dew_point_black_24dp"/>
+
+    <item
+        android:id="@+id/GoTochatbot"
+        android:title="챗봇과 대화하기"
+        android:icon="@drawable/baseline_android_black_24dp"/>
+
+    <item
+        android:id="@+id/informboard"
+        android:title="정보 게시판"
+        android:icon="@drawable/baseline_wysiwyg_black_24dp"/>
+
+    <item
+        android:id="@+id/Setting"
+        android:title="환경 설정"
+        android:icon="@drawable/baseline_settings_black_24dp"/>
+
+
+</menu>

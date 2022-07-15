@@ -6,4 +6,152 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity_MshipData">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:theme="@style/Theme.2022RealProject_PMplusApp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_find"
+        android:layout_width="298dp"
+        android:layout_height="42dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="#46AFFF"
+        android:text="조회하기"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Text_call"
+        app:layout_constraintVertical_bias="0.269"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/Text_shipcode"
+        android:layout_width="298dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/text_line_lightblue"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="청코드 입력"
+        android:inputType="textPersonName"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.051"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/Text_call"
+        android:layout_width="298dp"
+        android:layout_height="42dp"
+        android:background="@drawable/text_line_lightblue"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="호출부호 입력"
+        android:inputType="textPersonName"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Text_shipday1"
+        app:layout_constraintVertical_bias="0.215" />
+
+    <EditText
+        android:id="@+id/Text_shipday1"
+        android:layout_width="138dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/text_line_lightblue"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="입항 날짜 입력"
+        android:inputType="date"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Text_shipcode"
+        app:layout_constraintVertical_bias="0.155" />
+
+    <EditText
+        android:id="@+id/Text_shipday2"
+        android:layout_width="138dp"
+        android:layout_height="42dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/text_line_lightblue"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="출항 날짜 입력"
+        android:inputType="date"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintStart_toEndOf="@+id/Text_shipday1"
+        app:layout_constraintTop_toBottomOf="@+id/Text_shipcode"
+        app:layout_constraintVertical_bias="0.155" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="청코드"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/Text_shipcode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.147"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="입출항 날짜"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/Text_shipday1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.16"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="호출부호"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/Text_call"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

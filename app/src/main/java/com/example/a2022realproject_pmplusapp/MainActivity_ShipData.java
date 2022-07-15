@@ -1,6 +1,8 @@
 package com.example.a2022realproject_pmplusapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 
 
 import io.socket.client.IO;
@@ -9,6 +11,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import android.text.TextUtils;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -18,6 +21,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.net.URISyntaxException;
+import java.util.Objects;
 
 public class MainActivity_ShipData extends AppCompatActivity {
 
@@ -30,19 +34,24 @@ public class MainActivity_ShipData extends AppCompatActivity {
         }
     }
 
-
+    Toolbar  toolbar;
     EditText shipcode;
     EditText shipday1;
     EditText shipday2;
     EditText codecall;
 
     Button gofind;
-    ImageButton beforescreen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_ship_data);
+
+        toolbar = (Toolbar)findViewById(R.id.toolbar); //툴바 선언
+        setSupportActionBar(toolbar); //툴바를 불러오고
+
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true); //디스플레이에 적용
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.before); //툴바에 이미지 선언
 
         shipcode = (EditText)findViewById(R.id.Text_shipcode); //청코드, 필수
         String Shipcode = shipcode.getText().toString().trim();
@@ -56,18 +65,11 @@ public class MainActivity_ShipData extends AppCompatActivity {
         codecall = (EditText)findViewById(R.id.Text_call); //호출부호
         String Codecall = codecall.getText().toString().trim();
 
-        beforescreen = (ImageButton) findViewById(R.id.btn_before);//뒤로가기버튼
+
 
         gofind = (Button)findViewById(R.id.btn_find);
 
 
-
-
-
-        beforescreen.setOnClickListener(v -> { //뒤로가기 버튼이 눌렸을 때
-            Intent intent = new Intent (getApplicationContext(),MainActivity_PM_Main.class);
-            startActivity(intent);
-        });
 
 
         gofind.setOnClickListener(v -> { //조회 버튼이 눌렸을 때
@@ -94,6 +96,8 @@ public class MainActivity_ShipData extends AppCompatActivity {
                     }
             }
 
+            Intent intent = new Intent(getApplicationContext(),MainActivity_ShipdataResult.class);
+            startActivity(intent);
         });
 
     }
