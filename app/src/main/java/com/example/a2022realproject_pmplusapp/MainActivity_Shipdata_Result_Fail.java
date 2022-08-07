@@ -16,7 +16,7 @@ import android.os.Bundle;
 코드 작성자 :
  */
 
-public class MainActivity_shipdata_Result_Fail extends AppCompatActivity {
+public class MainActivity_Shipdata_Result_Fail extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

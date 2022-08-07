@@ -39,7 +39,7 @@ public class MainActivity_Search_PW_Fail extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true); //디스플레이에 적용
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.baseline_menu_black_24dp); //툴바에 이미지 선언
 
-        gomain = (ImageButton)findViewById(R.id.btn_go_pm_main);
+        gomain = (ImageButton)findViewById(R.id.btn_go_pm_main_ship);
         retry = (ImageButton)findViewById(R.id.btn_go_pwsearch_main);
 
         gomain.setOnClickListener(v -> {

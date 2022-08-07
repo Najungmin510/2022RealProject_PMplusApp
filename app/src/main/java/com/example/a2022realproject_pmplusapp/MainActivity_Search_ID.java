@@ -61,6 +61,7 @@ public class MainActivity_Search_ID extends AppCompatActivity {
 
 
         searchId.setOnClickListener(v->{ //버튼 클릭 시
+
             if(inputname.trim().equals("") || inputemail.trim().equals("")){
                 Toast inform = Toast.makeText(this.getApplicationContext(),"빈칸 없이 모두 입력해주세요.",Toast.LENGTH_SHORT);
                 inform.show();
@@ -78,6 +79,8 @@ public class MainActivity_Search_ID extends AppCompatActivity {
             }
 
             else { //모든 조건을 만족할 경우
+
+
             /*
             서버로 데이터를 보내는 소스코드 작성
             화면 전환은 중첩 if 문 사용해야 할 것 같음

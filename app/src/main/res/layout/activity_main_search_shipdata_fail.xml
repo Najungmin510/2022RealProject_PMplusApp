@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ship_data_background_textver"
-    tools:context=".MainActivity_Search_shipdata_Fail">
+    tools:context=".MainActivity_Shipdata_Result_Fail">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -21,7 +21,7 @@
 
 
     <ImageButton
-        android:id="@+id/btn_go_pm_main"
+        android:id="@+id/btn_go_pm_main_ship"
         android:layout_width="310dp"
         android:layout_height="55dp"
         android:background="#00ffffff"
@@ -31,7 +31,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.474"
+        app:layout_constraintVertical_bias="0.473"
         app:srcCompat="@drawable/search_idpw_fail_gotomain" />
 
     <ImageButton

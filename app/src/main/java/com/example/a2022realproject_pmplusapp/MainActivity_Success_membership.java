@@ -1,10 +1,13 @@
 package com.example.a2022realproject_pmplusapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
+import android.provider.ContactsContract;
+
+import android.widget.ImageButton;
 
 
 //회원가입 성공 시 관련 소스코드를 작성하시면 됩니다.
@@ -16,31 +19,32 @@ import android.widget.Button;
 흐름도 작성하는 곳
 
 
-코드 작성자 :
+코드 작성자 : 나정민
  */
 public class MainActivity_Success_membership extends AppCompatActivity {
 
-    Button gomain;
-    Button goLogin;
+    Toolbar toolbar;
+    ImageButton gomain;
+    ImageButton goLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_success_membership);
 
-      //  gomain = (Button)findViewById(R.id.btn_goMain);
-     //   goLogin =(Button)findViewById(R.id.btn_goLogin);
+        gomain = (ImageButton)findViewById(R.id.btn_go_main);
+        goLogin =(ImageButton)findViewById(R.id.btn_go_login);
 
-      // gomain.setOnClickListener(v -> {
-           // Intent intent = new Intent(getApplicationContext(), MainActivity_PM_Main.class); //나중에 작성 할 PM 메인화면 넣으면 됨
-           // startActivity(intent);
+       gomain.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), MainActivity_PM_Main.class);
+           startActivity(intent);
 
-     //   }); //람다식(익명함수)으로 작성, 회원가입 버튼 클릭 시 성공 화면으로 이동
+        });
 
-       // goLogin.setOnClickListener(v -> {
-           // Intent intent = new Intent(getApplicationContext(), MainActivity_Login.class);
-           // startActivity(intent);
-     //   });
+        goLogin.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), MainActivity_Login.class);
+            startActivity(intent);
+        });
 
 
 

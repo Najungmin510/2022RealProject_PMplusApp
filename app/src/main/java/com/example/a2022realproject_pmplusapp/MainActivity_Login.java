@@ -29,8 +29,8 @@ import java.util.Objects;
 
 
 public class MainActivity_Login extends AppCompatActivity {
-    Button MemberConversion; //회원가입 버튼
     ImageButton goLogin; // 로그인 버튼
+    Button MemberConversion; //회원가입 버튼
     Button searchpw; //비밀번호 찾기 버튼
     Button searchid; //아이디 찾기 버튼
     Toolbar toolbar;

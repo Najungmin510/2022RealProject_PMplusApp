@@ -23,7 +23,7 @@
         tools:ignore="UnknownIdInLayout" />
 
     <ImageButton
-        android:id="@+id/btn_go_pm_main"
+        android:id="@+id/btn_go_pm_main_ship"
         android:layout_width="310dp"
         android:layout_height="55dp"
         android:background="#00ffffff"

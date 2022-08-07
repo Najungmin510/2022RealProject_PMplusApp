@@ -38,7 +38,7 @@ public class MainActivity_Search_ID_Fail extends AppCompatActivity {
         setContentView(R.layout.activity_main_search_id_fail);
 
 
-        gomain = (ImageButton)findViewById(R.id.btn_go_pm_main);
+        gomain = (ImageButton)findViewById(R.id.btn_go_pm_main_ship);
         retry = (ImageButton)findViewById(R.id.btn_replay_id);
         setSupportActionBar(toolbar);
 
