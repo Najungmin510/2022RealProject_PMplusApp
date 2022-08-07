@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity_Notice">
+    tools:context=".MainActivity_MshipData_Result_Fail">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

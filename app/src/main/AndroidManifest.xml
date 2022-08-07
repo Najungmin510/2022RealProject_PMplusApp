@@ -15,10 +15,49 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
         <activity
-            android:name=".MainActivity_Notice"
+            android:name=".MainActivity_MshipData_Result_Fail"
             android:exported="false" />
         <activity
-            android:name=".MainActivity_ShipdataResult"
+            android:name=".MainActivity_ShipData_Result_Fail"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity_Search_PW_Success"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity_Search_ID_Success"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity_Notice_Newest"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity_Search_PW_Fail"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity_click_message_board"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity_write_in_message_board"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity_MshipData_Result"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity_Search_shipdata_Fail"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity_Search_ID_Fail"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity_Search_PW"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity_Search_ID"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity_Notice_Gathering"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity_Shipdata_Result"
             android:exported="false" />
         <activity
             android:name=".MainActivity_Setting"
@@ -54,7 +93,7 @@
             android:name=".MainActivity_Membership"
             android:exported="false" />
         <activity
-            android:name=".MainActivity_Success"
+            android:name=".MainActivity_Success_membership"
             android:exported="true" />
     </application>
 

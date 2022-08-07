@@ -10,16 +10,33 @@
         <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/drawable/user_image.xml" value="0.247" />
         <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main.xml" value="0.32608695652173914" />
         <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_chat_bot.xml" value="0.27355072463768115" />
+        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_click_message_board.xml" value="0.359375" />
         <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_login.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_membership.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_message_board.xml" value="0.359375" />
         <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_mship_data.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_mship_data_result.xml" value="0.359375" />
+        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_mship_data_result_fail.xml" value="0.30570652173913043" />
         <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_notice.xml" value="0.3029891304347826" />
-        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_pm_main.xml" value="0.22" />
-        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_setting.xml" value="0.27355072463768115" />
+        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_notice_gathering.xml" value="0.31567028985507245" />
+        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_notice_newest.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_pm_main.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_search_id.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_search_id_fail.xml" value="0.30027173913043476" />
+        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_search_id_pw_fail.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_search_id_success.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_search_pw.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_search_pw_fail.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_search_pw_success.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_search_shipdata_fail.xml" value="0.3016304347826087" />
+        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_setting.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_ship_data.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_ship_data_result_fail.xml" value="0.30570652173913043" />
         <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_shipdata_result.xml" value="0.29791666666666666" />
         <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_success.xml" value="0.271286231884058" />
-        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_weather.xml" value="0.13323201621073963" />
+        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_success_membership.xml" value="0.29528985507246375" />
+        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_weather.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_write_in_message_board.xml" value="0.34479166666666666" />
         <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/navigation_header.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/menu/main_activtiy_menu.xml" value="0.2796875" />
       </map>

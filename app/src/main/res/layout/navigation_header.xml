@@ -1,51 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="150dp"
     android:id="@+id/drawer_layout"
-    android:orientation="vertical"
-    android:background="#15BDFF"
-    >
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:background="@drawable/menu_header"
+    android:orientation="vertical">
 
    <ImageView
        android:id="@+id/imageView"
-       android:layout_width="100dp"
-       android:layout_height="100dp"
-       android:layout_marginTop="18dp"
+       android:layout_width="0dp"
+       android:layout_height="85dp"
+       android:layout_marginStart="30dp"
+       android:layout_marginTop="64dp"
+       android:layout_marginEnd="17dp"
        android:background="@drawable/user_image"
        app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintHorizontal_bias="0.103"
+       app:layout_constraintEnd_toStartOf="@+id/textView11"
+       app:layout_constraintHorizontal_bias="0.095"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toTopOf="parent" />
-
-   <ImageButton
-       android:id="@+id/imageButton"
-       android:layout_width="28dp"
-       android:layout_height="27dp"
-       android:layout_marginStart="136dp"
-       android:layout_marginTop="88dp"
-       android:background="@drawable/baseline_login_white_24dp"
-       app:layout_constraintBottom_toBottomOf="parent"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent"
-       app:layout_constraintVertical_bias="0.085"
-       tools:ignore="MissingConstraints" />
 
    <TextView
        android:id="@+id/LoinText"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:layout_marginTop="91dp"
-       android:text="로그인"
+       android:layout_marginTop="6dp"
+       android:layout_marginEnd="212dp"
+       android:layout_marginBottom="10dp"
+       android:text="GUEST"
        android:textColor="@color/white"
        android:textSize="20dp"
+       app:layout_constraintBottom_toTopOf="@+id/textView11"
        app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintHorizontal_bias="0.068"
-       app:layout_constraintStart_toEndOf="@+id/imageButton"
-       app:layout_constraintTop_toTopOf="parent" />
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_chainStyle="packed" />
+
+   <TextView
+       android:id="@+id/textView11"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginEnd="147dp"
+       android:text="회원 정보가 없습니다."
+       android:textColor="#FFFFFF"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toEndOf="@+id/imageView"
+       app:layout_constraintTop_toBottomOf="@+id/LoinText" />
+
+   <ImageButton
+       android:id="@+id/btn_menu_go_main"
+       android:layout_width="31dp"
+       android:layout_height="31dp"
+       android:layout_marginStart="6dp"
+       android:layout_marginTop="13dp"
+       android:background="##ffffff"
+       android:scaleType="fitXY"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:srcCompat="@drawable/baseline_chevron_left_white_24dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

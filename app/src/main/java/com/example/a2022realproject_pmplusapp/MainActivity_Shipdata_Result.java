@@ -11,7 +11,7 @@ import android.widget.Button;
 
 import java.net.URISyntaxException;
 
-public class MainActivity_ShipdataResult extends AppCompatActivity {
+public class MainActivity_Shipdata_Result extends AppCompatActivity {
 
     private Socket mSocket;
     {
@@ -27,14 +27,14 @@ public class MainActivity_ShipdataResult extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_shipdata_result);
 
-        Button button = (Button)findViewById(R.id.btn_return);
+       // Button button = (Button)findViewById(R.id.btn_return);
 
-        button.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), MainActivity_ShipData.class);
+       // button.setOnClickListener(v -> {
+          //  Intent intent = new Intent(getApplicationContext(), MainActivity_ShipData.class);
 
-            startActivity(intent);
+        //    startActivity(intent);
 
-        }); //재조회 버튼 클릭 시 화면 전환
+       // }); //재조회 버튼 클릭 시 화면 전환
 
     }
 }
