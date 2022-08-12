@@ -7,19 +7,6 @@
     android:background="@drawable/gray_background"
     tools:context=".MainActivity_Setting">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginBottom="23dp"
-        android:background="@null"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        tools:ignore="UnknownIdInLayout" />
-
     <ImageButton
         android:id="@+id/btn_delete_user"
         android:layout_width="370dp"
@@ -31,8 +18,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/setting_delect_user_textver" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

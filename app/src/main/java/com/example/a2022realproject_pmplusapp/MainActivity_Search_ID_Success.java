@@ -27,7 +27,7 @@ public class MainActivity_Search_ID_Success extends AppCompatActivity {
     TextView resultText; //id 결과값
     ImageButton goLoginMain;
     ImageButton goMainPM;
-    Toolbar toolbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +38,6 @@ public class MainActivity_Search_ID_Success extends AppCompatActivity {
         goLoginMain = (ImageButton)findViewById(R.id.btn_go_login_searchid_success);
         goMainPM = (ImageButton)findViewById(R.id.btn_go_pmmain_search_id_success);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar); //툴바 선언
-        setSupportActionBar(toolbar); //툴바를 불러오고
-
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true); //디스플레이에 적용
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.baseline_menu_black_24dp); //툴바에 이미지 선언
 
         goLoginMain.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(),MainActivity_Login.class);

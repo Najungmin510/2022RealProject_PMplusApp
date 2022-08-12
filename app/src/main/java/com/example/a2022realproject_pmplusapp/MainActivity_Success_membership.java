@@ -17,13 +17,14 @@ import android.widget.ImageButton;
 중간중간에 간략한 설명을 적어주세요.
 
 흐름도 작성하는 곳
+사용자가 입력한 정보를 저장 완료했다면 이 화면으로 넘어옴 ->
 
 
 코드 작성자 : 나정민
  */
 public class MainActivity_Success_membership extends AppCompatActivity {
 
-    Toolbar toolbar;
+
     ImageButton gomain;
     ImageButton goLogin;
 
@@ -31,6 +32,7 @@ public class MainActivity_Success_membership extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_success_membership);
+
 
         gomain = (ImageButton)findViewById(R.id.btn_go_main);
         goLogin =(ImageButton)findViewById(R.id.btn_go_login);

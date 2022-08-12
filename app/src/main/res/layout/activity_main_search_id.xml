@@ -39,32 +39,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginBottom="361dp"
-        android:background="@null"
-        app:layout_constraintBottom_toTopOf="@+id/btn_go_id_result"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <ImageButton
         android:id="@+id/btn_go_id_result"
         android:layout_width="310dp"
         android:layout_height="52dp"
-        android:layout_marginBottom="262dp"
+        android:layout_marginBottom="260dp"
         android:background="#00ffffff"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:srcCompat="@drawable/search_id" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

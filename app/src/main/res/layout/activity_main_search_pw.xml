@@ -7,21 +7,6 @@
     android:background="@drawable/search_background"
     tools:context=".MainActivity_Search_PW">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginBottom="361dp"
-        android:background="@null"
-        app:layout_constraintBottom_toTopOf="@+id/btn_go_id_result"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        tools:ignore="UnknownIdInLayout" />
-
     <EditText
         android:id="@+id/et_user_email_pw"
         android:layout_width="310dp"

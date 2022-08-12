@@ -30,7 +30,7 @@ public class MainActivity_Search_ID_Fail extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar); //툴바 선언
+
         ImageButton gomain;
         ImageButton retry;
 
@@ -40,10 +40,7 @@ public class MainActivity_Search_ID_Fail extends AppCompatActivity {
 
         gomain = (ImageButton)findViewById(R.id.btn_go_pm_main_ship);
         retry = (ImageButton)findViewById(R.id.btn_replay_id);
-        setSupportActionBar(toolbar);
 
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true); //디스플레이에 적용
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.baseline_menu_black_24dp); //툴바에 이미지 선언
 
         gomain.setOnClickListener(v ->{
             Intent intent = new Intent(getApplicationContext(), MainActivity_PM_Main.class);

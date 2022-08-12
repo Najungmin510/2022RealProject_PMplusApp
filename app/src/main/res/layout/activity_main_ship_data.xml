@@ -10,19 +10,17 @@
     <EditText
         android:id="@+id/et_sde"
         android:layout_width="139dp"
-        android:layout_height="0dp"
+        android:layout_height="55dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="38dp"
         android:background="@drawable/ship_date_write"
         android:ems="10"
         android:hint="  입항 날짜(필수)"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/et_clsgn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.164"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_prtAgCd" />
+        tools:layout_editor_absoluteY="263dp" />
 
     <EditText
         android:id="@+id/et_Ede"
@@ -39,42 +37,27 @@
         app:layout_constraintHorizontal_bias="0.832"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginBottom="119dp"
-        android:background="@null"
-        app:layout_constraintBottom_toTopOf="@+id/et_prtAgCd"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        tools:ignore="UnknownIdInLayout" />
 
     <EditText
         android:id="@+id/et_prtAgCd"
         android:layout_width="310dp"
-        android:layout_height="0dp"
+        android:layout_height="55dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="35dp"
+        android:layout_marginBottom="512dp"
         android:background="@drawable/ship_data_write"
         android:ems="10"
         android:hint="  항만 청코드 입력(필수)"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/et_sde"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/et_clsgn"
         android:layout_width="310dp"
-        android:layout_height="0dp"
+        android:layout_height="55dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="64dp"
@@ -85,8 +68,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btn_data_search"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_sde" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/btn_data_search"
@@ -99,7 +81,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_clsgn"
         app:srcCompat="@drawable/ship_data_inquiry" />
 
 

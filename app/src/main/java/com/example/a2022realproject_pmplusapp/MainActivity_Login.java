@@ -33,7 +33,7 @@ public class MainActivity_Login extends AppCompatActivity {
     Button MemberConversion; //회원가입 버튼
     Button searchpw; //비밀번호 찾기 버튼
     Button searchid; //아이디 찾기 버튼
-    Toolbar toolbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,13 +44,8 @@ public class MainActivity_Login extends AppCompatActivity {
         goLogin = (ImageButton) findViewById(R.id.btn_go_login_login);
         searchid = (Button)findViewById(R.id.btn_findID);
         searchpw = (Button)findViewById(R.id.btn_findPW);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
 
 
-        setSupportActionBar(toolbar); //툴바를 불러오고
-
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.baseline_chevron_left_black_24dp);
 
         goLogin.setOnClickListener(v -> {
             //로그인 버튼 클릭 시 서버로 데이터를 전송하는 코드 작성

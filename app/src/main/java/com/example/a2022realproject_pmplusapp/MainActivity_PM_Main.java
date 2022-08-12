@@ -5,6 +5,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.ActionBar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -35,6 +36,7 @@ public class MainActivity_PM_Main extends AppCompatActivity {
     ImageButton gonotice; //공지사항으로 이동
     DrawerLayout drawerLayout;
     NavigationView navigationView;
+    ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +45,7 @@ public class MainActivity_PM_Main extends AppCompatActivity {
 
        miniweather = (ImageButton)findViewById(R.id.btn_mini_weather);
        miniweather.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), MainActivity_Notice_Gathering.class);
+            Intent intent = new Intent(getApplicationContext(), MainActivity_Weather.class);
             startActivity(intent);
        });
 
@@ -64,8 +66,10 @@ public class MainActivity_PM_Main extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar); //툴바 선언
         setSupportActionBar(toolbar); //툴바를 불러오고
 
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true); //디스플레이에 적용
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.baseline_menu_white_24dp); //툴바에 이미지 선언
+        actionBar.setDisplayShowTitleEnabled(false); //기존 title을 삭제
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeAsUpIndicator(R.drawable.baseline_menu_white_24dp);
+
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout); //activity_main_pm에서 선언한 레이아웃
         navigationView = (NavigationView) findViewById(R.id.navigation_view); //activity_main_pm 메뉴화면을 만든 레이아웃을 가져옴

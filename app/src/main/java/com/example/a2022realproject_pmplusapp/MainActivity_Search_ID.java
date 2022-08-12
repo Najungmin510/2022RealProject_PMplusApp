@@ -36,18 +36,12 @@ public class MainActivity_Search_ID extends AppCompatActivity {
     ImageButton searchId; //아이디 찾기 버튼
     EditText username; //사용자가 입력한 이름
     EditText useremail; //사용자가 입력한 이메일
-    Toolbar toolbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_search_id);
-
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.baseline_chevron_left_black_24dp);
 
 
         username = (EditText)findViewById(R.id.et_Login_id_search);

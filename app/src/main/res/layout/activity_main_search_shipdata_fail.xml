@@ -7,18 +7,6 @@
     android:background="@drawable/ship_data_background_textver"
     tools:context=".MainActivity_Shipdata_Result_Fail">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@null"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        tools:ignore="UnknownIdInLayout" />
-
 
     <ImageButton
         android:id="@+id/btn_go_pm_main_ship"

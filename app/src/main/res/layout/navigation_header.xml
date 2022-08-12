@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="180dp"
     android:background="@drawable/menu_header"
+    android:fitsSystemWindows="true"
     android:orientation="vertical">
 
    <ImageView
@@ -55,7 +57,7 @@
        android:layout_height="31dp"
        android:layout_marginStart="6dp"
        android:layout_marginTop="13dp"
-       android:background="##ffffff"
+       android:background="#00ffffff"
        android:scaleType="fitXY"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toTopOf="parent"

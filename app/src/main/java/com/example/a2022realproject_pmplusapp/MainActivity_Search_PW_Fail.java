@@ -26,18 +26,13 @@ public class MainActivity_Search_PW_Fail extends AppCompatActivity {
 
     ImageButton gomain;
     ImageButton retry;
-    Toolbar toolbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_search_pw_fail);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar); //툴바 선언
-        setSupportActionBar(toolbar); //툴바를 불러오고
-
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true); //디스플레이에 적용
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.baseline_menu_black_24dp); //툴바에 이미지 선언
 
         gomain = (ImageButton)findViewById(R.id.btn_go_pm_main_ship);
         retry = (ImageButton)findViewById(R.id.btn_go_pwsearch_main);

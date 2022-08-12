@@ -5,53 +5,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gray_background"
     tools:context=".MainActivity_PM_Main"
     android:id="@+id/drawer_layout">
 
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/btn_notice"
-        android:layout_alignEnd="@+id/btn_notice"
-        android:layout_alignBottom="@+id/btn_notice"
-        android:layout_marginStart="23dp"
-        android:layout_marginEnd="233dp"
-        android:layout_marginBottom="127dp"
-        android:text="공지사항"
-        android:textSize="17sp" />
-
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:background="@drawable/gray_background">
 
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="50dp"
             android:background="@null"
+            android:fitsSystemWindows="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageButton
             android:id="@+id/btn_mini_weather"
             android:layout_width="match_parent"
-            android:layout_height="328dp"
+            android:layout_height="360dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginTop="0dp"
             android:layout_marginEnd="0dp"
-            android:layout_marginBottom="403dp"
+            android:layout_marginBottom="371dp"
             android:background="#00ffffff"
+            android:fitsSystemWindows="true"
             android:scaleType="fitXY"
             app:srcCompat="@drawable/main_pm_weather_button" />
 
@@ -62,94 +51,59 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="34dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="53dp"
             android:text="16.0"
             android:textColor="#FFFFFF"
             android:textSize="50sp" />
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="339dp"
-            android:layout_height="163dp"
-            android:layout_alignParentStart="true"
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="36dp"
-            android:layout_marginEnd="36dp"
-            android:layout_marginBottom="-19dp"
-            android:background="#00ffffff"
-            android:scaleType="fitXY"
-            app:srcCompat="@drawable/main_pm_button_white" />
+            android:layout_marginTop="341dp"
+            android:layout_marginEnd="0dp">
 
-        <ImageButton
-            android:id="@+id/btn_notice"
-            android:layout_width="339dp"
-            android:layout_height="163dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="36dp"
-            android:layout_marginEnd="36dp"
-            android:layout_marginBottom="210dp"
-            android:background="#00ffffff"
-            android:scaleType="fitXY"
-            app:srcCompat="@drawable/main_pm_button_white" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-        <ImageButton
-            android:id="@+id/btn_go_chatbot"
-            android:layout_width="232dp"
-            android:layout_height="39dp"
-            android:layout_alignStart="@+id/imageView3"
-            android:layout_alignEnd="@+id/imageView3"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="54dp"
-            android:layout_marginEnd="53dp"
-            android:layout_marginBottom="-7dp"
-            android:background="#00ffffff"
-            android:scaleType="fitXY"
-            app:srcCompat="@drawable/main_chatbot_blue_button" />
+                <ImageButton
+                    android:id="@+id/btn_notice"
+                    android:layout_width="330dp"
+                    android:layout_height="178dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="23dp"
+                    android:layout_marginBottom="50dp"
+                    android:background="#00ffffff"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/main_pm_button_notice" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/btn_notice"
-            android:layout_alignEnd="@+id/btn_notice"
-            android:layout_alignBottom="@+id/btn_notice"
-            android:layout_marginStart="23dp"
-            android:layout_marginEnd="233dp"
-            android:layout_marginBottom="127dp"
-            android:text="공지사항"
-            android:textColor="#3E3E3E"
-            android:textSize="17sp"
-            android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="162dp"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/imageView3"
-            android:layout_alignEnd="@+id/imageView3"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="23dp"
-            android:layout_marginEnd="154dp"
-            android:layout_marginBottom="102dp"
-            android:text="챗봇을 이용해보세요."
-            android:textSize="17sp"
-            android:textStyle="bold" />
+                <ImageView
+                    android:layout_width="330dp"
+                    android:layout_height="178dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="#00ffffff"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/main_pm_button_white" />
 
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="303dp"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/imageView3"
-            android:layout_alignEnd="@+id/imageView3"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="27dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="49dp"
-            android:text="빠르게 정보를 얻고싶다면, 챗봇을 이용해보세요. 필요한 정보를 챗봇을 이용해 조회할 수 있습니다."
-            android:textSize="15sp" />
+                <ImageButton
+                    android:id="@+id/btn_go_chatbot"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="109dp"
+                    android:layout_marginBottom="40dp"
+                    android:background="#00ffffff"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/main_chatbot_blue_button" />
+
+
+            </LinearLayout>
+
+        </ScrollView>
 
 
     </RelativeLayout>

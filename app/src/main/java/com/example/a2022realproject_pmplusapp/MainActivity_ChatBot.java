@@ -21,5 +21,7 @@ public class MainActivity_ChatBot extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_chat_bot);
+
+        //챗봇 하단, 상단은 고정하고 가운데를 스크롤뷰를 이용해서 채팅화면 구성
     }
 }

@@ -7,20 +7,7 @@
     android:background="@drawable/ship_data_result_background"
     tools:context=".MainActivity_Shipdata_Result">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginBottom="119dp"
-        android:background="@null"
-        app:layout_constraintBottom_toTopOf="@+id/et_prtAgCd"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        tools:ignore="UnknownIdInLayout" />
+
 
 
 </RelativeLayout>
