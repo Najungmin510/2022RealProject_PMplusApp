@@ -12,12 +12,11 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
         android:text="최신순"
         android:textColor="#7A7A7A"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/textView"
+        tools:layout_editor_absoluteX="151dp"
         tools:layout_editor_absoluteY="161dp" />
 
 
@@ -37,18 +36,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
-        android:text="모아보기"
-        android:textColor="#001E43"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/imageButton6"
@@ -129,5 +116,13 @@
         app:layout_constraintEnd_toEndOf="@+id/imageButton"
         app:layout_constraintStart_toStartOf="@+id/imageButton"
         app:layout_constraintTop_toTopOf="@+id/imageButton" />
+
+    <TextView
+        android:id="@+id/text_gather_gathering"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="모아보기"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="164dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

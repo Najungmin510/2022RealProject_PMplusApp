@@ -1,17 +1,23 @@
 package com.example.a2022realproject_pmplusapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
-
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import androidx.appcompat.widget.Toolbar;
 
-import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.EditText;
+import android.content.Intent;
+import android.widget.Toast;
 
+import java.net.URISyntaxException;
 import java.util.Objects;
+
+import io.socket.client.IO;
+import io.socket.client.Socket;
+
+
 
 //로그인 소스코드 작성해주시면 됩니다.
 
@@ -29,7 +35,19 @@ import java.util.Objects;
 
 
 public class MainActivity_Login extends AppCompatActivity {
+
+    Socket mSocket;
+    {
+        try{
+            mSocket = IO.socket("http://192.168.219.150:3000");
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+    }
+
     ImageButton goLogin; // 로그인 버튼
+    EditText userID;
+    EditText userPW;
     Button MemberConversion; //회원가입 버튼
     Button searchpw; //비밀번호 찾기 버튼
     Button searchid; //아이디 찾기 버튼
@@ -40,16 +58,13 @@ public class MainActivity_Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_login);
 
-        MemberConversion = (Button)findViewById(R.id.btn_go_member);
         goLogin = (ImageButton) findViewById(R.id.btn_go_login_login);
+        MemberConversion = (Button)findViewById(R.id.btn_go_member);
         searchid = (Button)findViewById(R.id.btn_findID);
         searchpw = (Button)findViewById(R.id.btn_findPW);
 
-
-
-        goLogin.setOnClickListener(v -> {
-            //로그인 버튼 클릭 시 서버로 데이터를 전송하는 코드 작성
-        });
+        userID = (EditText)findViewById(R.id.et_Login_ID);
+        userPW = (EditText)findViewById(R.id.et_Login_PW);
 
 
         MemberConversion.setOnClickListener(v -> {
@@ -69,6 +84,29 @@ public class MainActivity_Login extends AppCompatActivity {
             startActivity(intent);
 
         });
+
+
+        goLogin.setOnClickListener(v -> {
+            String ID = userID.getText().toString();
+            String PW = userPW.getText().toString();
+
+            if(ID.trim().equals("") || PW.trim().equals("")){
+
+                Toast inform = Toast.makeText(this.getApplicationContext(),"빈칸 없이 입력해주세요.",Toast.LENGTH_SHORT);
+                inform.show();
+
+            } else{
+                //로그인 버튼 클릭 시 서버로 데이터를 전송하는 코드 작성
+
+                //전송 후 메인화면으로 전환
+                Intent intent = new Intent(getApplicationContext(),MainActivity_PM_Main.class);
+                startActivity(intent);
+            }
+
+        });
+
+
+
 
 
     }

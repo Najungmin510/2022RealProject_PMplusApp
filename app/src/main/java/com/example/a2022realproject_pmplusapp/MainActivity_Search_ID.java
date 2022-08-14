@@ -13,8 +13,12 @@ import android.widget.Toast;
 import androidx.appcompat.widget.Toolbar;
 
 
+import java.net.URISyntaxException;
 import java.util.Objects;
 import java.util.regex.Pattern;
+
+import io.socket.client.IO;
+import io.socket.client.Socket;
 
 
 // 아이디 찾기 화면 코드 작성 하시면 됩니다.
@@ -32,6 +36,15 @@ import java.util.regex.Pattern;
  */
 
 public class MainActivity_Search_ID extends AppCompatActivity {
+
+    Socket mSocket;
+    {
+        try{
+            mSocket = IO.socket("http://192.168.219.150:3000");
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+    }
 
     ImageButton searchId; //아이디 찾기 버튼
     EditText username; //사용자가 입력한 이름

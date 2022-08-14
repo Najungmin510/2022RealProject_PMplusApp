@@ -15,6 +15,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
         <activity
+            android:name=".MainActivity_loding"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity_MshipData_Result_Fail"
             android:exported="false" />
         <activity

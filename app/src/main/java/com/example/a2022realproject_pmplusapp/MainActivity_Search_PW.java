@@ -24,7 +24,7 @@ import java.util.Objects;
 사용자로부터 값을 입력받음 -> 값들이 모두 입력되었는지 검사 -> 입력이 안되었다면 toast 메세지를 통해 사용자에게 안내 ->
 정보가 전부 입력되었다면 서버로 데이터 전송
 
-코드 작성자 : 나정민
+코드 작성자 : 나정민,
  */
 
 public class MainActivity_Search_PW extends AppCompatActivity {

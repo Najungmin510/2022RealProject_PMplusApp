@@ -37,7 +37,7 @@ import java.util.Objects;
 
 public class MainActivity_ShipData extends AppCompatActivity {
 
-    private Socket mSocket;
+   Socket mSocket;
     {
         try{
             mSocket = IO.socket("http://192.168.219.150:3000");

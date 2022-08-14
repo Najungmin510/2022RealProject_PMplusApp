@@ -4,6 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import java.net.URISyntaxException;
+
+import io.socket.client.IO;
+import io.socket.client.Socket;
+
 //날씨 정보 가져오는 소스코드 작성하시면 됩니다.
 
 /*
@@ -17,6 +22,17 @@ import android.os.Bundle;
  */
 
 public class MainActivity_Weather extends AppCompatActivity {
+
+    Socket mSocket;
+    {
+        try{
+            mSocket = IO.socket("http://192.168.219.150:3000");
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
