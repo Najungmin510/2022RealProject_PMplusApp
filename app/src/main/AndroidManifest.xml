@@ -16,12 +16,18 @@
         tools:targetApi="m">
         <activity
             android:name=".MainActivity_loding"
-            android:exported="false" />
+            android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter><!-- 첫 실행 화면으로 만들어준거 위 intent어쩌고가 -->
+        </activity>
         <activity
             android:name=".MainActivity_MshipData_Result_Fail"
             android:exported="false" />
         <activity
-            android:name=".MainActivity_ShipData_Result_Fail"
+            android:name=".MainActivity_Shipdata_Result_Fail"
             android:exported="false" />
         <activity
             android:name=".MainActivity_Search_PW_Success"
@@ -43,9 +49,6 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity_MshipData_Result"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity_Search_shipdata_Fail"
             android:exported="false" />
         <activity
             android:name=".MainActivity_Search_ID_Fail"
@@ -82,13 +85,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity_PM_Main"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity> <!-- 첫 실행 화면으로 만들어준거 위 intent어쩌고가 -->
+            android:exported="false"/>
         <activity
             android:name=".MainActivity_Login"
             android:exported="false" />
