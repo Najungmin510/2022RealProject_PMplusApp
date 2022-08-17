@@ -24,7 +24,6 @@ import android.widget.ImageButton;
  */
 public class MainActivity_Success_membership extends AppCompatActivity {
 
-
     ImageButton gomain;
     ImageButton goLogin;
 

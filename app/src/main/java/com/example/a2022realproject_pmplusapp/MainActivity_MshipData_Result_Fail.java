@@ -25,8 +25,8 @@ import android.widget.ImageButton;
 
 public class MainActivity_MshipData_Result_Fail extends AppCompatActivity {
 
-    private ImageButton replay;
-    private ImageButton gomain;
+    ImageButton replay;
+    ImageButton gomain;
 
 
     @Override
