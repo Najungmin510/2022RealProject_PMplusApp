@@ -6,34 +6,55 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity_ChatBot">
 
-    <EditText
-        android:id="@+id/etn_chatbot_user_input_text"
-        android:layout_width="369dp"
-        android:layout_height="47dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/chatbot_user_input"
-        android:ems="10"
-        android:gravity="center|left"
-        android:hint="  궁금한 사항을 입력해주세요."
-        android:inputType="textPersonName"
-        android:scaleType="fitXY"
-        android:textColorHint="#4A4A4A"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <TextView
         android:id="@+id/text_chatbot_today"
-        android:layout_width="144dp"
-        android:layout_height="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/chatbot_today"
         android:gravity="center"
         android:text="오늘 날짜 출력"
-        android:textSize="15sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/image_chatbot_user_input"
+        android:layout_width="387dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="16dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/chatbot_user_input" />
+
+    <EditText
+        android:id="@+id/et_chatbot_usersay"
+        android:layout_width="333dp"
+        android:layout_height="27dp"
+        android:layout_marginBottom="16dp"
+        android:background="#00ffffff"
+        android:ems="10"
+        android:hint="텍스트 입력"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/image_chatbot_user_input"
+        app:layout_constraintHorizontal_bias="0.24"
+        app:layout_constraintStart_toStartOf="@+id/image_chatbot_user_input"
+        app:layout_constraintTop_toTopOf="@+id/image_chatbot_user_input" />
+
+    <ImageButton
+        android:id="@+id/btn_send_chatbot_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00ffffff"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="@+id/image_chatbot_user_input"
+        app:layout_constraintStart_toEndOf="@+id/et_chatbot_usersay"
+        app:srcCompat="@drawable/baseline_send_black_24dp"
+        tools:layout_editor_absoluteY="683dp"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

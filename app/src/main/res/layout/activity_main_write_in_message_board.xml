@@ -7,5 +7,14 @@
     tools:context=".MainActivity_write_in_message_board">
 
 
-
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_message_write_in_messageboard"
+        android:layout_width="409dp"
+        android:layout_height="50dp"
+        android:background="#00ffffff"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="1dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

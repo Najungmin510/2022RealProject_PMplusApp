@@ -5,7 +5,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.appcompat.app.ActionBar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -36,39 +35,18 @@ public class MainActivity_PM_Main extends AppCompatActivity {
     ImageButton gonotice; //공지사항으로 이동
     DrawerLayout drawerLayout;
     NavigationView navigationView;
-    ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_pm_main);
 
-       miniweather = (ImageButton)findViewById(R.id.btn_mini_weather);
-       miniweather.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), MainActivity_Weather.class);
-            startActivity(intent);
-       });
-
-      gochatbot =(ImageButton)findViewById(R.id.btn_go_chatbot);
-       gochatbot.setOnClickListener(v ->{
-         Intent intent = new Intent(getApplicationContext(),MainActivity_ChatBot.class);
-         startActivity(intent);
-       });
-
-       gonotice = (ImageButton)findViewById(R.id.btn_notice);
-       gonotice.setOnClickListener(v ->{
-           Intent intent = new Intent(getApplicationContext(), MainActivity_Notice_Gathering.class);
-           startActivity(intent);
-       });
-
-
-
         toolbar = (Toolbar) findViewById(R.id.toolbar); //툴바 선언
         setSupportActionBar(toolbar); //툴바를 불러오고
 
-        actionBar.setDisplayShowTitleEnabled(false); //기존 title을 삭제
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.baseline_menu_white_24dp);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.baseline_menu_white_24dp);
+        getSupportActionBar().setDisplayShowTitleEnabled(false); //타이틀 이름 지우기
 
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout); //activity_main_pm에서 선언한 레이아웃
@@ -121,6 +99,24 @@ public class MainActivity_PM_Main extends AppCompatActivity {
                     }
                 });
 
+        miniweather = (ImageButton)findViewById(R.id.btn_mini_weather);
+        miniweather.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), MainActivity_Weather.class);
+            startActivity(intent);
+        });
+
+        gochatbot =(ImageButton)findViewById(R.id.btn_go_chatbot);
+        gochatbot.setOnClickListener(v ->{
+            Intent intent = new Intent(getApplicationContext(),MainActivity_ChatBot.class);
+            startActivity(intent);
+        });
+
+        gonotice = (ImageButton)findViewById(R.id.btn_notice);
+        gonotice.setOnClickListener(v ->{
+            Intent intent = new Intent(getApplicationContext(), MainActivity_Notice_Gathering.class);
+            startActivity(intent);
+        });
+
 
     }
 
@@ -141,6 +137,8 @@ public class MainActivity_PM_Main extends AppCompatActivity {
                 super.onBackPressed();
             }
         }
+
+
 
     }
 

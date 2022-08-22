@@ -87,7 +87,7 @@
     <Button
         android:id="@+id/btn_findID"
         android:layout_width="113dp"
-        android:layout_height="49dp"
+        android:layout_height="45dp"
         android:layout_marginStart="28dp"
         android:layout_marginBottom="220dp"
         android:background="#00ffffff"

@@ -24,6 +24,9 @@ import android.widget.ImageButton;
  */
 public class MainActivity_MshipData extends AppCompatActivity {
 
+    ImageButton go;
+    EditText a;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

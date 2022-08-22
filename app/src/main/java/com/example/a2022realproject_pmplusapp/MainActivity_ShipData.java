@@ -59,11 +59,13 @@ public class MainActivity_ShipData extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_ship_data);
 
-       // toolbar = (Toolbar)findViewById(R.id.toolbar); //툴바 선언
-       // setSupportActionBar(toolbar); //툴바를 불러오고
+       toolbar = (Toolbar)findViewById(R.id.toolbar_main_ship_data); //툴바 선언
+       setSupportActionBar(toolbar); //툴바를 불러오고
 
-      //  Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true); //디스플레이에 적용
-       // getSupportActionBar().setHomeAsUpIndicator(R.drawable.before); //툴바에 이미지 선언
+       Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+       getSupportActionBar().setHomeAsUpIndicator(R.drawable.before);
+       getSupportActionBar().setTitle("선박 입출항 조회");
+
 
        // shipcode = (EditText)findViewById(R.id.Text_shipcode); //청코드, 필수
        // String Shipcode = shipcode.getText().toString().trim();
