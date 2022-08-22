@@ -1,6 +1,7 @@
 package com.example.a2022realproject_pmplusapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,8 +10,6 @@ import android.util.Patterns;
 import android.widget.ImageButton;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import androidx.appcompat.widget.Toolbar;
 
 
 import java.net.URISyntaxException;
@@ -49,7 +48,7 @@ public class MainActivity_Search_ID extends AppCompatActivity {
     ImageButton searchId; //아이디 찾기 버튼
     EditText username; //사용자가 입력한 이름
     EditText useremail; //사용자가 입력한 이메일
-
+    Toolbar toolbar; //툴바
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +60,14 @@ public class MainActivity_Search_ID extends AppCompatActivity {
         useremail = (EditText)findViewById(R.id.et_Logini_email_search);
         searchId = (ImageButton)findViewById(R.id.btn_go_id_result);
         Pattern pattern = Patterns.EMAIL_ADDRESS; //각 변수들 선언
+
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar_seach_id); //툴바 선언
+        setSupportActionBar(toolbar); //툴바를 불러오고
+
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.baseline_chevron_left_black_24dp);
+        getSupportActionBar().setTitle("아이디 찾기");
 
 
         String inputname = username.getText().toString();
@@ -86,7 +93,6 @@ public class MainActivity_Search_ID extends AppCompatActivity {
             }
 
             else { //모든 조건을 만족할 경우
-
 
             /*
             서버로 데이터를 보내는 소스코드 작성

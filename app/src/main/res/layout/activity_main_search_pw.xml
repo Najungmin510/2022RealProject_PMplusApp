@@ -7,48 +7,83 @@
     android:background="@drawable/search_background"
     tools:context=".MainActivity_Search_PW">
 
-    <EditText
-        android:id="@+id/et_user_email_pw"
-        android:layout_width="310dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="320dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/text_write"
-        android:ems="10"
-        android:hint="  이메일을 입력해주세요"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/et_Login_pw_name"
-        android:layout_width="310dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="240dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/text_write"
-        android:ems="10"
-        android:hint="  아이디를 입력해주세요"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageButton
         android:id="@+id/btn_go_pw_result"
         android:layout_width="310dp"
         android:layout_height="52dp"
-        android:layout_marginBottom="262dp"
         android:background="#00ffffff"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.648"
         app:srcCompat="@drawable/search_pw" />
+
+    <ImageView
+        android:id="@+id/imageView18"
+        android:layout_width="310dp"
+        android:layout_height="55dp"
+        android:background="#00ffffff"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/text_write" />
+
+    <ImageView
+        android:id="@+id/imageView19"
+        android:layout_width="310dp"
+        android:layout_height="55dp"
+        android:background="#00ffffff"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.369"
+        app:srcCompat="@drawable/text_write" />
+
+    <EditText
+        android:id="@+id/et_Login_pw_name"
+        android:layout_width="272dp"
+        android:layout_height="52dp"
+        android:background="#00ffffff"
+        android:ems="10"
+        android:hint="아이디를 입력해주세요."
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView19"
+        app:layout_constraintEnd_toEndOf="@+id/imageView19"
+        app:layout_constraintStart_toStartOf="@+id/imageView19"
+        app:layout_constraintTop_toTopOf="@+id/imageView19" />
+
+    <EditText
+        android:id="@+id/et_user_email_pw"
+        android:layout_width="272dp"
+        android:layout_height="52dp"
+        android:background="#00ffffff"
+        android:ems="10"
+        android:hint="이메일을 입력해주세요."
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView18"
+        app:layout_constraintEnd_toEndOf="@+id/imageView18"
+        app:layout_constraintStart_toStartOf="@+id/imageView18"
+        app:layout_constraintTop_toTopOf="@+id/imageView18" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_search_pw"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="#F3F3F3"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="-1dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

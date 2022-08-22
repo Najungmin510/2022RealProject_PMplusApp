@@ -33,12 +33,15 @@ public class MainActivity_Membership extends AppCompatActivity {
     EditText username; //사용자 이름 입력받은 것 저장할 변수
     EditText useremail; //사용자 이메일 입력받은 것 저장할 변수
     ImageButton MemberShipBtn; //버튼 값을 저장할 변수
+    Toolbar toolbar;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_membership);
+
+        toolbar = (Toolbar)findViewById(R.id.toolbar_membership);
 
         username = (EditText) findViewById(R.id.et_username);
         username.setFilters(new InputFilter[]{new InputFilter.LengthFilter(5)}); //이름은 최대 5글자

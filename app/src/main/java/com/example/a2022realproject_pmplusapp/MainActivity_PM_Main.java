@@ -62,7 +62,7 @@ public class MainActivity_PM_Main extends AppCompatActivity {
                         int id = item.getItemId();
 
                         if (id == R.id.LoginandMembership) {
-                            Intent membership = new Intent(getApplicationContext(), MainActivity_Membership.class);
+                            Intent membership = new Intent(getApplicationContext(), MainActivity_Login.class);
 
                             startActivity(membership); //로그인/회원가입
 

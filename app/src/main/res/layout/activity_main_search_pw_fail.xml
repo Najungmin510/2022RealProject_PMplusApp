@@ -10,7 +10,7 @@
     <ImageButton
         android:id="@+id/btn_go_pm_main_ship"
         android:layout_width="310dp"
-        android:layout_height="55dp"
+        android:layout_height="52dp"
         android:background="#00ffffff"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -18,20 +18,32 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.474"
-        app:srcCompat="@drawable/search_idpw_fail_gotomain" />
+        app:srcCompat="@drawable/mship_gomain_two" />
 
     <ImageButton
         android:id="@+id/btn_go_pwsearch_main"
         android:layout_width="310dp"
-        android:layout_height="55dp"
-        android:layout_marginBottom="260dp"
+        android:layout_height="52dp"
         android:background="#00ffffff"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ship_replay_button" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.65"
+        app:srcCompat="@drawable/mship_replay_two" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_search_pw_fail"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="#F3F3F3"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="-1dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

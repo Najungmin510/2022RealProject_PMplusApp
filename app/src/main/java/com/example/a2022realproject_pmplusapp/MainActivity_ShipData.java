@@ -2,7 +2,6 @@ package com.example.a2022realproject_pmplusapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
 
 
 import io.socket.client.IO;
@@ -11,8 +10,6 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import android.text.TextUtils;
-import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -52,7 +49,7 @@ public class MainActivity_ShipData extends AppCompatActivity {
     EditText shipday2;
     EditText codecall;
 
-    Button gofind;
+    ImageButton gofind;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,52 +64,54 @@ public class MainActivity_ShipData extends AppCompatActivity {
        getSupportActionBar().setTitle("선박 입출항 조회");
 
 
-       // shipcode = (EditText)findViewById(R.id.Text_shipcode); //청코드, 필수
-       // String Shipcode = shipcode.getText().toString().trim();
-
-       // shipday1 = (EditText)findViewById(R.id.Text_shipday1); //시작날짜, 필수
-       // String Shipday1 = shipday1.getText().toString().trim();
-
-      //  shipday2 = (EditText)findViewById(R.id.Text_shipday2); //종료날짜, 필수
-       // String Shipday2 = shipday2.getText().toString().trim();
-
-        //codecall = (EditText)findViewById(R.id.Text_call); //호출부호
-       // String Codecall = codecall.getText().toString().trim();
 
 
+        shipcode = (EditText)findViewById(R.id.et_prtAgCd_ship); //청코드, 필수
+        String Shipcode = shipcode.getText().toString().trim();
 
-      //  gofind = (Button)findViewById(R.id.btn_find);
+        shipday1 = (EditText)findViewById(R.id.et_sde_ship); //시작날짜
+        String Shipday1 = shipday1.getText().toString().trim();
+
+        shipday2 = (EditText)findViewById(R.id.et_ede_ship); //종료날짜, 필수
+        String Shipday2 = shipday2.getText().toString().trim();
+
+        codecall = (EditText)findViewById(R.id.et_clsgn_ship); //호출부호
+        String Codecall = codecall.getText().toString().trim();
 
 
 
 
-    //    gofind.setOnClickListener(v -> { //조회 버튼이 눌렸을 때
 
-          //  if(TextUtils.isEmpty(Shipcode) || TextUtils.isEmpty(Shipday1) || TextUtils.isEmpty(Shipday2)){
+        gofind = (ImageButton)findViewById(R.id.btn_data_search);
 
-             //   Toast.makeText(getApplicationContext(),"필수 부분을 모두 입력해주세요.",Toast.LENGTH_SHORT).show();
+        gofind.setOnClickListener(v -> { //조회 버튼이 눌렸을 때
 
-           // } else{
-               // mSocket.connect();
+           if(TextUtils.isEmpty(Shipcode) || TextUtils.isEmpty(Shipday1) || TextUtils.isEmpty(Shipday2)){
 
-              //  JSONObject data = new JSONObject();
+              Toast.makeText(getApplicationContext(),"필수 부분을 모두 입력해주세요.",Toast.LENGTH_SHORT).show();
 
-                  //  try {
+           } else{
+                mSocket.connect();
 
-                     //   data.put("prtAgCd",Shipcode);
-                     //   data.put("sde",Shipday1);
-                     //   data.put("ede",Shipday2);
-                      //  data.put("clsgn", Codecall);
-                      //  mSocket.emit("PutShipData",data);
+               JSONObject data = new JSONObject();
 
-                 //   } catch (JSONException e) {
-                  //      e.printStackTrace();
-                   // }
-           // }
+                    try {
 
-          //  Intent intent = new Intent(getApplicationContext(),MainActivity_ShipdataResult.class);
-         //   startActivity(intent);
-      //  });
+                        data.put("prtAgCd",Shipcode);
+                        data.put("sde",Shipday1);
+                        data.put("ede",Shipday2);
+                        data.put("clsgn", Codecall);
+                        mSocket.emit("PutShipData",data);
 
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+            }
+
+           Intent intent = new Intent(getApplicationContext(),MainActivity_Shipdata_Result.class);
+           startActivity(intent);
+       });
+
+        //데이터 출력하는 건 결과 화면에서
   }
 }

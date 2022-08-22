@@ -11,13 +11,14 @@
         android:id="@+id/et_result_text_ID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="207dp"
         android:text="ID출력"
         android:textColor="#3D8FFF"
         android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.303" />
 
     <ImageButton
         android:id="@+id/btn_go_pmmain_search_id_success"
