@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.ImageButton; //버튼도 동일함
 import android.widget.Toast; //토스트 메세지를 이용하여, 회원가입이 완료되었습니다 메세지를 출력
 
+import java.util.Objects;
+
 //import io.socket.client.Socket; //이하동일
 
 
@@ -42,6 +44,11 @@ public class MainActivity_Membership extends AppCompatActivity {
         setContentView(R.layout.activity_main_membership);
 
         toolbar = (Toolbar)findViewById(R.id.toolbar_membership);
+        setSupportActionBar(toolbar); //툴바를 불러오고
+
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.baseline_chevron_left_black_24dp);
+        getSupportActionBar().setTitle("회원가입");
 
         username = (EditText) findViewById(R.id.et_username);
         username.setFilters(new InputFilter[]{new InputFilter.LengthFilter(5)}); //이름은 최대 5글자

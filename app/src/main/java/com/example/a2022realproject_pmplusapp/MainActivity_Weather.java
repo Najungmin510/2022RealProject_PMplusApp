@@ -1,10 +1,12 @@
 package com.example.a2022realproject_pmplusapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 
 import java.net.URISyntaxException;
+import java.util.Objects;
 
 import io.socket.client.IO;
 import io.socket.client.Socket;
@@ -18,25 +20,23 @@ import io.socket.client.Socket;
 흐름도 작성하는 곳
 
 
-코드 작성자 :
+코드 작성자 : 나정민
  */
 
 public class MainActivity_Weather extends AppCompatActivity {
 
-    Socket mSocket;
-    {
-        try{
-            mSocket = IO.socket("http://192.168.219.150:3000");
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        }
-    }
-
-
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_weather);
+
+        toolbar = (Toolbar)findViewById(R.id.toolbar_main_weather);
+        setSupportActionBar(toolbar); //툴바를 불러오고
+
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.baseline_chevron_left_white_24dp);
+        getSupportActionBar().setTitle("해상 날씨 예보 조회");
     }
 }

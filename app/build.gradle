@@ -41,6 +41,7 @@ dependencies {
     implementation ('io.socket:socket.io-client:2.0.0') { //socket.io 방식을 이용해서 서버와통신
         exclude group: 'org.json', module: 'json'
     }
+    implementation 'de.hdodenhof:circleimageview:3.1.0' //Circle ImageView
 
 
 }

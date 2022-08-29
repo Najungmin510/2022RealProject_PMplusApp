@@ -4,17 +4,68 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".MainActivity_write_in_message_board">
 
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_message_write_in_messageboard"
-        android:layout_width="409dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
-        android:background="#00ffffff"
+        android:background="#FF578DFF"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="1dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="384dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="64dp"
+        android:background="#00ffffff"
+        android:ems="10"
+        android:hint="제목 입력"
+        android:inputType="textPersonName"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.407"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar_message_write_in_messageboard"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/btn_completion_messageboard"
+        android:layout_width="116dp"
+        android:layout_height="31dp"
+        android:background="#00ffffff"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.944"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar_message_write_in_messageboard"
+        app:layout_constraintVertical_bias="0.784"
+        app:srcCompat="@drawable/board_write_completion" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName4"
+        android:layout_width="411dp"
+        android:layout_height="388dp"
+        android:background="@drawable/board_write_main"
+        android:ems="10"
+        android:hint="내용 입력"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar_message_write_in_messageboard"
+        app:layout_constraintVertical_bias="0.32" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

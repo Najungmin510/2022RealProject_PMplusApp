@@ -18,17 +18,17 @@
 
     <item
         android:id="@+id/WeatherData"
-        android:title="날씨 현황"
+        android:title="해상 날씨 예보 조회"
         android:icon="@drawable/baseline_dew_point_black_24dp"/>
 
     <item
         android:id="@+id/GoTochatbot"
-        android:title="챗봇과 대화하기"
+        android:title="PM+ 매니저-챗봇이용하기"
         android:icon="@drawable/baseline_android_black_24dp"/>
 
     <item
         android:id="@+id/informboard"
-        android:title="정보 게시판"
+        android:title="항만/항구 정보 공유 게시판"
         android:icon="@drawable/baseline_wysiwyg_black_24dp"/>
 
     <item

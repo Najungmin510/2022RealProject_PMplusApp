@@ -49,7 +49,7 @@
             android:layout_height="match_parent"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="360dp"
+            android:layout_marginTop="429dp"
             android:layout_marginEnd="0dp">
 
             <LinearLayout
@@ -66,8 +66,8 @@
                     android:layout_marginRight="23dp"
                     android:layout_marginBottom="50dp"
                     android:background="#03F3F3F3"
-                    android:scaleType="fitXY"
                     android:elevation="20dp"
+                    android:scaleType="fitXY"
                     app:srcCompat="@drawable/main_pm_button_notice" />
 
 
@@ -101,8 +101,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
             android:layout_marginStart="50dp"
             android:layout_marginTop="90dp"
+            android:layout_marginEnd="236dp"
             android:text="현재 00는"
             android:textColor="#FFFFFF"
             android:textSize="30sp" />
@@ -125,8 +127,10 @@
             android:layout_height="38dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
             android:layout_marginStart="50dp"
             android:layout_marginTop="135dp"
+            android:layout_marginEnd="116dp"
             android:text="날씨 하늘 상태 출력"
             android:textColor="#FFFFFF"
             android:textSize="30sp"

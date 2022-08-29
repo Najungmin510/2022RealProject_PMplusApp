@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="10dp"
+    android:padding="3dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical">
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/chatbot_image"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="top"
+            android:src="@drawable/chatbot_image"
+            app:civ_border_color="#4A65F3"
+            app:civ_border_width="1dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/chatbot_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:text="PM+ 파트너"
+                    android:textColor="#333333"
+                    android:textSize="14sp"
+                    android:textStyle="normal">
+                </TextView>
+            </LinearLayout>
+
+          <ImageView
+              android:id="@+id/chatbot_textmsg"
+              android:layout_width="wrap_content"
+              android:layout_height="10dp"
+              android:background="@drawable/chatbot_text_gray"
+              android:layout_weight="1"
+              android:layout_margin="10dp">
+          </ImageView>
+      </LinearLayout>
+
+</LinearLayout>
+
+</LinearLayout>
