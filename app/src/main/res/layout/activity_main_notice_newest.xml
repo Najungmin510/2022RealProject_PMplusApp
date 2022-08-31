@@ -44,6 +44,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/notice_title" />
 
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -54,15 +55,17 @@
         android:textColor="#001E43"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/text_gather_newest"
-        app:layout_constraintTop_toBottomOf="@+id/text_user_search_notice" />
-
+        app:layout_constraintTop_toBottomOf="@+id/text_user_search_notice"
+        app:layout_constraintVertical_bias="0.003" />
 
     <EditText
         android:id="@+id/text_user_search_notice"
         android:layout_width="338dp"
         android:layout_height="33dp"
-        android:layout_marginTop="78dp"
         android:background="@drawable/notice_search_with_icon"
         android:ems="10"
         android:gravity="center"
@@ -70,9 +73,12 @@
         android:inputType="textPersonName"
         android:scaleType="fitXY"
         android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.104" />
 
     <TextView
         android:id="@+id/text_gather_newest"
@@ -118,5 +124,19 @@
         android:text="TextView"
         app:layout_constraintStart_toStartOf="@+id/imageView4"
         tools:layout_editor_absoluteY="255dp" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_notice_newest"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="#FF578DFF"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

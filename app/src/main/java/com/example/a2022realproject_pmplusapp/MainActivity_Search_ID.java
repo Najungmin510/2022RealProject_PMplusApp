@@ -57,7 +57,7 @@ public class MainActivity_Search_ID extends AppCompatActivity {
 
 
         username = (EditText)findViewById(R.id.et_Login_id_search);
-        useremail = (EditText)findViewById(R.id.et_Logini_email_search);
+        useremail = (EditText)findViewById(R.id.et_Login_id_email_search);
         searchId = (ImageButton)findViewById(R.id.btn_go_id_result);
         Pattern pattern = Patterns.EMAIL_ADDRESS; //각 변수들 선언
 

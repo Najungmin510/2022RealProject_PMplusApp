@@ -5,45 +5,75 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="@drawable/search_pw_success_background"
+    android:background="@drawable/gray_background"
     tools:context=".MainActivity_Search_PW_Success">
 
     <TextView
         android:id="@+id/text_user_pw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="207dp"
         android:text="비밀번호출력"
         android:textColor="#3D8FFF"
         android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.319" />
 
     <ImageButton
         android:id="@+id/btn_go_login_searchpw_success"
         android:layout_width="310dp"
         android:layout_height="55dp"
-        android:layout_marginTop="308dp"
-        android:background="#00ffffff"
-        android:scaleType="fitXY"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/search_idpw_fail_gotologin" />
-
-    <ImageButton
-        android:id="@+id/btn_go_main_searchpw_success"
-        android:layout_width="310dp"
-        android:layout_height="55dp"
-        android:layout_marginBottom="288dp"
         android:background="#00ffffff"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.476"
+        app:srcCompat="@drawable/search_idpw_fail_gotologin" />
+
+    <ImageButton
+        android:id="@+id/btn_go_main_searchpw_success"
+        android:layout_width="310dp"
+        android:layout_height="55dp"
+        android:background="#00ffffff"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.606"
         app:srcCompat="@drawable/search_idpw_fail_gotomain" />
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비밀번호 정보입니다."
+        android:textColor="#373737"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.203" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_pw_search_success"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="#F3F3F3"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

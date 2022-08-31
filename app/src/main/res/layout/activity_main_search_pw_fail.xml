@@ -5,24 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="@drawable/search_fail_background"
+    android:background="@drawable/gray_background"
     tools:context=".MainActivity_Search_PW_Fail">
 
-    <ImageButton
-        android:id="@+id/btn_go_pm_main_ship"
-        android:layout_width="310dp"
-        android:layout_height="52dp"
-        android:background="#00ffffff"
-        android:scaleType="fitXY"
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="존재하지 않는 정보입니다."
+        android:textColor="#373737"
+        android:textSize="31sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/mship_gomain_two" />
+        app:layout_constraintVertical_bias="0.279" />
 
     <ImageButton
-        android:id="@+id/btn_go_pwsearch_main"
+        android:id="@+id/btn_replay_pw"
         android:layout_width="310dp"
         android:layout_height="52dp"
         android:background="#00ffffff"
@@ -36,15 +37,29 @@
         app:srcCompat="@drawable/mship_replay_two" />
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_search_pw_fail"
+        android:id="@+id/toolbar_pwsearch_fail"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:background="#F3F3F3"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="-1dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/btn_pwsearch_gomain"
+        android:layout_width="310dp"
+        android:layout_height="52dp"
+        android:scaleType="fitXY"
+        android:background="#00ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/mship_gomain_two" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,14 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.appcompat.widget.Toolbar;
 import android.widget.ImageButton;
 import android.widget.EditText;
-
-import io.socket.client.IO;
-import io.socket.client.Socket;
-
-import java.util.Objects;
 
 //비밀번호 찾기 소스코드 작성해주시면 됩니다.
 
@@ -45,7 +39,7 @@ public class MainActivity_Search_PW extends AppCompatActivity {
         userId = (EditText)findViewById(R.id.et_Login_pw_name);
         ID = userId.getText().toString();
 
-        userEmail = (EditText)findViewById(R.id.et_user_email_pw);
+        userEmail = (EditText)findViewById(R.id.et_Login_pw_email_search);
         Email = userEmail.getText().toString();
 
         /*

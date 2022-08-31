@@ -37,7 +37,7 @@
         app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/ocean_name_weather"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="00바다 날씨정보"
@@ -51,7 +51,7 @@
         app:layout_constraintVertical_bias="0.22" />
 
     <TextView
-        android:id="@+id/text_today_print"
+        android:id="@+id/degree_ocean_weather"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="온도 출력"
@@ -77,7 +77,7 @@
         tools:layout_editor_absoluteY="0dp" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/sky_weather"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="날씨 하늘 형태"
@@ -91,7 +91,7 @@
         app:layout_constraintVertical_bias="0.348" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/detail_weather"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="날씨 상세 정보"
@@ -163,7 +163,7 @@
         app:srcCompat="@drawable/morning_night_button" />
 
     <TextView
-        android:id="@+id/textView21"
+        android:id="@+id/wind_weather_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="풍속 데이터 출력"
@@ -177,7 +177,7 @@
         app:layout_constraintVertical_bias="0.588" />
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/wave_height_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="파고 데이터 출력"
@@ -191,7 +191,7 @@
         app:layout_constraintVertical_bias="0.695" />
 
     <TextView
-        android:id="@+id/textView23"
+        android:id="@+id/rain_weather_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="강수 형태 출력"

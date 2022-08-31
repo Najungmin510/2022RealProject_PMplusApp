@@ -1,14 +1,393 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="@drawable/ship_data_result_background"
+    android:background="@drawable/portmis_data_result_background_color"
     tools:context=".MainActivity_Shipdata_Result">
 
 
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="조회결과"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_shipdata_result"
+        app:layout_constraintVertical_bias="0.042" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_shipdata_result"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="#FF578DFF"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 
-</RelativeLayout>
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView27"
+        app:layout_constraintVertical_bias="1.0">
+
+
+        <ImageButton
+            android:id="@+id/btn_shipdata_replay_go"
+            android:layout_width="206dp"
+            android:layout_height="70dp"
+            android:background="#00ffffff"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/go_replay_shipdata_text" />
+
+        <ImageButton
+            android:id="@+id/btn_shipdata_go_main"
+            android:layout_width="206dp"
+            android:layout_height="70dp"
+            android:background="#00ffffff"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/go_pm_main_ship_result_text" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="521dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/portmis_data_result_background"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView27"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="521dp"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/ship_result_etryptDt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:text="입항일시"
+                android:textColor="#001E43"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/ship_result_etryptDt_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="결과값 출력"
+                android:textSize="24sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"/>
+
+
+            <TextView
+                android:id="@+id/ship_result_tkoffDt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="출항일시"
+                android:textColor="#001E43"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/ship_result_tkoffDt_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="결과값 출력"
+                android:textSize="24sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"/>
+
+
+            <TextView
+                android:id="@+id/ship_result_ibobprtNm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="내외항구분명"
+                android:textColor="#001E43"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/ship_result_ibobprtNm_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="결과값 출력"
+                android:textSize="24sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"/>
+
+
+            <TextView
+                android:id="@+id/ship_result_laidupFcltyNm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="계선시설명"
+                android:textColor="#001E43"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/ship_result_laidupFcltyNm_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="결과값 출력"
+                android:textSize="24sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"/>
+
+
+            <TextView
+                android:id="@+id/ship_result_ldadngFrghtCICd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="화물명세"
+                android:textColor="#001E43"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/ship_result_ldadngFrghtCICd_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="결과값 출력"
+                android:textSize="24sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"/>
+
+
+
+            <TextView
+                android:id="@+id/ship_result_grtg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="총톤수"
+                android:textColor="#001E43"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/ship_result_grtg_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="결과값 출력"
+                android:textSize="24sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"/>
+
+
+            <TextView
+                android:id="@+id/ship_result_satmntEntrpsNm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:text="신고업체명"
+                android:textColor="#001E43"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/ship_result_satmntEntrpsNm_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="결과값 출력"
+                android:textSize="24sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="155dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="세부정보"
+                android:textColor="#001E43"
+                android:textStyle="bold"
+                android:textSize="28sp" />
+
+
+            <TextView
+                android:id="@+id/ship_result_prtAgCd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="35dp"
+                android:text="항구청코드"
+                android:textColor="#001E43"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/ship_result_prtAgCd_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="결과값 출력"
+                android:textSize="24sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/ship_result_prtAgNm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:text="항구청명"
+                android:textColor="#001E43"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/ship_result_prtAgNm_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="결과값 출력"
+                android:textSize="24sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/ship_result_clsgn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="호출부호"
+                android:textColor="#001E43"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/ship_result_clsgn_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="결과값 출력"
+                android:textSize="24sp"
+                android:layout_marginLeft="20dp"
+
+                android:layout_marginBottom="10dp"/>
+
+
+            <TextView
+                android:id="@+id/shipe_result_vsslNm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="선박명"
+                android:textColor="#001E43"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/shipe_result_vsslNm_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="결과값 출력"
+                android:textSize="24sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"/>
+
+
+            <TextView
+                android:id="@+id/shipe_result_vsslNltyNm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="선박국가명"
+                android:textColor="#001E43"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/shipe_result_vsslNltyNm_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="결과값 출력"
+                android:textSize="24sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"/>
+
+
+            <TextView
+                android:id="@+id/shipe_result_vsslKndNm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:textColor="#001E43"
+                android:text="선박종류명"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/shipe_result_vsslKndNm_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="결과값 출력"
+                android:textSize="24sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"/>
+
+
+            <TextView
+                android:id="@+id/shipe_result_etryptPurpsNm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="입항목적명"
+                android:textColor="#001E43"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/shipe_result_etryptPurpsNm_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="결과값 출력"
+                android:textSize="24sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"/>
+
+
+            <TextView
+                android:id="@+id/shipe_result_dstnPrtNm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="목적지항구명"
+                android:textColor="#001E43"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/shipe_result_dstnPrtNm_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="결과값 출력"
+                android:textSize="24sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="30dp"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

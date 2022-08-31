@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="@drawable/search_fail_background"
+    android:background="@drawable/gray_background"
     tools:context=".MainActivity_Search_ID_Fail">
 
 
@@ -13,19 +13,6 @@
         android:id="@+id/btn_replay_id"
         android:layout_width="310dp"
         android:layout_height="52dp"
-        android:layout_marginBottom="260dp"
-        android:background="#00ffffff"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/mship_replay_two" />
-
-    <ImageButton
-        android:id="@+id/btn_go_pm_main_ship"
-        android:layout_width="310dp"
-        android:layout_height="55dp"
         android:background="#00ffffff"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -33,7 +20,47 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.474"
-        app:srcCompat="@drawable/search_idpw_fail_gotomain" />
+        app:layout_constraintVertical_bias="0.65"
+        app:srcCompat="@drawable/mship_replay_two" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="존재하지 않는 정보입니다."
+        android:textColor="#373737"
+        android:textSize="31sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.279" />
+
+    <ImageButton
+        android:id="@+id/btn_idsearch_gomain"
+        android:layout_width="310dp"
+        android:layout_height="52dp"
+        android:background="#00ffffff"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/mship_gomain_two" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_idserach_fail"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="#F3F3F3"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

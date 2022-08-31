@@ -29,7 +29,7 @@ import java.util.Objects;
 흐름도 작성하는 곳
 
 
-코드 작성자 :
+코드 작성자 : 나정민
  */
 
 public class MainActivity_ShipData extends AppCompatActivity {

@@ -5,9 +5,382 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="@drawable/ship_data_result_background"
+    android:background="@drawable/portmis_data_result_background_color"
     tools:context=".MainActivity_MshipData_Result">
 
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_mshipdata_result"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="#FF578DFF"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="조회결과"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_mshipdata_result"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_mshipdata_result"
+        app:layout_constraintVertical_bias="1.0">
+
+        <ImageButton
+            android:id="@+id/btn_mshipdata_replay_go"
+            android:layout_width="206dp"
+            android:layout_height="70dp"
+            android:background="#00ffffff"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/go_replay_shipdata_text" />
+
+        <ImageButton
+            android:id="@+id/btn_mshipdata_go_main"
+            android:layout_width="206dp"
+            android:layout_height="70dp"
+            android:background="#00ffffff"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/go_pm_main_ship_result_text" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="413dp"
+        android:layout_height="521dp"
+        android:background="@drawable/portmis_data_result_background"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_mshipdata_result"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/mship_result_cntrlNm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="관제구분명"
+                android:textColor="#001E43"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/mship_result_cntrlNm_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="결과값 출력"
+                android:textSize="24sp" />
+
+
+            <TextView
+                android:id="@+id/mship_result_cntrlOpertDt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="관제작업일시"
+                android:textColor="#001E43"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/mship_result_cntrlOpertDt_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="결과값 출력"
+                android:textSize="24sp" />
+
+
+            <TextView
+                android:id="@+id/mship_result_fcltyCd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="시설코드"
+                android:textColor="#001E43"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/mship_result_fcltyCd_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="결과값 출력"
+                android:textSize="24sp" />
+
+
+            <TextView
+                android:id="@+id/mship_result_fcltySubCd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="시설서브코드"
+                android:textColor="#001E43"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/mship_result_fcltySubCd_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="결과값 출력"
+                android:textSize="24sp" />
+
+
+            <TextView
+                android:id="@+id/mship_result_fcltyNm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="시설한글명"
+                android:textColor="#001E43"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/mship_result_fcltyNm_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="결과값 출력"
+                android:textSize="24sp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="155dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="세부정보"
+                android:textColor="#001E43"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/mship_result_prtAgCd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:text="항구청코드"
+                android:textColor="#001E43"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/mship_result_prtAgCd_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="결과값 출력"
+                android:textSize="24sp" />
+
+
+            <TextView
+                android:id="@+id/mship_result_prtAgNm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="항만명"
+                android:textColor="#001E43"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/mship_result_prtAgNm_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="결과값 출력"
+                android:textSize="24sp" />
+
+
+            <TextView
+                android:id="@+id/mship_result_clsgn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="호출부호"
+                android:textColor="#001E43"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/mship_result_clsgn_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="결과값 출력"
+                android:textSize="24sp" />
+
+
+            <TextView
+                android:id="@+id/mship_result_vsslKndNm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="선박종류명"
+                android:textColor="#001E43"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/mship_result_vsslKndNm_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="결과값 출력"
+                android:textSize="24sp" />
+
+
+            <TextView
+                android:id="@+id/mship_result_vsslNm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="선박한글명"
+                android:textColor="#001E43"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/mship_result_vsslNm_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="결과값 출력"
+                android:textSize="24sp" />
+
+
+            <TextView
+                android:id="@+id/mship_result_vsslGrtg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="선박총톤수"
+                android:textColor="#001E43"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/mship_result_vsslGrtg_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="결과값 출력"
+                android:textSize="24sp" />
+
+
+            <TextView
+                android:id="@+id/mship_result_vsslNltyNm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="선박국적명"
+                android:textColor="#001E43"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/mship_result_vsslNltyNm_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="결과값 출력"
+                android:textSize="24sp" />
+
+
+            <TextView
+                android:id="@+id/mship_result_aprtfEtryptDt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="기항지입항일시"
+                android:textColor="#001E43"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/mship_result_aprtfEtryptDt_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="결과값 출력"
+                android:textSize="24sp" />
+
+
+            <TextView
+                android:id="@+id/mship_result_harborEntrpsNm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="항만업체명"
+                android:textColor="#001E43"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/mship_result_harborEntrpsNm_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="30dp"
+                android:text="결과값 출력"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

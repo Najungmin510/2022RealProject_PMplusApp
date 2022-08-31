@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/search_background"
+    android:background="@drawable/gray_background"
     tools:context=".MainActivity_Search_PW">
 
     <ImageButton
@@ -62,7 +62,7 @@
         app:layout_constraintTop_toTopOf="@+id/imageView19" />
 
     <EditText
-        android:id="@+id/et_user_email_pw"
+        android:id="@+id/et_Login_pw_email_search"
         android:layout_width="272dp"
         android:layout_height="52dp"
         android:background="#00ffffff"
@@ -88,5 +88,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="정보를 입력해주세요."
+        android:textColor="#373737"
+        android:textSize="31sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_search_pw"
+        app:layout_constraintVertical_bias="0.149" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
