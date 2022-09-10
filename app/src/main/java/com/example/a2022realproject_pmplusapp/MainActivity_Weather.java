@@ -4,12 +4,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserFactory;
 
-import java.net.URISyntaxException;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
 import java.util.Objects;
+import java.io.InputStreamReader;
 
-import io.socket.client.IO;
-import io.socket.client.Socket;
 
 //날씨 정보 가져오는 소스코드 작성하시면 됩니다.
 
@@ -25,7 +35,17 @@ import io.socket.client.Socket;
 
 public class MainActivity_Weather extends AppCompatActivity {
 
+
     Toolbar toolbar;
+    ImageButton save_weather;
+    Button search_weather;
+    EditText user_search_weather; //사용자의 검색, 요청 변수, DB와 연결
+    TextView ocean_name; //00바다 날씨정보
+    TextView degree; //온도
+    TextView sky; //날씨하늘형태
+    TextView wind_detail; //풍속
+    TextView wave_height; //파고
+    TextView rain; //강수형태
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,5 +58,55 @@ public class MainActivity_Weather extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.baseline_chevron_left_white_24dp);
         getSupportActionBar().setTitle("해상 날씨 예보 조회");
+
+        user_search_weather = (EditText)findViewById(R.id.et_weather_user_inform_write);
+
+
+        ocean_name = (TextView) findViewById(R.id.ocean_name_weather);
+        degree = (TextView)findViewById(R.id.degree_ocean_weather);
+        sky = (TextView)findViewById(R.id.sky_weather);
+        wind_detail = (TextView)findViewById(R.id.wind_weather_detail);
+        wave_height = (TextView)findViewById(R.id.wave_height_detail);
+        rain = (TextView)findViewById(R.id.rain_weather_detail);
+
+
+
+        search_weather=(Button)findViewById(R.id.btn_weather_search);
+
+        search_weather.setOnClickListener(v->{
+
+            try {
+                String searchdata = user_search_weather.getText().toString(); //사용자가 입력한 값을 string타입으로 변환
+               // String code = null; //이 변수에 DB에서 받아온 값을 저장할 것
+
+                /*
+                DB와 연결하여 사용자가 입력한 값와 일치하는 관서코드를 안드로이드로 가져오는 코드 작성
+                작성 : 홍혜린
+                 */
+
+                new weather_api_toxml(searchdata); //날씨 api로부터 데이터를 받아와 출력할 것
+                //데이터 정제 후 사용자에게 내보내는 역할은 weather_api_toxml 파일에서 수행
+
+
+
+
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+        });
+
+
+
+        save_weather = (ImageButton)findViewById(R.id.btn_mainweather_continue);
+        save_weather.setOnClickListener(v->{
+            /* 버튼 클릭 시 db와 연결되어 그 정보를 저장하도록 함
+            작성 : 홍혜린
+            */
+
+        });
     }
+
+
+
 }
+

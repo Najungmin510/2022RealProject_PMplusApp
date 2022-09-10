@@ -56,41 +56,66 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="500dp"
                 android:orientation="vertical">
 
-                <ImageButton
-                    android:id="@+id/btn_notice"
-                    android:layout_width="330dp"
-                    android:layout_height="178dp"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginRight="23dp"
-                    android:layout_marginBottom="50dp"
-                    android:background="#03F3F3F3"
-                    android:elevation="20dp"
-                    android:scaleType="fitXY"
-                    app:srcCompat="@drawable/main_pm_button_notice" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="450dp">
+
+                    <ImageView
+                        android:id="@+id/imageView27"
+                        android:layout_width="338dp"
+                        android:layout_height="156dp"
+                        android:layout_marginTop="70dp"
+                        android:background="@drawable/main_pm_button_white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.493"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.704" />
+
+                    <ImageView
+                        android:id="@+id/imageView28"
+                        android:layout_width="338dp"
+                        android:layout_height="156dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/main_pm_button_white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.493"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.054" />
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView28"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView28"
+                        app:layout_constraintHorizontal_bias="0.085"
+                        app:layout_constraintStart_toStartOf="@+id/imageView28"
+                        app:layout_constraintTop_toTopOf="@+id/imageView28"
+                        app:layout_constraintVertical_bias="0.138" />
+
+                    <ImageButton
+                        android:id="@+id/btn_go_chatbot"
+                        android:layout_width="201dp"
+                        android:layout_height="38dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="#00ffffff"
+                        android:scaleType="fitXY"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView27"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView27"
+                        app:layout_constraintHorizontal_bias="0.437"
+                        app:layout_constraintStart_toStartOf="@+id/imageView27"
+                        app:srcCompat="@drawable/main_chatbot_blue_button" />
 
 
-                <ImageView
-                    android:layout_width="330dp"
-                    android:layout_height="178dp"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginBottom="20dp"
-                    android:background="#00ffffff"
-                    android:scaleType="fitXY"
-                    app:srcCompat="@drawable/main_pm_button_white" />
-
-                <ImageButton
-                    android:id="@+id/btn_go_chatbot"
-                    android:layout_width="200dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="109dp"
-                    android:layout_marginBottom="40dp"
-                    android:background="#00ffffff"
-                    android:scaleType="fitXY"
-                    app:srcCompat="@drawable/main_chatbot_blue_button" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
 
             </LinearLayout>
@@ -127,12 +152,14 @@
             android:id="@+id/text_miniweather_sky"
             android:layout_width="wrap_content"
             android:layout_height="38dp"
+            android:layout_above="@+id/null"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="50dp"
             android:layout_marginTop="135dp"
             android:layout_marginEnd="116dp"
+            android:layout_marginBottom="256dp"
             android:text="날씨 하늘 상태 출력"
             android:textColor="#FFFFFF"
             android:textSize="30sp"
@@ -142,14 +169,19 @@
             android:id="@+id/text_miniweather_rain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/null"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
             android:layout_marginStart="49dp"
             android:layout_marginTop="272dp"
+            android:layout_marginEnd="180dp"
+            android:layout_marginBottom="117dp"
             android:text="강수 정보 출력"
             android:textColor="#FFFFFF"
             android:textSize="30sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="UnknownId" />
 
 
     </RelativeLayout>

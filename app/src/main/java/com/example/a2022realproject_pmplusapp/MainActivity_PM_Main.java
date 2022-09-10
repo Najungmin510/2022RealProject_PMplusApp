@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 import java.util.Objects;
@@ -33,6 +34,8 @@ public class MainActivity_PM_Main extends AppCompatActivity {
     ImageButton miniweather; //날씨 정보
     ImageButton gochatbot; //챗봇으로 이동
     ImageButton gonotice; //공지사항으로 이동
+    TextView weather_sky;
+    TextView weather_rain;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
 
@@ -111,11 +114,20 @@ public class MainActivity_PM_Main extends AppCompatActivity {
             startActivity(intent);
         });
 
-        gonotice = (ImageButton)findViewById(R.id.btn_notice);
-        gonotice.setOnClickListener(v ->{
-            Intent intent = new Intent(getApplicationContext(), MainActivity_Notice_Gathering.class);
-            startActivity(intent);
-        });
+       /// gonotice = (ImageButton)findViewById(R.id.btn_notice);
+       // gonotice.setOnClickListener(v ->{
+           // Intent intent = new Intent(getApplicationContext(), MainActivity_Notice_Gathering.class);
+           // startActivity(intent);
+       // });
+
+        weather_sky = (TextView)findViewById(R.id.text_miniweather_sky); //weather_api_toxml 코드와 연결
+        //필요시 코드 추가
+        String sky_data = weather_sky.getText().toString();
+
+        weather_rain = (TextView)findViewById(R.id.text_miniweather_rain); //weather_api_toxml 코드와 연결
+        //필요시 코드 추가
+        String rain_data = weather_rain.getText().toString();
+
 
 
     }
