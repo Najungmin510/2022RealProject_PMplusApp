@@ -8,49 +8,13 @@
     android:background="@drawable/notice_background_two"
     tools:context=".MainActivity_Notice_Newest">
 
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="390dp"
-        android:layout_height="70dp"
-        android:layout_marginBottom="222dp"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/notice_title" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="390dp"
-        android:layout_height="70dp"
-        android:layout_marginBottom="116dp"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/notice_title" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="390dp"
-        android:layout_height="70dp"
-        android:layout_marginBottom="328dp"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/notice_title" />
-
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="38dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginBottom="548dp"
         android:text="최신순"
         android:textColor="#001E43"
         android:textSize="20sp"
@@ -59,71 +23,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/text_gather_newest"
-        app:layout_constraintTop_toBottomOf="@+id/text_user_search_notice"
-        app:layout_constraintVertical_bias="0.003" />
-
-    <EditText
-        android:id="@+id/text_user_search_notice"
-        android:layout_width="338dp"
-        android:layout_height="33dp"
-        android:background="@drawable/notice_search_with_icon"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="찾으시는 정보가 있으신가요?"
-        android:inputType="textPersonName"
-        android:scaleType="fitXY"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.104" />
+        app:layout_constraintTop_toTopOf="@+id/toolbar_notice_newest"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/text_gather_newest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
+        android:layout_marginTop="156dp"
         android:text="모아보기"
         android:textColor="#7A7A7A"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="390dp"
-        android:layout_height="70dp"
-        android:layout_marginBottom="434dp"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintHorizontal_bias="0.107"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/notice_title" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="공지사항 제목 입력"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintEnd_toEndOf="@+id/imageView4"
-        app:layout_constraintHorizontal_bias="0.33"
-        app:layout_constraintStart_toStartOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="0.56" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="@+id/imageView4"
-        tools:layout_editor_absoluteY="255dp" />
+        app:layout_constraintTop_toTopOf="@+id/toolbar_notice_newest" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_notice_newest"
@@ -137,6 +52,57 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageView30"
+        android:layout_width="359dp"
+        android:layout_height="38dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar_notice_newest"
+        app:layout_constraintVertical_bias="0.096"
+        app:srcCompat="@drawable/notice_search_with_icon" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName6"
+        android:layout_width="283dp"
+        android:layout_height="35dp"
+        android:background="#00ffffff"
+        android:ems="10"
+        android:hint="찾으시는 정보가 있으신가요?"
+        android:inputType="textPersonName"
+        android:scaleType="fitXY"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView30"
+        app:layout_constraintEnd_toEndOf="@+id/imageView30"
+        app:layout_constraintHorizontal_bias="0.765"
+        app:layout_constraintStart_toStartOf="@+id/imageView30"
+        app:layout_constraintTop_toTopOf="@+id/imageView30"
+        app:layout_constraintVertical_bias="0.56" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="35dp"
+        android:layout_height="33dp"
+        android:background="#00ffffff"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView30"
+        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName6"
+        app:layout_constraintStart_toStartOf="@+id/imageView30"
+        app:layout_constraintTop_toTopOf="@+id/imageView30" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="156dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_notice_newest"
         app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -51,6 +52,7 @@ public class MainActivity_Login extends AppCompatActivity {
     Button MemberConversion; //회원가입 버튼
     Button searchpw; //비밀번호 찾기 버튼
     Button searchid; //아이디 찾기 버튼
+    Toolbar toolbar;
 
 
     @Override
@@ -65,6 +67,13 @@ public class MainActivity_Login extends AppCompatActivity {
 
         userID = (EditText)findViewById(R.id.et_Login_ID);
         userPW = (EditText)findViewById(R.id.et_Login_PW);
+
+        toolbar = (Toolbar)findViewById(R.id.toolbar_login);
+        setSupportActionBar(toolbar); //툴바를 불러오고
+
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.baseline_chevron_left_black_24dp);
+        getSupportActionBar().setTitle("");
 
 
         MemberConversion.setOnClickListener(v -> {
@@ -92,10 +101,17 @@ public class MainActivity_Login extends AppCompatActivity {
 
             if(ID.trim().equals("") || PW.trim().equals("")){
 
-                Toast inform = Toast.makeText(this.getApplicationContext(),"빈칸 없이 입력해주세요.",Toast.LENGTH_SHORT);
-                inform.show();
+                Toast.makeText(getApplicationContext(), "빈칸없이 입력해주세요.", Toast.LENGTH_SHORT).show();
 
-            } else{
+            } else if(ID.length() < 1){
+                Toast.makeText(getApplicationContext(), "아이디를 두글자 이상 입력해주세요.", Toast.LENGTH_SHORT).show();
+
+            }  else if(PW.length() < 4) {
+                Toast.makeText(getApplicationContext(), "비밀번호를 다섯글자 이상 입력해주세요.", Toast.LENGTH_SHORT).show();
+
+            }
+
+            else{
                 //로그인 버튼 클릭 시 서버로 데이터를 전송하는 코드 작성
 
                 //전송 후 메인화면으로 전환
@@ -105,9 +121,17 @@ public class MainActivity_Login extends AppCompatActivity {
 
         });
 
+    }
 
-
-
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) { //뒤로가기 했을 때
+        switch (item.getItemId()){
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                break;
+        }
+        return super. onOptionsItemSelected(item);
     }
 }

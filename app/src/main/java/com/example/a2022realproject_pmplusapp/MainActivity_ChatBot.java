@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ImageButton;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -67,6 +68,18 @@ public class MainActivity_ChatBot extends AppCompatActivity {
         ChatdataList.add(new Chatbot_DataItem("안녕하세요. PM+ 매니저입니다.",null,Chatbot_Content_Code.ViewType.LEFT_Content));
         ChatdataList.add(new Chatbot_DataItem("원하시는 서비스를 선택해주세요.",null,Chatbot_Content_Code.ViewType.LEFT_Content));
         ChatdataList.add(new Chatbot_DataItem("사용자 입력값 출력",null,Chatbot_Content_Code.ViewType.RIGHT_Content));
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) { //뒤로가기 했을 때
+        switch (item.getItemId()){
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                break;
+        }
+        return super. onOptionsItemSelected(item);
     }
 
 

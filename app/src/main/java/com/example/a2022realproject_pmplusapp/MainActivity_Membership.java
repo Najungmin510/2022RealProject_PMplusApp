@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton; //버튼도 동일함
@@ -61,7 +62,7 @@ public class MainActivity_Membership extends AppCompatActivity {
 
 
         userpass = (EditText) findViewById(R.id.et_userPW); //이하 동일
-        userpass.setFilters(new InputFilter[]{new InputFilter.LengthFilter(20)}); //비밀번호 글자수수 제한
+        userpass.setFilters(new InputFilter[]{new InputFilter.LengthFilter(20)}); //비밀번호 글자수 제한
         userpass.getText().toString(); //글자를 가져옴
 
 
@@ -82,30 +83,66 @@ public class MainActivity_Membership extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (!android.util.Patterns.EMAIL_ADDRESS.matcher(s.toString()).matches()) {
-                    Toast.makeText(getApplicationContext(), "이메일 형식에 맞춰주세요.", Toast.LENGTH_SHORT).show();
-                } else {
 
-                    MemberShipBtn.setOnClickListener(v -> { //버튼이 눌렸을 때
+                MemberShipBtn.setOnClickListener(v -> {
+                    if (!android.util.Patterns.EMAIL_ADDRESS.matcher(s.toString()).matches()) {
+                        Toast.makeText(getApplicationContext(), "이메일 형식에 맞춰주세요.", Toast.LENGTH_SHORT).show();
+
+                    } else if (useremail.length() == 0){
+                        Toast.makeText(getApplicationContext(), "이메일을 입력해주세요.", Toast.LENGTH_SHORT).show();
+                    }
+
+                    else if(username.length() == 0){
+                        Toast.makeText(getApplicationContext(), "이름을 입력해주세요.", Toast.LENGTH_SHORT).show();
+
+                    } else if(userid.length() == 0){
+                        Toast.makeText(getApplicationContext(), "아이디를 입력해주세요.", Toast.LENGTH_SHORT).show();
+
+                    } else if(userpass.length() == 0){
+                        Toast.makeText(getApplicationContext(), "비밀번호를 입력해주세요.", Toast.LENGTH_SHORT).show();
+
+                    } else if(username.length() < 1){
+                        Toast.makeText(getApplicationContext(), "이름을 두글자 이상 입력해주세요.", Toast.LENGTH_SHORT).show();
+
+                    } else if(userid.length() < 1){
+                        Toast.makeText(getApplicationContext(), "아이디를 두글자 이상 입력해주세요.", Toast.LENGTH_SHORT).show();
+
+                    } else if(userpass.length() < 4){
+                        Toast.makeText(getApplicationContext(), "비밀번호를 다섯글자 이상 입력해주세요.", Toast.LENGTH_SHORT).show();
+
+                    } else if(useremail.length() == 0 && userid.length() == 0 && userpass.length() == 0 && username.length() == 0){
+                        Toast.makeText(getApplicationContext(), "정보를 입력해주세요.", Toast.LENGTH_SHORT).show();
+                    }
+
+                    else{
 
                         ServerConnect thread = new ServerConnect();
                         thread.start(userid, userpass, username, useremail); //작성한 자료들을 서버로 보내기 위해 SERVER CONNECT로 데이터 넘겨줌
+                        //넘겨줌과 동시에 화면으로 전환
 
                         Intent intent = new Intent(getApplicationContext(), MainActivity_Success_membership.class);
                         startActivity(intent);
 
-                    }); //람다식(익명함수)으로 작성, 회원가입 버튼 클릭 시 성공 화면으로 이동
+                        //서버로부터 ok 신호가 오면 그 때 회원가입이 완료되었습니다 토스트메세지 출력
+                    }
+                });
 
-
-                }
             }// afterTextChanged()..
         });
 
-        MemberShipBtn.setOnClickListener(v -> {
-            //회원가입 버튼 클릭 시 서버로 데이터 전송송
-        });
 
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) { //뒤로가기 했을 때
+        switch (item.getItemId()){
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                break;
+        }
+        return super. onOptionsItemSelected(item);
     }
 
 }

@@ -32,7 +32,7 @@
         <ImageButton
             android:id="@+id/btn_mini_weather"
             android:layout_width="match_parent"
-            android:layout_height="387dp"
+            android:layout_height="330dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
@@ -51,7 +51,7 @@
             android:layout_height="match_parent"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="429dp"
+            android:layout_marginTop="460dp"
             android:layout_marginEnd="0dp">
 
             <LinearLayout
@@ -67,7 +67,7 @@
                         android:id="@+id/imageView27"
                         android:layout_width="338dp"
                         android:layout_height="156dp"
-                        android:layout_marginTop="70dp"
+                        android:layout_marginTop="90dp"
                         android:background="@drawable/main_pm_button_white"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -93,13 +93,16 @@
                         android:id="@+id/textView16"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView"
+                        android:text="공지사항"
+                        android:textColor="#333333"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="@+id/imageView28"
                         app:layout_constraintEnd_toEndOf="@+id/imageView28"
-                        app:layout_constraintHorizontal_bias="0.085"
+                        app:layout_constraintHorizontal_bias="0.106"
                         app:layout_constraintStart_toStartOf="@+id/imageView28"
                         app:layout_constraintTop_toTopOf="@+id/imageView28"
-                        app:layout_constraintVertical_bias="0.138" />
+                        app:layout_constraintVertical_bias="0.068" />
 
                     <ImageButton
                         android:id="@+id/btn_go_chatbot"
@@ -113,6 +116,87 @@
                         app:layout_constraintHorizontal_bias="0.437"
                         app:layout_constraintStart_toStartOf="@+id/imageView27"
                         app:srcCompat="@drawable/main_chatbot_blue_button" />
+
+                    <TextView
+                        android:id="@+id/text_notice_one_main"
+                        android:layout_width="302dp"
+                        android:layout_height="26dp"
+                        android:text="첫 번째 공지사항 출력"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView28"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView28"
+                        app:layout_constraintHorizontal_bias="0.805"
+                        app:layout_constraintStart_toStartOf="@+id/imageView28"
+                        app:layout_constraintTop_toTopOf="@+id/imageView28"
+                        app:layout_constraintVertical_bias="0.33" />
+
+                    <ImageButton
+                        android:id="@+id/btn_go_notice"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:background="#00ffffff"
+                        android:scaleType="fitXY"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView28"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView28"
+                        app:layout_constraintHorizontal_bias="0.935"
+                        app:layout_constraintStart_toStartOf="@+id/imageView28"
+                        app:layout_constraintTop_toTopOf="@+id/imageView28"
+                        app:layout_constraintVertical_bias="0.067"
+                        app:srcCompat="@drawable/baseline_add_black_24dp" />
+
+                    <TextView
+                        android:id="@+id/text_notice_two_main"
+                        android:layout_width="302dp"
+                        android:layout_height="26dp"
+                        android:text="두 번째 공지사항 출력"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView28"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView28"
+                        app:layout_constraintHorizontal_bias="0.805"
+                        app:layout_constraintStart_toStartOf="@+id/imageView28"
+                        app:layout_constraintTop_toTopOf="@+id/imageView28"
+                        app:layout_constraintVertical_bias="0.607" />
+
+                    <TextView
+                        android:id="@+id/text_notice_three_main"
+                        android:layout_width="302dp"
+                        android:layout_height="26dp"
+                        android:text="세 번째 공지사항 출력"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView28"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView28"
+                        app:layout_constraintHorizontal_bias="0.805"
+                        app:layout_constraintStart_toStartOf="@+id/imageView28"
+                        app:layout_constraintTop_toTopOf="@+id/imageView28"
+                        app:layout_constraintVertical_bias="0.884" />
+
+                    <TextView
+                        android:id="@+id/textView23"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:text="PM+ 매니저를 이용해 보세요"
+                        android:textColor="#333333"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView27"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView27"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/imageView27"
+                        app:layout_constraintTop_toTopOf="@+id/imageView27"
+                        app:layout_constraintVertical_bias="0.138" />
+
+                    <TextView
+                        android:id="@+id/textView37"
+                        android:layout_width="296dp"
+                        android:layout_height="44dp"
+                        android:text="챗봇을 이용하여 날씨정보, 선박 관제 현황, 선박 입출항, 코드집 정보 조회가 가능합니다."
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView27"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView27"
+                        app:layout_constraintStart_toStartOf="@+id/imageView27"
+                        app:layout_constraintTop_toTopOf="@+id/imageView27"
+                        app:layout_constraintVertical_bias="0.44" />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -152,7 +236,6 @@
             android:id="@+id/text_miniweather_sky"
             android:layout_width="wrap_content"
             android:layout_height="38dp"
-            android:layout_above="@+id/null"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
@@ -169,7 +252,6 @@
             android:id="@+id/text_miniweather_rain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/null"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"

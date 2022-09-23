@@ -301,7 +301,7 @@
                 android:textStyle="bold"
                 android:textSize="20sp" />
             <TextView
-                android:id="@+id/shipe_result_vsslNm_data"
+                android:id="@+id/ship_result_vsslNm_data"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="결과값 출력"
@@ -320,7 +320,7 @@
                 android:textStyle="bold"
                 android:textSize="20sp" />
             <TextView
-                android:id="@+id/shipe_result_vsslNltyNm_data"
+                android:id="@+id/ship_result_vsslNltyNm_data"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="결과값 출력"
@@ -339,7 +339,7 @@
                 android:text="선박종류명"
                 android:textSize="20sp" />
             <TextView
-                android:id="@+id/shipe_result_vsslKndNm_data"
+                android:id="@+id/ship_result_vsslKndNm_data"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="결과값 출력"
@@ -358,7 +358,7 @@
                 android:textStyle="bold"
                 android:textSize="20sp" />
             <TextView
-                android:id="@+id/shipe_result_etryptPurpsNm_data"
+                android:id="@+id/ship_result_etryptPurpsNm_data"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="결과값 출력"
@@ -377,7 +377,7 @@
                 android:textStyle="bold"
                 android:textSize="20sp" />
             <TextView
-                android:id="@+id/shipe_result_dstnPrtNm_data"
+                android:id="@+id/ship_result_dstnPrtNm_data"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="결과값 출력"

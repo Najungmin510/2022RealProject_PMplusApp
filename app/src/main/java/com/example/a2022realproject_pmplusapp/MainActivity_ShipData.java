@@ -4,20 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 
-import io.socket.client.IO;
-import io.socket.client.Socket;
 import android.content.Intent;
 import android.os.Bundle;
 
-import android.text.TextUtils;
+import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.net.URISyntaxException;
 import java.util.Objects;
 
 //선박 입출항 현황 데이터를 서버로부터 가져오는 소스코드를 작성하시면 됩니다.
@@ -34,14 +27,6 @@ import java.util.Objects;
 
 public class MainActivity_ShipData extends AppCompatActivity {
 
-   Socket mSocket;
-    {
-        try{
-            mSocket = IO.socket("http://192.168.219.150:3000");
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        }
-    }
 
     Toolbar  toolbar;
     EditText shipcode;
@@ -56,18 +41,22 @@ public class MainActivity_ShipData extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_ship_data);
 
-       toolbar = (Toolbar)findViewById(R.id.toolbar_main_ship_data); //툴바 선언
-       setSupportActionBar(toolbar); //툴바를 불러오고
+        boolean Itsture = false; //클래스로부터 데이터가 잘 받아져왔는지 신호를 받기 위한 변수, 조회된데이터가 없다면 false 아니면 true
 
-       Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
-       getSupportActionBar().setHomeAsUpIndicator(R.drawable.before);
-       getSupportActionBar().setTitle("선박 입출항 조회");
+
+
+        toolbar = (Toolbar)findViewById(R.id.toolbar_main_ship_data); //툴바 선언
+        setSupportActionBar(toolbar); //툴바를 불러오고
+
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.before);
+        getSupportActionBar().setTitle("선박 입출항 조회");
 
 
 
 
         shipcode = (EditText)findViewById(R.id.et_prtAgCd_ship); //청코드, 필수
-        String Shipcode = shipcode.getText().toString().trim();
+        String Shipcode = shipcode.getText().toString().trim(); //청코드
 
         shipday1 = (EditText)findViewById(R.id.et_sde_ship); //시작날짜
         String Shipday1 = shipday1.getText().toString().trim();
@@ -76,7 +65,7 @@ public class MainActivity_ShipData extends AppCompatActivity {
         String Shipday2 = shipday2.getText().toString().trim();
 
         codecall = (EditText)findViewById(R.id.et_clsgn_ship); //호출부호
-        String Codecall = codecall.getText().toString().trim();
+        String Codecall = codecall.getText().toString().trim(); //호출부호
 
 
 
@@ -86,32 +75,31 @@ public class MainActivity_ShipData extends AppCompatActivity {
 
         gofind.setOnClickListener(v -> { //조회 버튼이 눌렸을 때
 
-           if(TextUtils.isEmpty(Shipcode) || TextUtils.isEmpty(Shipday1) || TextUtils.isEmpty(Shipday2)){
+            //빈칸인지 아닌지 확인하는 ifelse 코드 추가할 것
 
-              Toast.makeText(getApplicationContext(),"필수 부분을 모두 입력해주세요.",Toast.LENGTH_SHORT).show();
 
-           } else{
-                mSocket.connect();
 
-               JSONObject data = new JSONObject();
+                   shipdata_to_xml_re s_result = new shipdata_to_xml_re(Shipcode, Shipday1, Shipday2, Codecall);
 
-                    try {
 
-                        data.put("prtAgCd",Shipcode);
-                        data.put("sde",Shipday1);
-                        data.put("ede",Shipday2);
-                        data.put("clsgn", Codecall);
-                        mSocket.emit("PutShipData",data);
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-            }
-
-           Intent intent = new Intent(getApplicationContext(),MainActivity_Shipdata_Result.class);
-           startActivity(intent);
+                   Intent intent = new Intent(getApplicationContext(),MainActivity_Shipdata_Result.class);
+                   startActivity(intent);
        });
 
-        //데이터 출력하는 건 결과 화면에서
+        //데이터 출력하는 건 결과 화면에서..
   }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) { //뒤로가기 했을 때
+        switch (item.getItemId()){
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                break;
+        }
+        return super. onOptionsItemSelected(item);
+    }
+
+
 }

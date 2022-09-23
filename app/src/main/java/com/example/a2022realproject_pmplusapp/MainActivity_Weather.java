@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -75,24 +76,14 @@ public class MainActivity_Weather extends AppCompatActivity {
 
         search_weather.setOnClickListener(v->{
 
-            try {
-                String searchdata = user_search_weather.getText().toString(); //사용자가 입력한 값을 string타입으로 변환
-               // String code = null; //이 변수에 DB에서 받아온 값을 저장할 것
+            String searchdata = user_search_weather.getText().toString(); //사용자가 입력한 값을 string타입으로 변환
+            // String code = null; //이 변수에 DB에서 받아온 값을 저장할 것
 
                 /*
                 DB와 연결하여 사용자가 입력한 값와 일치하는 관서코드를 안드로이드로 가져오는 코드 작성
                 작성 : 홍혜린
                  */
 
-                new weather_api_toxml(searchdata); //날씨 api로부터 데이터를 받아와 출력할 것
-                //데이터 정제 후 사용자에게 내보내는 역할은 weather_api_toxml 파일에서 수행
-
-
-
-
-            } catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
-            }
         });
 
 
@@ -104,6 +95,18 @@ public class MainActivity_Weather extends AppCompatActivity {
             */
 
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) { //뒤로가기 했을 때
+        switch (item.getItemId()){
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                break;
+        }
+        return super. onOptionsItemSelected(item);
     }
 
 

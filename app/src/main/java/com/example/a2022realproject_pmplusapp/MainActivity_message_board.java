@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.view.MenuItem;
 import android.widget.ImageButton;
 
 import java.util.Objects;
@@ -48,5 +49,17 @@ public class MainActivity_message_board extends AppCompatActivity {
         getSupportActionBar().setTitle("항만/항구 정보 공유 게시판");
 
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) { //뒤로가기 했을 때
+        switch (item.getItemId()){
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                break;
+        }
+        return super. onOptionsItemSelected(item);
     }
 }

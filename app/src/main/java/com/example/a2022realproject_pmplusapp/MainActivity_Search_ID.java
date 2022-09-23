@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import android.util.Patterns;
+import android.view.MenuItem;
 import android.widget.ImageButton;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -106,5 +107,17 @@ public class MainActivity_Search_ID extends AppCompatActivity {
 
         });
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) { //뒤로가기 했을 때
+        switch (item.getItemId()){
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                break;
+        }
+        return super. onOptionsItemSelected(item);
     }
 }

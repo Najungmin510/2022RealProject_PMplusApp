@@ -13,13 +13,14 @@
         <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_click_message_board.xml" value="0.359375" />
         <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_loding.xml" value="0.2740036231884058" />
         <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_login.xml" value="0.3333333333333333" />
-        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_membership.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_membership.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_message_board.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_mship_data.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_mship_data_result.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_mship_data_result_fail.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_notice.xml" value="0.3029891304347826" />
-        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_notice_gathering.xml" value="0.31567028985507245" />
+        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_notice_content_when_click.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_notice_gathering.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_notice_newest.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_pm_main.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/activity_main_search_id.xml" value="0.3333333333333333" />
@@ -43,10 +44,16 @@
         <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/chatbot_date_center_itemlist.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/chatbot_room_bot_left_itemlist.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/chatbot_room_user_right_itemlist.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/item_notice.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/item_notice_pm.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/item_notice_text.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/messageboard_item.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/navigation_header.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/shadow.xml" value="0.3061594202898551" />
+        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/layout/shipdata_adapter.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/menu/main_activtiy_menu.xml" value="0.2796875" />
+        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1485" />
+        <entry key="..\:/Users/skdbs/2022RealProject_PMplusApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
       </map>
     </option>
   </component>
