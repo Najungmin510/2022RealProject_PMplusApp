@@ -22,6 +22,8 @@ public class MainActivity_Shipdata_Result extends AppCompatActivity {
     //item
     TextView prtAgCd_ship, prtAgNm_ship, clsgn_ship, vsslNm_ship, vsslNltyNm_ship, vsslKndNm_ship, etryptPurpsNm_ship, dstnPrtNm_ship;
 
+
+    String rs_day1, rs_day2, rs_call, rs_sc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,33 +47,35 @@ public class MainActivity_Shipdata_Result extends AppCompatActivity {
         dstnPrtNm_ship = (TextView)findViewById(R.id.ship_result_dstnPrtNm_data);
 
 
-        shipdata_to_xml_re result = new shipdata_to_xml_re();
-        String[] your_result = new String[result.total().length]; //받아온 배열의 길이만큼 저장해줄건데
+        Intent intent = getIntent();
+        rs_sc = intent.getStringExtra("청코드");
+        rs_day1 = intent.getStringExtra("입항날짜");
+        rs_day2 = intent.getStringExtra("출항날짜");
+        rs_call = intent.getStringExtra("호출부호");
 
-        for(int i = 0; i < result.total().length; i++){ //배열에 값을 넣어줌
+        shipdata_to_xml_re result = new shipdata_to_xml_re(rs_sc, rs_day1, rs_day2, rs_call);
+       // String your_result[];
+        
 
-            your_result[i] = result.total()[i];
 
-        } //받아온 배열값을 순서대로 textview에 넣어주면 끝
-
-        etryptDt_ship.setText(your_result[8]); //text값 변경
-        tkoffDt_ship.setText(your_result[14]);
-        ibobprtNm_ship.setText(your_result[9]);
+       // etryptDt_ship.setText(your_result[8]); //text값 변경
+       // tkoffDt_ship.setText(your_result[14]);
+       // ibobprtNm_ship.setText(your_result[9]);
 
 
 
         replay_shipdata = (ImageButton)findViewById(R.id.btn_shipdata_replay_go);
         no_replay_main = (ImageButton)findViewById(R.id.btn_shipdata_go_main);
 
-        replay_shipdata.setOnClickListener(v->{
-            Intent intent = new Intent(getApplicationContext(),MainActivity_ShipData.class);
-            startActivity(intent);
-        });
+        //replay_shipdata.setOnClickListener(v->{
+          //  Intent intent = new Intent(getApplicationContext(),MainActivity_ShipData.class);
+           // startActivity(intent);
+      //  });
 
-        no_replay_main.setOnClickListener(v->{
-            Intent intent = new Intent(getApplicationContext(),MainActivity_PM_Main.class);
-            startActivity(intent);
-        });
+       // no_replay_main.setOnClickListener(v->{
+           // Intent intent = new Intent(getApplicationContext(),MainActivity_PM_Main.class);
+          //  startActivity(intent);
+      //  });
 
 
     }

@@ -82,7 +82,5 @@ public class MainActivity_Notice_Gathering extends AppCompatActivity {
         return super. onOptionsItemSelected(item);
     }
 
-    public void setOnViewHolderItemClickListener(OnViewHolderItemClickListener onViewHolderItemClickListener) {
-        this.onViewHolderItemClickListener = onViewHolderItemClickListener;
-    }
+
 }

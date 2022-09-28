@@ -4,6 +4,7 @@ import android.animation.ValueAnimator;
 import android.util.SparseBooleanArray;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,8 +16,13 @@ public class ViewHolderNotice extends RecyclerView. ViewHolder{
     TextView notice_adapter_title;
     TextView notice_adapter_writer;
     TextView notice_adapter_date;
-    TextView item_notice_text1;
+    TextView notice_adapter_content;
     ImageView notice_adapter_image;
+
+
+    LinearLayout linearlayout;
+
+    OnViewHolderItemClickListener onViewHolderItemClickListener;
 
     public ViewHolderNotice(View itemView){
         super(itemView);
@@ -25,6 +31,16 @@ public class ViewHolderNotice extends RecyclerView. ViewHolder{
         notice_adapter_writer = itemView.findViewById(R.id.notice_adapter_writer);
         notice_adapter_date = itemView.findViewById(R.id.notice_adapter_date);
         notice_adapter_image = itemView.findViewById(R.id.notice_adapter_image);
+        notice_adapter_content = itemView.findViewById(R.id.notice_adapter_content);
+        linearlayout = itemView.findViewById(R.id.linearlayout_notice_g);
+
+        linearlayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onViewHolderItemClickListener.onViewHolderItemClick();
+            }
+        });
+
     }
 
 
@@ -33,8 +49,9 @@ public class ViewHolderNotice extends RecyclerView. ViewHolder{
         notice_adapter_writer.setText(noticeData.getWriter());
         notice_adapter_date.setText(noticeData.getDate());
         notice_adapter_image.setImageResource(noticeData.getImage());
+        notice_adapter_content.setText(noticeData.getTitle());
 
-        item_notice_text1.setText(noticeData.getTitle());
+
         changeVisibility(selectedItems.get(position));
     }
 
@@ -46,11 +63,11 @@ public class ViewHolderNotice extends RecyclerView. ViewHolder{
         va.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
-                // imageView의 높이 변경
-                item_notice_text1.getLayoutParams().height = (int) animation.getAnimatedValue();
-                item_notice_text1.requestLayout();
-                // imageView가 실제로 사라지게하는 부분
-                item_notice_text1.setVisibility(isExpanded ? View.VISIBLE : View.GONE);
+                // 텍스트(내용)의 높이를 변경해주고
+                notice_adapter_content.getLayoutParams().height = (int) animation.getAnimatedValue();
+                notice_adapter_content.requestLayout();
+                // 내용이 사라지고 보여지게 하는 내용
+                notice_adapter_content.setVisibility(isExpanded ? View.VISIBLE : View.GONE);
             }
         });
         // Animation start

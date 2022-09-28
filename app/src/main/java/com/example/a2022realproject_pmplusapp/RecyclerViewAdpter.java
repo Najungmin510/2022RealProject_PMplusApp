@@ -30,10 +30,10 @@ public class RecyclerViewAdpter extends RecyclerView.Adapter<RecyclerView.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
-        ViewHolderNotice viewHolderMovie = (ViewHolderNotice)holder;
-        viewHolderMovie.onBind(listData.get(position),position, selectedItems);
-        viewHolderMovie.setOnViewHolderItemClickListener(new OnViewHolderItemClickListener() {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
+        ViewHolderNotice viewHolderNotice = (ViewHolderNotice)holder;
+        viewHolderNotice.onBind(listData.get(position),position, selectedItems);
+        viewHolderNotice.setOnViewHolderItemClickListener(new OnViewHolderItemClickListener() {
             @Override
             public void onViewHolderItemClick() {
                 if (selectedItems.get(position)) {

@@ -10,6 +10,7 @@ public class NoticeData {
     private String date; //날짜
     private int image; //어떤 종류의 공지인지 알려주는 텍스트의 배경
 
+
     public NoticeData(String title, String writer, String date, int image) {
         this.title = title;
         this.writer = writer;

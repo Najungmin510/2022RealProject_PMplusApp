@@ -71,19 +71,22 @@ public class MainActivity_ShipData extends AppCompatActivity {
 
 
 
+
         gofind = (ImageButton)findViewById(R.id.btn_data_search);
 
-        gofind.setOnClickListener(v -> { //조회 버튼이 눌렸을 때
+        gofind.setOnClickListener(v -> { //조회 버튼이 눌렸을 때 입력받은 값을 결과화면으로 보내고 화면 전환
 
-            //빈칸인지 아닌지 확인하는 ifelse 코드 추가할 것
+            Intent intent = new Intent(MainActivity_ShipData.this, MainActivity_Shipdata_Result.class);
 
+            intent.putExtra("청코드",Shipcode);
+            intent.putExtra("입항날짜",Shipday1);
+            intent.putExtra("출항날짜",Shipday2);
+            intent.putExtra("호출부호",Codecall);
 
+            shipdata_to_xml_re ship = new shipdata_to_xml_re( Shipcode, Shipday1, Shipday2, Codecall );
 
-                   shipdata_to_xml_re s_result = new shipdata_to_xml_re(Shipcode, Shipday1, Shipday2, Codecall);
-
-
-                   Intent intent = new Intent(getApplicationContext(),MainActivity_Shipdata_Result.class);
-                   startActivity(intent);
+                   Intent parsing_start = new Intent(getApplicationContext(),MainActivity_Shipdata_Result.class);
+                   startActivity(parsing_start);
        });
 
         //데이터 출력하는 건 결과 화면에서..
