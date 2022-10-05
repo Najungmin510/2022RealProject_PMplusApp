@@ -41,9 +41,6 @@ public class MainActivity_ShipData extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_ship_data);
 
-        boolean Itsture = false; //클래스로부터 데이터가 잘 받아져왔는지 신호를 받기 위한 변수, 조회된데이터가 없다면 false 아니면 true
-
-
 
         toolbar = (Toolbar)findViewById(R.id.toolbar_main_ship_data); //툴바 선언
         setSupportActionBar(toolbar); //툴바를 불러오고
@@ -69,24 +66,18 @@ public class MainActivity_ShipData extends AppCompatActivity {
 
 
 
-
-
-
         gofind = (ImageButton)findViewById(R.id.btn_data_search);
 
         gofind.setOnClickListener(v -> { //조회 버튼이 눌렸을 때 입력받은 값을 결과화면으로 보내고 화면 전환
 
             Intent intent = new Intent(MainActivity_ShipData.this, MainActivity_Shipdata_Result.class);
 
-            intent.putExtra("청코드",Shipcode);
-            intent.putExtra("입항날짜",Shipday1);
-            intent.putExtra("출항날짜",Shipday2);
-            intent.putExtra("호출부호",Codecall);
+            intent.putExtra("A",Shipcode); // 020
+            intent.putExtra("B",Shipday1);
+            intent.putExtra("B2",Shipday2);
+            intent.putExtra("C",Codecall);
 
-            shipdata_to_xml_re ship = new shipdata_to_xml_re( Shipcode, Shipday1, Shipday2, Codecall );
-
-                   Intent parsing_start = new Intent(getApplicationContext(),MainActivity_Shipdata_Result.class);
-                   startActivity(parsing_start);
+            startActivity(intent);
        });
 
         //데이터 출력하는 건 결과 화면에서..

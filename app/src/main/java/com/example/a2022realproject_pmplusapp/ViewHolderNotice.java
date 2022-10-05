@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-
+/*
 public class ViewHolderNotice extends RecyclerView. ViewHolder{
 
     TextView notice_adapter_title;
@@ -30,7 +30,7 @@ public class ViewHolderNotice extends RecyclerView. ViewHolder{
         notice_adapter_title = itemView.findViewById(R.id.notice_adapter_title);
         notice_adapter_writer = itemView.findViewById(R.id.notice_adapter_writer);
         notice_adapter_date = itemView.findViewById(R.id.notice_adapter_date);
-        notice_adapter_image = itemView.findViewById(R.id.notice_adapter_image);
+        //notice_adapter_image = itemView.findViewById(R.id.notice_adapter_image);
         notice_adapter_content = itemView.findViewById(R.id.notice_adapter_content);
         linearlayout = itemView.findViewById(R.id.linearlayout_notice_g);
 
@@ -48,8 +48,8 @@ public class ViewHolderNotice extends RecyclerView. ViewHolder{
         notice_adapter_title.setText(noticeData.getTitle());
         notice_adapter_writer.setText(noticeData.getWriter());
         notice_adapter_date.setText(noticeData.getDate());
-        notice_adapter_image.setImageResource(noticeData.getImage());
-        notice_adapter_content.setText(noticeData.getTitle());
+       // notice_adapter_image.setImageResource(noticeData.getImage());
+        notice_adapter_content.setText(noticeData.getContent());
 
 
         changeVisibility(selectedItems.get(position));
@@ -79,3 +79,4 @@ public class ViewHolderNotice extends RecyclerView. ViewHolder{
     }
 
 }
+*/

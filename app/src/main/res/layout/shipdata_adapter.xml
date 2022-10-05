@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginBottom="250dp">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,19 +21,20 @@
                 <ImageView
                     android:id="@+id/imageView7"
                     android:layout_width="401dp"
-                    android:layout_height="477dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_height="455dp"
                     android:background="#00ffffff"
                     android:scaleType="fitXY"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/ship_recycle_view" />
 
                 <TextView
-                    android:id="@+id/shipdata_adapter_one"
+                    android:id="@+id/shipdata_adapter_etryptDt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="입항날짜"
                     android:textColor="#04091E"
                     android:textSize="18sp"
                     android:textStyle="bold"
@@ -50,36 +43,209 @@
                     app:layout_constraintHorizontal_bias="0.083"
                     app:layout_constraintStart_toStartOf="@+id/imageView7"
                     app:layout_constraintTop_toTopOf="@+id/imageView7"
-                    app:layout_constraintVertical_bias="0.058" />
+                    app:layout_constraintVertical_bias="0.121" />
 
                 <TextView
-                    android:id="@+id/shipdata_adapter_two"
+                    android:id="@+id/shipdata_adapter_tkoffDt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="출항날짜"
                     android:textColor="#04091E"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/imageView7"
-                    app:layout_constraintHorizontal_bias="0.082"
+                    app:layout_constraintHorizontal_bias="0.083"
                     app:layout_constraintStart_toStartOf="@+id/imageView7"
                     app:layout_constraintTop_toTopOf="@+id/imageView7"
-                    app:layout_constraintVertical_bias="0.13" />
+                    app:layout_constraintVertical_bias="0.175" />
 
                 <TextView
-                    android:id="@+id/shipdata_adapter_three"
+                    android:id="@+id/shipdata_adapter_vsslNm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="18sp"
+                    android:text="선박명"
+                    android:textColor="#04091E"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView7"
                     app:layout_constraintEnd_toEndOf="@+id/imageView7"
-                    app:layout_constraintHorizontal_bias="0.082"
+                    app:layout_constraintHorizontal_bias="0.079"
                     app:layout_constraintStart_toStartOf="@+id/imageView7"
                     app:layout_constraintTop_toTopOf="@+id/imageView7"
-                    app:layout_constraintVertical_bias="0.247" />
+                    app:layout_constraintVertical_bias="0.034" />
+
+                <TextView
+                    android:id="@+id/shipdata_adapter_etryptPurpsNm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="입항목적명"
+                    android:textColor="#454545"
+                    android:textSize="17sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView7"
+                    app:layout_constraintHorizontal_bias="0.077"
+                    app:layout_constraintStart_toStartOf="@+id/imageView7"
+                    app:layout_constraintTop_toTopOf="@+id/imageView7"
+                    app:layout_constraintVertical_bias="0.53" />
+
+                <TextView
+                    android:id="@+id/shipdata_adapter_clsgn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="호출부호"
+                    android:textColor="#04091E"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView7"
+                    app:layout_constraintHorizontal_bias="0.677"
+                    app:layout_constraintStart_toStartOf="@+id/imageView7"
+                    app:layout_constraintTop_toTopOf="@+id/imageView7"
+                    app:layout_constraintVertical_bias="0.035" />
+
+                <TextView
+                    android:id="@+id/shipdata_adapter_vsslNltyNm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="선박국가명"
+                    android:textColor="#454545"
+                    android:textSize="17sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView7"
+                    app:layout_constraintHorizontal_bias="0.077"
+                    app:layout_constraintStart_toStartOf="@+id/imageView7"
+                    app:layout_constraintTop_toTopOf="@+id/imageView7"
+                    app:layout_constraintVertical_bias="0.407" />
+
+                <TextView
+                    android:id="@+id/shipdata_adapter_prtAgNm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="항구청명"
+                    android:textColor="#454545"
+                    android:textSize="17sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView7"
+                    app:layout_constraintHorizontal_bias="0.074"
+                    app:layout_constraintStart_toStartOf="@+id/imageView7"
+                    app:layout_constraintTop_toTopOf="@+id/imageView7"
+                    app:layout_constraintVertical_bias="0.325" />
+
+                <TextView
+                    android:id="@+id/shipdata_adapter_prtAgCd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="항구청코드"
+                    android:textColor="#454545"
+                    android:textSize="17sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView7"
+                    app:layout_constraintHorizontal_bias="0.684"
+                    app:layout_constraintStart_toStartOf="@+id/imageView7"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.335" />
+
+                <TextView
+                    android:id="@+id/shipdata_adapter_vsslKndNm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="선박종류명"
+                    android:textColor="#454545"
+                    android:textSize="17sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView7"
+                    app:layout_constraintHorizontal_bias="0.684"
+                    app:layout_constraintStart_toStartOf="@+id/imageView7"
+                    app:layout_constraintTop_toTopOf="@+id/imageView7"
+                    app:layout_constraintVertical_bias="0.407" />
+
+                <TextView
+                    android:id="@+id/shipdata_adapter_dstnPrtNm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="목적지항구명"
+                    android:textColor="#454545"
+                    android:textSize="17sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView7"
+                    app:layout_constraintHorizontal_bias="0.719"
+                    app:layout_constraintStart_toStartOf="@+id/imageView7"
+                    app:layout_constraintTop_toTopOf="@+id/imageView7"
+                    app:layout_constraintVertical_bias="0.53" />
+
+                <TextView
+                    android:id="@+id/shipdata_adapter_ibobprtNm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="내외항구분명"
+                    android:textColor="#454545"
+                    android:textSize="17sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView7"
+                    app:layout_constraintHorizontal_bias="0.08"
+                    app:layout_constraintStart_toStartOf="@+id/imageView7"
+                    app:layout_constraintTop_toTopOf="@+id/imageView7"
+                    app:layout_constraintVertical_bias="0.605" />
+
+                <TextView
+                    android:id="@+id/shipdata_adapter_laidupFcltyNm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="계선시설명"
+                    android:textColor="#454545"
+                    android:textSize="17sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView7"
+                    app:layout_constraintHorizontal_bias="0.684"
+                    app:layout_constraintStart_toStartOf="@+id/imageView7"
+                    app:layout_constraintTop_toTopOf="@+id/imageView7"
+                    app:layout_constraintVertical_bias="0.604" />
+
+                <TextView
+                    android:id="@+id/shipdata_adapter_ldadngFrghtClCd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="화물명세서"
+                    android:textColor="#454545"
+                    android:textSize="17sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView7"
+                    app:layout_constraintHorizontal_bias="0.08"
+                    app:layout_constraintStart_toStartOf="@+id/imageView7"
+                    app:layout_constraintTop_toTopOf="@+id/imageView7"
+                    app:layout_constraintVertical_bias="0.736" />
+
+                <TextView
+                    android:id="@+id/shipdata_adapter_grtg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="총톤수"
+                    android:textColor="#454545"
+                    android:textSize="17sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView7"
+                    app:layout_constraintHorizontal_bias="0.624"
+                    app:layout_constraintStart_toStartOf="@+id/imageView7"
+                    app:layout_constraintTop_toTopOf="@+id/imageView7"
+                    app:layout_constraintVertical_bias="0.736" />
+
+                <TextView
+                    android:id="@+id/shipdata_adapter_satmntEntrpsNm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="신고업체명"
+                    android:textColor="#454545"
+                    android:textSize="17sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView7"
+                    app:layout_constraintHorizontal_bias="0.08"
+                    app:layout_constraintStart_toStartOf="@+id/imageView7"
+                    app:layout_constraintTop_toTopOf="@+id/imageView7"
+                    app:layout_constraintVertical_bias="0.825" />
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
-    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

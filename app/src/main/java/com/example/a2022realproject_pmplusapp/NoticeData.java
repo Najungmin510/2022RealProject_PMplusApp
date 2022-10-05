@@ -8,48 +8,33 @@ public class NoticeData {
     private String title; //제목
     private String writer; //작성자
     private String date; //날짜
-    private int image; //어떤 종류의 공지인지 알려주는 텍스트의 배경
+    private String content; // 내용 (클릭 시 내용을 보여줌)
 
-
-    public NoticeData(String title, String writer, String date, int image) {
+    public NoticeData(String title, String writer, String date, String content) {
         this.title = title;
         this.writer = writer;
         this.date = date;
-        this.image = image;
-
+        this.content = content; //내용
     }
 
     public String getTitle(){
         return title;
     }
 
-    public void setTitle(String title){
-        this.title = title;
-    }
-
     public String getWriter(){
         return writer;
-    }
-
-    public void setWriter(){
-        this.writer = writer;
     }
 
     public String getDate(){
         return date;
     }
 
-    public void setDate(){
-        this.date = date;
+    public String getContent(){
+        return content;
     }
 
-    public int getImage(){
-        return image;
-    }
 
-    public void setImage(int image){
-        this.image = image;
-    }
+
 
 
 

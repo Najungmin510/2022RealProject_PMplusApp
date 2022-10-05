@@ -68,326 +68,41 @@
             app:srcCompat="@drawable/go_pm_main_ship_result_text" />
     </LinearLayout>
 
-    <ScrollView
-        android:layout_width="409dp"
-        android:layout_height="521dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/portmis_data_result_background"
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="414dp"
+        android:layout_height="519dp"
+        android:background="#00ffffff"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.669"
+        app:srcCompat="@drawable/portmis_data_result_background" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ship_recyclerview"
+        android:layout_width="411dp"
+        android:layout_height="479dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView27"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toTopOf="@+id/imageView8"
+        app:layout_constraintVertical_bias="1.0" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="521dp"
-            android:layout_marginTop="30dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/ship_result_etryptDt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="15dp"
-                android:text="입항일시"
-                android:textColor="#001E43"
-                android:textStyle="bold"
-                android:textSize="20sp" />
-            <TextView
-                android:id="@+id/ship_result_etryptDt_data"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="결과값 출력"
-                android:textSize="24sp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginBottom="10dp"/>
-
-
-            <TextView
-                android:id="@+id/ship_result_tkoffDt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="출항일시"
-                android:textColor="#001E43"
-                android:textStyle="bold"
-                android:textSize="20sp" />
-            <TextView
-                android:id="@+id/ship_result_tkoffDt_data"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="결과값 출력"
-                android:textSize="24sp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginBottom="10dp"/>
-
-
-            <TextView
-                android:id="@+id/ship_result_ibobprtNm"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="내외항구분명"
-                android:textColor="#001E43"
-                android:textStyle="bold"
-                android:textSize="20sp" />
-            <TextView
-                android:id="@+id/ship_result_ibobprtNm_data"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="결과값 출력"
-                android:textSize="24sp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginBottom="10dp"/>
-
-
-            <TextView
-                android:id="@+id/ship_result_laidupFcltyNm"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="계선시설명"
-                android:textColor="#001E43"
-                android:textStyle="bold"
-                android:textSize="20sp" />
-            <TextView
-                android:id="@+id/ship_result_laidupFcltyNm_data"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="결과값 출력"
-                android:textSize="24sp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginBottom="10dp"/>
-
-
-            <TextView
-                android:id="@+id/ship_result_ldadngFrghtCICd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="화물명세"
-                android:textColor="#001E43"
-                android:textStyle="bold"
-                android:textSize="20sp" />
-            <TextView
-                android:id="@+id/ship_result_ldadngFrghtCICd_data"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="결과값 출력"
-                android:textSize="24sp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginBottom="10dp"/>
-
-
-
-            <TextView
-                android:id="@+id/ship_result_grtg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="총톤수"
-                android:textColor="#001E43"
-                android:textStyle="bold"
-                android:textSize="20sp" />
-            <TextView
-                android:id="@+id/ship_result_grtg_data"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="결과값 출력"
-                android:textSize="24sp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginBottom="10dp"/>
-
-
-            <TextView
-                android:id="@+id/ship_result_satmntEntrpsNm"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:textStyle="bold"
-                android:text="신고업체명"
-                android:textColor="#001E43"
-                android:textSize="20sp" />
-            <TextView
-                android:id="@+id/ship_result_satmntEntrpsNm_data"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="결과값 출력"
-                android:textSize="24sp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginBottom="10dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="155dp"
-                android:layout_marginTop="15dp"
-                android:gravity="center"
-                android:text="세부정보"
-                android:textColor="#001E43"
-                android:textStyle="bold"
-                android:textSize="28sp" />
-
-
-            <TextView
-                android:id="@+id/ship_result_prtAgCd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="35dp"
-                android:text="항구청코드"
-                android:textColor="#001E43"
-                android:textStyle="bold"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/ship_result_prtAgCd_data"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="결과값 출력"
-                android:textSize="24sp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginBottom="10dp"/>
-
-            <TextView
-                android:id="@+id/ship_result_prtAgNm"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:textStyle="bold"
-                android:text="항구청명"
-                android:textColor="#001E43"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/ship_result_prtAgNm_data"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="결과값 출력"
-                android:textSize="24sp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginBottom="10dp"/>
-
-            <TextView
-                android:id="@+id/ship_result_clsgn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="호출부호"
-                android:textColor="#001E43"
-                android:textStyle="bold"
-                android:textSize="20sp" />
-            <TextView
-                android:id="@+id/ship_result_clsgn_data"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="결과값 출력"
-                android:textSize="24sp"
-                android:layout_marginLeft="20dp"
-
-                android:layout_marginBottom="10dp"/>
-
-
-            <TextView
-                android:id="@+id/shipe_result_vsslNm"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="선박명"
-                android:textColor="#001E43"
-                android:textStyle="bold"
-                android:textSize="20sp" />
-            <TextView
-                android:id="@+id/ship_result_vsslNm_data"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="결과값 출력"
-                android:textSize="24sp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginBottom="10dp"/>
-
-
-            <TextView
-                android:id="@+id/shipe_result_vsslNltyNm"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="선박국가명"
-                android:textColor="#001E43"
-                android:textStyle="bold"
-                android:textSize="20sp" />
-            <TextView
-                android:id="@+id/ship_result_vsslNltyNm_data"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="결과값 출력"
-                android:textSize="24sp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginBottom="10dp"/>
-
-
-            <TextView
-                android:id="@+id/shipe_result_vsslKndNm"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:textStyle="bold"
-                android:textColor="#001E43"
-                android:text="선박종류명"
-                android:textSize="20sp" />
-            <TextView
-                android:id="@+id/ship_result_vsslKndNm_data"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="결과값 출력"
-                android:textSize="24sp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginBottom="10dp"/>
-
-
-            <TextView
-                android:id="@+id/shipe_result_etryptPurpsNm"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="입항목적명"
-                android:textColor="#001E43"
-                android:textStyle="bold"
-                android:textSize="20sp" />
-            <TextView
-                android:id="@+id/ship_result_etryptPurpsNm_data"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="결과값 출력"
-                android:textSize="24sp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginBottom="10dp"/>
-
-
-            <TextView
-                android:id="@+id/shipe_result_dstnPrtNm"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="목적지항구명"
-                android:textColor="#001E43"
-                android:textStyle="bold"
-                android:textSize="20sp" />
-            <TextView
-                android:id="@+id/ship_result_dstnPrtNm_data"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="결과값 출력"
-                android:textSize="24sp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginBottom="30dp"/>
-
-
-        </LinearLayout>
-    </ScrollView>
+    <Button
+        android:id="@+id/btn_shiptest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintBottom_toTopOf="@+id/imageView8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView27"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_shipdata_result" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
