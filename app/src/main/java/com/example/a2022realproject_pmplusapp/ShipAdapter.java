@@ -57,12 +57,12 @@ public class ShipAdapter extends RecyclerView.Adapter <ShipAdapter.ViewHolder>{
        TextView a_dstnPrtNm; //목적지항구명
 
        TextView a_etryptDt; //입항일시
-       TextView a_tkoffDT; //출항일시
-       TextView a_ibobprtNm; //내외항구분명
-       TextView a_laidupFcltyNm; //계선시설명
-       TextView a_ldadngFrghtClCd ; //화물명세
-       TextView a_grtg; // 총톤수
-       TextView a_satmntEntrpsNm; //신고업체명
+       TextView a_tkoffDT; //관제작업일시
+       TextView a_ibobprtNm; //시설코드
+       TextView a_laidupFcltyNm;
+       TextView a_ldadngFrghtClCd; //관제작업일시
+       TextView a_grtg; //시설코드
+       TextView a_satmntEntrpsNm;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

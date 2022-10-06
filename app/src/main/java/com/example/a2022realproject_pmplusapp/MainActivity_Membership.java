@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,7 +16,9 @@ import android.widget.Toast; //토스트 메세지를 이용하여, 회원가입
 
 import java.util.Objects;
 
-//import io.socket.client.Socket; //이하동일
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 /*
@@ -25,6 +28,8 @@ import java.util.Objects;
 사용자 입력 값 받아오기 -> 서버 연결 -> 만약 입력하지 않은채로 버튼을 누르면 토스트 메세지 출력 ->
 전부 입력했다면 회원가입 버튼 클릭시 이 데이터를 서버로 전송 -> 전송 완료 시 회원가입 성공이라는 토스트 메세지 출력
 ->로그인창으로 화면 전환
+
+코드작성 : 나정민
 
  */
 
@@ -36,6 +41,7 @@ public class MainActivity_Membership extends AppCompatActivity {
     EditText username; //사용자 이름 입력받은 것 저장할 변수
     EditText useremail; //사용자 이메일 입력받은 것 저장할 변수
     ImageButton MemberShipBtn; //버튼 값을 저장할 변수
+    ServiceApi service;
     Toolbar toolbar;
 
 
@@ -43,6 +49,8 @@ public class MainActivity_Membership extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_membership);
+
+        service = RetrofitClient.getClient().create(ServiceApi.class);
 
         toolbar = (Toolbar)findViewById(R.id.toolbar_membership);
         setSupportActionBar(toolbar); //툴바를 불러오고
@@ -116,12 +124,12 @@ public class MainActivity_Membership extends AppCompatActivity {
 
                     else{
 
-                        ServerConnect thread = new ServerConnect();
-                        thread.start(userid, userpass, username, useremail); //작성한 자료들을 서버로 보내기 위해 SERVER CONNECT로 데이터 넘겨줌
-                        //넘겨줌과 동시에 화면으로 전환
+                        String name = username.getText().toString();
+                        String id = userid.getText().toString();
+                        String pass = userpass.getText().toString();
+                        String mail = useremail.getText().toString();
 
-                        Intent intent = new Intent(getApplicationContext(), MainActivity_Success_membership.class);
-                        startActivity(intent);
+                        startJoin(new JoinData(id,name,mail,pass));
 
                         //서버로부터 ok 신호가 오면 그 때 회원가입이 완료되었습니다 토스트메세지 출력
                     }
@@ -131,6 +139,26 @@ public class MainActivity_Membership extends AppCompatActivity {
         });
 
 
+    }
+
+    private void startJoin(JoinData data) {
+        service.userJoin(data).enqueue(new Callback<JoinResponse>() {
+            @Override
+            public void onResponse(Call<JoinResponse> call, Response<JoinResponse> response) {
+                JoinResponse result = response.body();
+                Toast.makeText(MainActivity_Membership.this, result.getMessage(), Toast.LENGTH_SHORT).show();
+
+                if (result.getCode() == 200) {
+                    finish();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<JoinResponse> call, Throwable t) {
+                Toast.makeText(MainActivity_Membership.this, "회원가입 에러 발생", Toast.LENGTH_SHORT).show();
+                Log.e("회원가입 에러 발생", t.getMessage());
+            }
+        });
     }
 
     @Override

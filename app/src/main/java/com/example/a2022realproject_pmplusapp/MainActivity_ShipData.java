@@ -53,29 +53,29 @@ public class MainActivity_ShipData extends AppCompatActivity {
 
 
         shipcode = (EditText)findViewById(R.id.et_prtAgCd_ship); //청코드, 필수
-        String Shipcode = shipcode.getText().toString().trim(); //청코드
 
         shipday1 = (EditText)findViewById(R.id.et_sde_ship); //시작날짜
-        String Shipday1 = shipday1.getText().toString().trim();
 
         shipday2 = (EditText)findViewById(R.id.et_ede_ship); //종료날짜, 필수
-        String Shipday2 = shipday2.getText().toString().trim();
 
         codecall = (EditText)findViewById(R.id.et_clsgn_ship); //호출부호
-        String Codecall = codecall.getText().toString().trim(); //호출부호
-
 
 
         gofind = (ImageButton)findViewById(R.id.btn_data_search);
 
         gofind.setOnClickListener(v -> { //조회 버튼이 눌렸을 때 입력받은 값을 결과화면으로 보내고 화면 전환
 
+            String Shipcode = shipcode.getText().toString().trim(); //청코드
+            String Shipday1 = shipday1.getText().toString().trim();
+            String Shipday2 = shipday2.getText().toString().trim();
+            String Codecall = codecall.getText().toString().trim(); //호출부호
+
             Intent intent = new Intent(MainActivity_ShipData.this, MainActivity_Shipdata_Result.class);
 
-            intent.putExtra("A",Shipcode); // 020
-            intent.putExtra("B",Shipday1);
-            intent.putExtra("B2",Shipday2);
-            intent.putExtra("C",Codecall);
+            intent.putExtra("prt",Shipcode); // 020
+            intent.putExtra("sde",Shipday1);
+            intent.putExtra("ede",Shipday2);
+            intent.putExtra("clsgnll",Codecall);
 
             startActivity(intent);
        });

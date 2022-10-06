@@ -2,6 +2,7 @@ package com.example.a2022realproject_pmplusapp;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -32,6 +33,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -41,8 +44,10 @@ public class MainActivity_Shipdata_Result extends AppCompatActivity {
 
     ImageButton replay_shipdata;
     ImageButton no_replay_main;
+    Toolbar toolbar;
     Button test;
     String rs_day1, rs_day2, rs_call, rs_sc;
+    int count = 0; //몇개의 결과가 조회되었는지 셀 변수
 
     RecyclerView review;
     static RequestQueue requestQueue;
@@ -55,35 +60,43 @@ public class MainActivity_Shipdata_Result extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_shipdata_result);
 
+        toolbar = (Toolbar)findViewById(R.id.toolbar_shipdata_result);
+        setSupportActionBar(toolbar); //툴바를 불러오고
+
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.baseline_chevron_left_white_24dp);
+        getSupportActionBar().setTitle("선박 입출항 현황 조회결과");
+
+
 
         Intent intent = getIntent();
         //인텐트 문제인 듯? 이 부분을 수정해보기
-        rs_sc = intent.getStringExtra("A"); //prtAgCd, 020
-        rs_day1 = intent.getStringExtra("B"); //sde
-        rs_day2 = intent.getStringExtra("B2"); //ede
-        rs_call = intent.getStringExtra("C"); //clsgn
+        rs_sc = intent.getStringExtra("prt"); //prtAgCd, 020
+        rs_day1 = intent.getStringExtra("sde"); //sde
+        rs_day2 = intent.getStringExtra("ede"); //ede
+        rs_call = intent.getStringExtra("clsgnll"); //clsgn
 
         //문제가 지금 null값 나오고 있음
 
-        Log.d("dataintent","intentdata" + rs_sc);
-        Log.d("dataintent","intentdata" + rs_day1);
-        Log.d("dataintent","intentdata" + rs_day2);
-        Log.d("dataintent","intentdata" + rs_call);
+        Log.d("dataintent", rs_sc);
+        Log.d("dataintent", rs_day1);
+        Log.d("dataintent", rs_day2);
+        Log.d("dataintent", rs_call); //사용자로부터 입력받은 값이 잘 나오는지 확인
 
 
-        replay_shipdata = (ImageButton)findViewById(R.id.btn_shipdata_replay_go);
-        no_replay_main = (ImageButton)findViewById(R.id.btn_shipdata_go_main);
-        test = (Button)findViewById(R.id.btn_shiptest);
+        replay_shipdata = (ImageButton) findViewById(R.id.btn_shipdata_replay_go);
+        no_replay_main = (ImageButton) findViewById(R.id.btn_shipdata_go_main);
 
-        replay_shipdata.setOnClickListener(v->{
-            Intent re_start = new Intent(getApplicationContext(),MainActivity_ShipData.class);
+
+        replay_shipdata.setOnClickListener(v -> {
+            Intent re_start = new Intent(getApplicationContext(), MainActivity_ShipData.class);
             startActivity(re_start);
         });
 
-       no_replay_main.setOnClickListener(v->{
-           Intent no_start = new Intent(getApplicationContext(),MainActivity_PM_Main.class);
-           startActivity(no_start);
-       });
+        no_replay_main.setOnClickListener(v -> {
+            Intent no_start = new Intent(getApplicationContext(), MainActivity_PM_Main.class);
+            startActivity(no_start);
+        });
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         adapter = new ShipAdapter();
@@ -91,154 +104,155 @@ public class MainActivity_Shipdata_Result extends AppCompatActivity {
         review.setLayoutManager(layoutManager);
         review.setAdapter(adapter); //레이아웃 어댑터 연결
 
-        requestQueue = Volley.newRequestQueue(getApplicationContext());
+        requestQueue = Volley.newRequestQueue(getApplicationContext()); //volley로 데이터를 가져올거
 
-        test.setOnClickListener(new View.OnClickListener(){
 
-            final int STEP_NONE = 0;
-            final int STEP_Item = 1;
-            final int STEP_Detail = 2;
-
-            int step = STEP_NONE;
-            @Override
-            public void onClick(View v) {
                 StringRequest request = new StringRequest(
                         Request.Method.GET,
                         "http://apis.data.go.kr/1192000/VsslEtrynd2/Info?serviceKey=NYQp85bV4GjxauduBdSwaoZb3uT9jcgbECXr1WNuzKbPSx5%2Fdv7m%2B5gV6xRZk3yYt5M4dzOuspvMzSwrPgtd7g%3D%3D" +
-                                "&sde="+rs_day1+"&ede="+rs_day2+"&prtAgCd="+rs_sc+"&clsgn="+rs_call+"&pageNo=1&numOfRows=3",
+                                "&sde=" + rs_day1 + "&ede=" + rs_day2 + "&prtAgCd=" + rs_sc + "&clsgn=" + rs_call + "&pageNo=1&numOfRows=50",
                         new Response.Listener<String>() {
-                    @SuppressLint("NotifyDataSetChanged")
-                    @Override
-                    public void onResponse(String response) {
-                        Log.d(TAG, "onResponse : " + response);
+                            @SuppressLint("NotifyDataSetChanged")
+                            @Override
+                            public void onResponse(String response) {
+                                Log.d(TAG, "onResponse : " + response);
 
-                        String curr_tag = "";
-                        //ArrayList<Station> arrStation = new ArrayList<>();
-                        shipdata_Item ditem = new shipdata_Item();
-                        adapter.clearItems(); //아이템 정리
+                                String curr_tag = ""; //<tag>의 이름을 저장할 변수수
+                                //ArrayList<Station> arrStation = new ArrayList<>();
 
-                        try{
-                            XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
-                            factory.setNamespaceAware(true);
-                            XmlPullParser xpp = factory.newPullParser();
+                                shipdata_Item ditem = new shipdata_Item();
+                                adapter.clearItems(); //아이템 정리
 
-                            xpp.setInput( new StringReader(response) );
-                            int eventType = xpp.getEventType();
+                                try {
+                                    XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
 
-                            while (eventType != XmlPullParser.END_DOCUMENT) { //문서의 끝일때까지 돌건데
-                                if(eventType == XmlPullParser.START_DOCUMENT) { //이벤트타입이 START라면 XML데이터를 시작해
-                                    //System.out.println("Start document");
+                                    factory.setNamespaceAware(true);
+                                    XmlPullParser xpp = factory.newPullParser();
 
-                                } else if(eventType == XmlPullParser.START_TAG) { //START 태그를 기억할거야 (대표 태그)
-                                    curr_tag = xpp.getName(); //대표태그를 currtag에서 기억할건데
+                                    xpp.setInput(new StringReader(response));
+                                    int eventType = xpp.getEventType();
 
-                                   //ditem = new shipdata_Item(); //일단 값들 저장할 함수불러와 ****
+                                    while (eventType != XmlPullParser.END_DOCUMENT) {
+                                        if (eventType == XmlPullParser.START_DOCUMENT) {
+                                            //System.out.println("Start document");
 
-                                    if(xpp.getName().equals("item")){ //만약 시작태그가 item하고 같다면 item에 있는 데이터를 파싱해
+                                        } else if (eventType == XmlPullParser.START_TAG) {
+                                            //시작하는 tag 기억
 
-                                        step = STEP_Item; //item을 파싱하기 위해서 step에 step_item 저장
 
-                                    } else if(xpp.getName().equals("detail")){
-                                        step = STEP_Detail; //item을 파싱하기 위해서 step에 step_detail 저장
+                                            curr_tag = xpp.getName();
+                                            if (xpp.getName().equals("item")) { //item 태그를 기준으로 돌거임 <item> ~ </item> 이 1회 도는거임
+                                                ditem = new shipdata_Item();
+                                                count++; //ITEM 태그를 만난 횟수 세어주기
+                                            }
 
-                                    } else{ //아무것도 없다면 그냥 0값 저장
-                                        step = STEP_NONE;
-                                    }
+                                        } else if (eventType == XmlPullParser.END_TAG) {
+                                            //item 태그 종료시 추가
+                                            if (xpp.getName().equals("item")) {
+                                                if (ditem.checkRecvAllData()) {
+                                                    adapter.addItem(ditem);
+                                                }
 
-                                } else if(eventType == XmlPullParser.END_TAG) { //만약 태그의 끝 부분에 도달했다면
+                                            }
+                                            curr_tag = "";
+                                        } else if (eventType == XmlPullParser.TEXT) {
+                                            //태그 종류별로 기록
+                                            switch (curr_tag) {
+                                                case "prtAgCd":
+                                                    ditem.prtAgCd = xpp.getText();
+                                                    Log.d("please",ditem.prtAgCd); //로그를 통해 데이터가 잘 나오는지 확인
+                                                    break;
+                                                case "prtAgNm":
+                                                    ditem.prtAgNm = xpp.getText();
+                                                    Log.d("please",ditem.prtAgNm);
+                                                    break;
+                                                case "clsgn":
+                                                    ditem.clsgn = xpp.getText();
+                                                    Log.d("please",ditem.clsgn);
+                                                    break;
+                                                case "vsslNm":
+                                                    ditem.vsslNm = xpp.getText();
+                                                    Log.d("please",ditem.vsslNm);
+                                                    break;
+                                                case "vsslNltyNm":
+                                                    ditem.vsslNltyNm = xpp.getText();
+                                                    Log.d("please",ditem.vsslNltyNm);
+                                                    break;
+                                                case "vsslKndNm":
+                                                    ditem.vsslKndNm = xpp.getText();
+                                                    Log.d("please",ditem.vsslKndNm);
+                                                    break;
+                                                case "etryptPurpsNm":
+                                                    ditem. etryptPurpsNm = xpp.getText();
+                                                    Log.d("please",ditem.etryptPurpsNm);
+                                                    break;
+                                                case "dstnPrtNm":
+                                                    ditem.dstnPrtNm= xpp.getText();
+                                                    Log.d("please",ditem.dstnPrtNm);
+                                                    break;
 
-                                    if(xpp.getName().equals("item")){ //아이템에 있는 태그들을 가져올거야
-                                        if(ditem.checkRecvAllData()){
-                                            adapter.addItem(ditem);
+                                                /*item태그안의 자식태그들*/
+                                                /*item 태그안의 자식 태그들 중 detail 부분의 태그들*/
+
+                                                case "etryptDt":
+                                                    ditem.etryptDt = xpp.getText();
+                                                    Log.d("please",ditem.etryptDt);
+                                                    break;
+
+                                                case "tkoffDt":
+                                                    ditem.tkoffDT = xpp.getText();
+                                                    Log.d("please",ditem.tkoffDT);
+                                                    break;
+
+                                                case "ibobprtNm":
+                                                    ditem.ibobprtNm = xpp.getText();
+                                                    Log.d("please",ditem.ibobprtNm);
+                                                    break;
+
+                                                case "laidupFcltyNm":
+                                                    ditem.laidupFcltyNm = xpp.getText();
+                                                    Log.d("please",ditem.laidupFcltyNm);
+                                                    break;
+
+                                                case "ldadngFrghtClCd":
+                                                    ditem. ldadngFrghtClCd = xpp.getText();
+                                                    Log.d("please",ditem.ldadngFrghtClCd);
+                                                    break;
+
+                                                case "grtg":
+                                                    ditem.grtg= xpp.getText();
+                                                    Log.d("please",ditem.grtg);
+                                                    break;
+
+                                                case "satmntEntrpsNm":
+                                                    ditem.satmntEntrpsNm = xpp.getText();
+                                                    Log.d("please",ditem.satmntEntrpsNm);
+                                                    break;
+
+
+                                            }
                                         }
-                                        //arrStation.add(station);
-                                    }
+                                        eventType = xpp.next();
 
-                                    curr_tag = "";
+                                    } //while문 종료
 
-                                    //태그안을 돌면서 데이터 파싱할거
-                                } else if(eventType == XmlPullParser.TEXT) { // 시작 태그와 종료 태그 사이의 텍스트. " ex) <item>TEXT</item>"
-                                    //태그 종류별로 기록
-
-                                    if(step == STEP_Item){
-                                        switch(curr_tag) //대표 목록 태그를 가져와서 text형태로 저장할거야
-                                        { //이 정보들을 가져와 (여긴 item 태그에 속하는 데이터들)
-                                            case "prtAgCd":
-                                                ditem.prtAgCd = xpp.getText();
-                                                Log.d(TAG, "onResponse : " + ditem.prtAgCd);
-                                                break;
-
-                                            case "prtAgNm":
-                                                ditem.prtAgNm = xpp.getText();
-                                                Log.d(TAG, "onResponse : " + ditem.prtAgNm);
-                                                break;
-                                            case "clsgn":
-                                                ditem.clsgn = xpp.getText();
-                                                break;
-                                            case "vsslNm":
-                                                ditem.vsslNm = xpp.getText();
-                                                break;
-                                            case "vsslNltyNm":
-                                                ditem.vsslNltyNm = xpp.getText();
-                                                break;
-                                            case "vsslKndNm":
-                                                ditem.vsslKndNm = xpp.getText();
-                                                break;
-                                            case "etryptPurpsNm":
-                                                ditem.etryptPurpsNm = xpp.getText();
-                                                break;
-                                            case "dstnPrtNm":
-                                                ditem.dstnPrtNm = xpp.getText();
-                                                break;
-                                        }
-                                    } else if(step == STEP_Detail) { //만약 DETAIL 태그라면 그와 관련된 데이터들을 가져와
-
-                                        switch (curr_tag) {
-                                            case "etryptDt":
-                                                ditem.etryptDt = xpp.getText();
-                                                Log.d(TAG, "onResponse : " + ditem.etryptDt);
-                                                break;
-                                            case "tkoffDT":
-                                                ditem.tkoffDT = xpp.getText();
-                                                Log.d(TAG, "onResponse : " + ditem.tkoffDT);
-                                                break;
-                                            case "ibobprtNm":
-                                                ditem.ibobprtNm = xpp.getText();
-                                                break;
-                                            case "laidupFcltyNm":
-                                                ditem.laidupFcltyNm = xpp.getText();
-                                                break;
-                                            case "ldadngFrghtClCd":
-                                                ditem.ldadngFrghtClCd = xpp.getText();
-                                                break;
-                                            case "grtg":
-                                                ditem.grtg= xpp.getText();
-                                                break;
-                                            case "satmntEntrpsNm":
-                                                ditem.satmntEntrpsNm = xpp.getText();
-                                                break;
-                                        }
-                                    }
+                                } catch (Exception e) {
+                                    e.printStackTrace();
                                 }
-                                eventType = xpp.next();
 
+                                //System.out.println("Count : " + arrStation.size());
+                                adapter.notifyDataSetChanged();
+                                Toast.makeText(getApplicationContext(), count+"개의 결과가 조회되었어요.", Toast.LENGTH_LONG).show();
                             }
 
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-
-                        adapter.notifyDataSetChanged();
-                        Toast.makeText(getApplicationContext(), "수신완료", Toast.LENGTH_LONG).show();
-                    }
-            },
+                        },
                         new Response.ErrorListener() {
                             @Override
                             public void onErrorResponse(VolleyError error) {
                                 Log.d(TAG, "onErrorResponse : " + error.toString());
                             }
-                        })
-                {
+                        }
+                ) {
                     @Nullable
                     @Override
                     protected Map<String, String> getParams() throws AuthFailureError {
@@ -251,11 +265,8 @@ public class MainActivity_Shipdata_Result extends AppCompatActivity {
                 };
                 request.setShouldCache(false);
                 requestQueue.add(request);
-                }
+            }
 
-        });
-
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) { //뒤로가기 했을 때

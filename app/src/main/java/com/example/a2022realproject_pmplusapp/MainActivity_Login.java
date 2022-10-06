@@ -37,14 +37,6 @@ import io.socket.client.Socket;
 
 public class MainActivity_Login extends AppCompatActivity {
 
-    Socket mSocket;
-    {
-        try{
-            mSocket = IO.socket("http://192.168.219.150:3000");
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        }
-    }
 
     ImageButton goLogin; // 로그인 버튼
     EditText userID;

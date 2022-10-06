@@ -20,7 +20,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@drawable/main_titlebar"
+            android:background="#2D6DF1"
             android:fitsSystemWindows="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -44,7 +44,7 @@
             android:background="#00ffffff"
             android:fitsSystemWindows="true"
             android:scaleType="fitXY"
-            app:srcCompat="@drawable/main_pm_miniweather" />
+            app:srcCompat="@drawable/pm_main_miniweather_text" />
 
         <ScrollView
             android:layout_width="match_parent"

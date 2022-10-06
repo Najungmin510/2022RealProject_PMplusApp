@@ -36,6 +36,11 @@ public class MainActivity_MshipData extends AppCompatActivity {
     EditText mshipday2;
     EditText mcodecall;
 
+    String mShipcode;
+    String mShipday1;
+    String mShipday2;
+    String mCodecall;
+
     ImageButton gofind;
 
     @Override
@@ -53,16 +58,16 @@ public class MainActivity_MshipData extends AppCompatActivity {
        // boolean Itsture = false; //클래스로부터 데이터가 잘 받아져왔는지 신호를 받기 위한 변수, 조회된데이터가 없다면 false 아니면 true
 
         mshipcode = (EditText)findViewById(R.id.et_prtAgCd_mship); //청코드, 필수
-        String mShipcode = mshipcode.getText().toString().trim();
+        mShipcode = mshipcode.getText().toString().trim();
 
         mshipday1 = (EditText)findViewById(R.id.et_sde_mship); //시작날짜
-        String mShipday1 = mshipday1.getText().toString().trim();
+        mShipday1 = mshipday1.getText().toString().trim();
 
         mshipday2 = (EditText)findViewById(R.id.et_ede_mship); //종료날짜, 필수
-        String mShipday2 = mshipday2.getText().toString().trim();
+        mShipday2 = mshipday2.getText().toString().trim();
 
         mcodecall = (EditText)findViewById(R.id.et_clsgn_mship); //호출부호
-        String mCodecall = mcodecall.getText().toString().trim();
+        mCodecall = mcodecall.getText().toString().trim();
 
 
         gofind = (ImageButton)findViewById(R.id.btn_data_search);
@@ -71,24 +76,19 @@ public class MainActivity_MshipData extends AppCompatActivity {
 
         gofind.setOnClickListener(v -> { //조회 버튼이 눌렸을 때
 
-            if(TextUtils.isEmpty(mShipcode) || TextUtils.isEmpty(mShipday1) || TextUtils.isEmpty(mShipday2) || TextUtils.isEmpty(mCodecall)){
+                Intent intent = new Intent(MainActivity_MshipData.this, MainActivity_MshipData_Result.class);
 
-                Toast.makeText(getApplicationContext(),"필수 부분을 모두 입력해주세요.",Toast.LENGTH_SHORT).show();
+                mShipcode = mshipcode.getText().toString().trim();
+                mShipday1 = mshipday1.getText().toString().trim();
+                mShipday2 = mshipday2.getText().toString().trim();
+                mCodecall = mcodecall.getText().toString().trim();
 
-            } else {
+                intent.putExtra("prt",mShipcode); // 020
+                intent.putExtra("sde",mShipday1);
+                intent.putExtra("ede",mShipday2);
+                intent.putExtra("clsgnll",mCodecall);
 
-/*
-                if(Itsture != false){
-                    Intent intent = new Intent(getApplicationContext(),MainActivity_Shipdata_Result.class);
-                    startActivity(intent);
-                } else{
-                    Intent intent = new Intent(getApplicationContext(),MainActivity_Shipdata_Result_Fail.class);
-                    startActivity(intent);
-                }
-*/
-            }
-
-
+                startActivity(intent);
 
         });
 

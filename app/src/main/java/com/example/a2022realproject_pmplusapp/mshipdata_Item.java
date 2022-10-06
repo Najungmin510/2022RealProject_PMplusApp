@@ -23,7 +23,7 @@ public class mshipdata_Item {
 
     //xml 데이터는 오름차순으로 파싱되어옴
 
-    public void clear(){
+    public void m_clear(){
 
         m_prtAgCd = ""; //항구청코드 o
         m_prtAgNm = ""; //항구청명 o
@@ -43,7 +43,7 @@ public class mshipdata_Item {
 
     }
 
-    boolean checkRecvAllData(){
+    boolean m_checkRecvAllData(){
 
         return m_prtAgCd.length()  > 0
                 && m_prtAgNm.length()  > 0
