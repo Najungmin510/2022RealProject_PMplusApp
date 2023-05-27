@@ -39,6 +39,7 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/kopubworld_dotum_pro_bold"
         android:text="청코드"
         android:textColor="#001E43"
         android:textSize="18sp"
@@ -54,6 +55,7 @@
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/kopubworld_dotum_pro_bold"
         android:text="입출항 날짜"
         android:textColor="#001E43"
         android:textSize="18sp"
@@ -69,6 +71,7 @@
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/kopubworld_dotum_pro_bold"
         android:text="호출부호"
         android:textColor="#001E43"
         android:textSize="18sp"
@@ -85,6 +88,7 @@
         android:layout_width="310dp"
         android:layout_height="55dp"
         android:scaleType="fitXY"
+        android:background="#00ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
@@ -93,26 +97,12 @@
         app:layout_constraintVertical_bias="0.224"
         app:srcCompat="@drawable/text_write" />
 
-    <EditText
-        android:id="@+id/et_prtAgCd_ship"
-        android:layout_width="281dp"
-        android:layout_height="53dp"
-        android:background="#00ffffff"
-        android:ems="10"
-        android:hint="항만 청코드 입력(필수)"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView10"
-        app:layout_constraintEnd_toEndOf="@+id/imageView10"
-        app:layout_constraintHorizontal_bias="0.689"
-        app:layout_constraintStart_toStartOf="@+id/imageView10"
-        app:layout_constraintTop_toTopOf="@+id/imageView10"
-        app:layout_constraintVertical_bias="0.0" />
-
     <ImageView
         android:id="@+id/imageView12"
         android:layout_width="310dp"
         android:layout_height="55dp"
         android:scaleType="fitXY"
+        android:background="#00ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
@@ -126,6 +116,7 @@
         android:layout_width="310dp"
         android:layout_height="55dp"
         android:scaleType="fitXY"
+        android:background="#00ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
@@ -140,6 +131,7 @@
         android:layout_height="53dp"
         android:background="#00ffffff"
         android:ems="10"
+        android:fontFamily="@font/kopubworld_dotum_pro_medium"
         android:hint="입항 날짜 입력(필수)"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="@+id/imageView12"
@@ -155,6 +147,7 @@
         android:layout_height="53dp"
         android:background="#00ffffff"
         android:ems="10"
+        android:fontFamily="@font/kopubworld_dotum_pro_medium"
         android:hint="출항 날짜 입력(필수)"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="@+id/imageView13"
@@ -181,6 +174,7 @@
         android:layout_height="53dp"
         android:background="#00ffffff"
         android:ems="10"
+        android:fontFamily="@font/kopubworld_dotum_pro_medium"
         android:hint="호출부호 입력(필수)"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="@+id/imageView17"
@@ -189,6 +183,32 @@
         app:layout_constraintStart_toStartOf="@+id/imageView17"
         app:layout_constraintTop_toTopOf="@+id/imageView17"
         app:layout_constraintVertical_bias="0.0" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="68dp"
+        android:layout_height="53dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.842"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar_main_ship_data"
+        app:layout_constraintVertical_bias="0.227" />
+
+    <TextView
+        android:id="@+id/et_prtAgCd_ship"
+        android:layout_width="221dp"
+        android:layout_height="53dp"
+        android:fontFamily="@font/kopubworld_dotum_pro_medium"
+        android:gravity="center_vertical"
+        android:hint="청코드 선택(필수)"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView10"
+        app:layout_constraintEnd_toEndOf="@+id/imageView10"
+        app:layout_constraintHorizontal_bias="0.191"
+        app:layout_constraintStart_toStartOf="@+id/imageView10"
+        app:layout_constraintTop_toTopOf="@+id/imageView10"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

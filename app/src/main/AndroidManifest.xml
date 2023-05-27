@@ -6,6 +6,12 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_myreal_background"
@@ -15,6 +21,12 @@
         android:theme="@style/Theme.2022RealProject_PMplusApp"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
+        <activity
+            android:name=".MainActivity_setting_user_inform_detail"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity_pmmain_weather"
+            android:exported="false" />
         <activity
             android:name=".MainActivity_notice_content_when_click"
             android:exported="false" />
@@ -98,6 +110,9 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity_Success_membership"
+            android:exported="true" />
+        <activity
+            android:name=".CameraActivity"
             android:exported="true" />
     </application>
 

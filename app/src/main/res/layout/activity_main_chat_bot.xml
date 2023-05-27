@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -25,55 +25,61 @@
         app:layout_constraintVertical_bias="0.0"
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_marginTop="670dp"
-        android:layout_marginLeft="-412dp"
-        android:layout_width="match_parent"
-        android:layout_height="60dp">
 
-        <ImageView
-            android:id="@+id/imageView24"
-            android:layout_width="380dp"
-            android:layout_height="45dp"
-            android:background="#00ffffff"
-            android:scaleType="fitXY"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.533"
-            app:srcCompat="@drawable/chatbot_user_input" />
+    <ImageView
+        android:id="@+id/imageView24"
+        android:layout_width="380dp"
+        android:layout_height="45dp"
+        android:background="#00ffffff"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976"
+        app:srcCompat="@drawable/chatbot_user_input" />
 
-        <EditText
-            android:id="@+id/et_chatbot_usersay"
-            android:layout_width="325dp"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#00ffffff"
-            android:ems="10"
-            android:hint="궁금한 내용을 입력하세요."
-            android:inputType="textPersonName"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/imageView24"
-            app:layout_constraintHorizontal_bias="0.218"
-            app:layout_constraintStart_toStartOf="@+id/imageView24"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.526" />
+    <EditText
+        android:id="@+id/et_chatbot_usersay"
+        android:layout_width="319dp"
+        android:layout_height="43dp"
+        android:background="#00ffffff"
+        android:ems="10"
+        android:hint="내용을 입력해주세요"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView24"
+        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintStart_toStartOf="@+id/imageView24"
+        app:layout_constraintTop_toTopOf="@+id/imageView24"
+        app:layout_constraintVertical_bias="0.0" />
 
-        <ImageButton
-            android:id="@+id/btn_send_chatbot_message"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:background="#00ffffff"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/imageView24"
-            app:layout_constraintStart_toEndOf="@+id/et_chatbot_usersay"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/baseline_send_black_24dp" />
+    <ImageButton
+        android:id="@+id/btn_send_chatbot_message"
+        android:layout_width="25dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="#00ffffff"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.988"
+        app:layout_constraintStart_toStartOf="@+id/imageView24"
+        app:layout_constraintTop_toTopOf="@+id/imageView24"
+        app:layout_constraintVertical_bias="0.523"
+        app:srcCompat="@drawable/baseline_send_black_24dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_chat"
+        android:layout_width="409dp"
+        android:layout_height="612dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.442" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

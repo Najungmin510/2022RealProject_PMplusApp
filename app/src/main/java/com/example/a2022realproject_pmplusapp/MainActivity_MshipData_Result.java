@@ -69,7 +69,7 @@ public class MainActivity_MshipData_Result extends AppCompatActivity {
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.baseline_chevron_left_white_24dp);
-        getSupportActionBar().setTitle("선별 관제 현황 조회결과");
+        getSupportActionBar().setTitle("선박 관제현황 조회결과");
 
         Intent intent = getIntent();
 
@@ -114,7 +114,7 @@ public class MainActivity_MshipData_Result extends AppCompatActivity {
                     public void onResponse(String response) {
                         Log.d(TAG, "onResponse : " + response);
 
-                        String curr_tag = ""; //<tag>의 이름을 저장할 변수수
+                        String curr_tag = ""; //<tag>의 이름을 저장할 변수
                         //ArrayList<Station> arrStation = new ArrayList<>();
 
                         mshipdata_Item mitem = new mshipdata_Item();
@@ -232,7 +232,12 @@ public class MainActivity_MshipData_Result extends AppCompatActivity {
                         }
 
                         //System.out.println("Count : " + arrStation.size());
-                        adapter.notifyDataSetChanged();
+                        if(count == 0){
+                            Intent fail = new Intent(getApplicationContext(),MainActivity_MshipData_Result_Fail.class);
+                            startActivity(fail);
+                        } else{
+                            adapter.notifyDataSetChanged();
+                        }
                         Toast.makeText(getApplicationContext(), count+"개의 결과가 조회되었어요.", Toast.LENGTH_LONG).show();
                     }
 

@@ -1,4 +1,4 @@
-package com.example.a2022realproject_pmplusapp;
+//package com.example.a2022realproject_pmplusapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,8 +12,8 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
+//import com.google.firebase.firestore.DocumentReference;
+//import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -31,6 +31,7 @@ import java.util.Objects;
 코드 작성자 : 나정민
  */
 
+/*
 public class MainActivity_write_in_message_board extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseFirestore mStore = FirebaseFirestore.getInstance();
@@ -111,3 +112,5 @@ public class MainActivity_write_in_message_board extends AppCompatActivity imple
         return super. onOptionsItemSelected(item);
     }
 }
+
+ */

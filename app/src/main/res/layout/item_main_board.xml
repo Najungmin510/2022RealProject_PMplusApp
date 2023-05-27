@@ -32,16 +32,15 @@
         android:textColor="#2C2C2C"/>
 
 
-        <TextView
-            android:id="@+id/item_content_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="9dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginLeft="9dp"
-            android:text="입력한 내용을 출력합니다. 출력예시는 다음과 같습니다. 테스트용입니다."
-            android:textSize="18sp"/>
-
+    <TextView
+        android:id="@+id/item_content_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="9dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginLeft="9dp"
+        android:text="입력한 내용을 출력합니다. 출력예시는 다음과 같습니다. 테스트용입니다."
+        android:textSize="18sp"/>
 
     <TextView
         android:id="@+id/item_name_text"
@@ -53,7 +52,7 @@
         android:gravity="center"
         android:textSize="15sp"
         android:drawableStart="@drawable/ic_person"
-        android:layout_marginBottom="3dp"
-        />
+        android:layout_marginBottom="3dp"/>
+
     </LinearLayout>
 </androidx.cardview.widget.CardView>

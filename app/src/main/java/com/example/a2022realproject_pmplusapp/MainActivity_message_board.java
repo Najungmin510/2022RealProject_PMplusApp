@@ -17,14 +17,14 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentChange;
-import com.google.firebase.firestore.EventListener;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
+//import com.google.android.gms.tasks.OnCompleteListener;
+//import com.google.android.gms.tasks.Task;
+//import com.google.firebase.firestore.DocumentChange;
+//import com.google.firebase.firestore.EventListener;
+//import com.google.firebase.firestore.FirebaseFirestore;
+//import com.google.firebase.firestore.FirebaseFirestoreException;
+//import com.google.firebase.firestore.QueryDocumentSnapshot;
+//import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,13 +42,15 @@ import java.util.Objects;
 
 코드 작성자 : 나정민
  */
+
+/*
 public class MainActivity_message_board extends AppCompatActivity implements View.OnClickListener {
 
-    private FirebaseFirestore mStore = FirebaseFirestore.getInstance();//파이어베이스에 연결
+   // private FirebaseFirestore mStore = FirebaseFirestore.getInstance();//파이어베이스에 연결
 
     private RecyclerView mMainRecyclerView;
 
-    private MainAdapter mAdapter;
+    private PostAdapter mAdapter;
     private List<Board> mBoardList;
 
     Toolbar toolbar;
@@ -59,14 +61,15 @@ public class MainActivity_message_board extends AppCompatActivity implements Vie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_message_board);
 
-        mMainRecyclerView =  findViewById(R.id.board_recycler_view); //리사이클러 뷰 연결
-        go_write_button = (ImageButton)findViewById(R.id.btn_go_write_messageboard);
+        mMainRecyclerView = findViewById(R.id.board_recycler_view); //리사이클러 뷰 연결
+        go_write_button = (ImageButton) findViewById(R.id.btn_go_write_messageboard);
 
         findViewById(R.id.btn_go_write_messageboard).setOnClickListener(this);
 
 
-        mBoardList = new ArrayList<>();
-
+        mBoardList = new ArrayList<>(); //새로운 리스트 생성
+    }
+/*
         mStore.collection("board")
                 .addSnapshotListener(new EventListener<QuerySnapshot>() { //실시간으로 정보 업데이트할거임
             @Override
@@ -82,7 +85,7 @@ public class MainActivity_message_board extends AppCompatActivity implements Vie
 
                     mBoardList.add(0,data); //역순으로 출력(최신순대로 출력하겠다는거)
                 }
-                mAdapter = new MainAdapter(mBoardList);
+                mAdapter = new PostAdapter(mBoardList);
                 mMainRecyclerView.setAdapter(mAdapter);
             }
         });
@@ -110,11 +113,11 @@ public class MainActivity_message_board extends AppCompatActivity implements Vie
         startActivity(new Intent(this, MainActivity_write_in_message_board.class));
     }
 
-    private class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder>{
+    private class PostAdapter extends RecyclerView.Adapter<PostAdapter.MainViewHolder>{
 
         private List<Board> mBoardList;
 
-        private MainAdapter(List<Board> mBoardList) {
+        private PostAdapter(List<Board> mBoardList) {
             this.mBoardList = mBoardList;
         }
 
@@ -155,4 +158,7 @@ public class MainActivity_message_board extends AppCompatActivity implements Vie
             }
         }
     }
+
 }
+
+ */

@@ -11,7 +11,7 @@
     <ImageButton
         android:id="@+id/btn_delete_user"
         android:layout_width="370dp"
-        android:layout_height="47dp"
+        android:layout_height="50dp"
         android:background="#00ffffff"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -35,5 +35,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/btn_go_setting_user_infrom"
+        android:layout_width="370dp"
+        android:layout_height="50dp"
+        android:background="#00ffffff"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar_setting"
+        app:layout_constraintVertical_bias="0.271"
+        app:srcCompat="@drawable/setting_user_inform" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

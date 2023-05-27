@@ -240,8 +240,12 @@ public class MainActivity_Shipdata_Result extends AppCompatActivity {
                                     e.printStackTrace();
                                 }
 
-                                //System.out.println("Count : " + arrStation.size());
-                                adapter.notifyDataSetChanged();
+                                if(count == 0){
+                                    Intent fail = new Intent(getApplicationContext(),MainActivity_Shipdata_Result_Fail.class);
+                                    startActivity(fail);
+                                }else{
+                                    adapter.notifyDataSetChanged();
+                                }
                                 Toast.makeText(getApplicationContext(), count+"개의 결과가 조회되었어요.", Toast.LENGTH_LONG).show();
                             }
 

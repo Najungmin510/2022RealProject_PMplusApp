@@ -3,8 +3,17 @@ package com.example.a2022realproject_pmplusapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Objects;
 
@@ -23,6 +32,8 @@ import java.util.Objects;
 public class MainActivity_Setting extends AppCompatActivity {
 
     Toolbar toolbar;
+    ImageButton go_user_inform;
+    Button camera;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +46,33 @@ public class MainActivity_Setting extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.baseline_chevron_left_black_24dp);
         getSupportActionBar().setTitle("환경 설정");
+
+        go_user_inform = (ImageButton)findViewById(R.id.btn_go_setting_user_infrom);
+        go_user_inform.setOnClickListener(ClickListener);
+
+
+    }
+
+    View.OnClickListener ClickListener = new View.OnClickListener() {
+        @SuppressLint("NonConstantResourceId")
+        @Override
+        public void onClick(View v) {
+            if (v.getId() == R.id.btn_go_setting_user_infrom) { //버튼 클릭 시 세팅 함수 실행하도록 함
+                check();
+            }
+        }
+    };
+
+
+    public void check(){
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        if(user == null){
+            Toast.makeText(this,"로그인 후 이용해주세요.",Toast.LENGTH_SHORT).show();
+        } else {
+            Intent intent = new Intent(getApplicationContext(),MainActivity_setting_user_inform_detail.class);
+            startActivity(intent); //사용자 정보 설정으로 이동
+        }
     }
 
     @Override

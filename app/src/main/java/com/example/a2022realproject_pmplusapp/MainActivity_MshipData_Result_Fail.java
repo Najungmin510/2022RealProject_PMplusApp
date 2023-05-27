@@ -6,8 +6,10 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ImageButton;
 
+import java.util.Objects;
 
 
 // 선별 관제 현황 정보 가져오기 실패 시 화면에 대한 소스코드를 작성하시면 됩니다.
@@ -27,6 +29,7 @@ public class MainActivity_MshipData_Result_Fail extends AppCompatActivity {
 
     ImageButton replay;
     ImageButton gomain;
+    Toolbar toolbar;
 
 
     @Override
@@ -35,8 +38,15 @@ public class MainActivity_MshipData_Result_Fail extends AppCompatActivity {
         setContentView(R.layout.activity_main_mship_data_result_fail);
 
 
-        gomain = (ImageButton)findViewById(R.id.btn_replay_mshipdata);
-        replay = (ImageButton)findViewById(R.id.btn_go_pm_main_mship);
+        gomain = (ImageButton)findViewById(R.id.btn_go_pm_main_mship);
+        replay = (ImageButton)findViewById(R.id.btn_replay_mshipdata);
+
+        toolbar = (Toolbar)findViewById(R.id.toolbar_mshipdata_search_fail);
+        setSupportActionBar(toolbar); //툴바를 불러오고
+
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.baseline_chevron_left_black_24dp);
+        getSupportActionBar().setTitle("선박 관제현황 조회결과");
 
 
         gomain.setOnClickListener(v -> {
@@ -49,6 +59,16 @@ public class MainActivity_MshipData_Result_Fail extends AppCompatActivity {
             startActivity(intent);
         });
 
-
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) { //뒤로가기 했을 때
+        switch (item.getItemId()){
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                break;
+        }
+        return super. onOptionsItemSelected(item);
     }
 }

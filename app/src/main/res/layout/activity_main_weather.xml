@@ -4,42 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/weather_morning_two"
+    android:background="@drawable/background_weather_final"
     android:fitsSystemWindows="true"
     tools:context=".MainActivity_Weather">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="387dp"
-        android:layout_height="37dp"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.126"
-        app:srcCompat="@drawable/rectangle_search_weather" />
-
-    <EditText
-        android:id="@+id/et_weather_user_inform_write"
-        android:layout_width="295dp"
-        android:layout_height="30dp"
-        android:background="#00ffffff"
-        android:ems="10"
-        android:hint="동해앞바다와 같은 형태로 검색"
-        android:inputType="textPersonName"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#85FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintHorizontal_bias="0.641"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
     <TextView
         android:id="@+id/ocean_name_weather"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/kopubworld_dotum_pro_bold"
         android:text="00바다 날씨정보"
         android:textColor="#FFFFFF"
         android:textSize="27sp"
@@ -48,21 +22,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.22" />
-
-    <TextView
-        android:id="@+id/degree_ocean_weather"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="온도 출력"
-        android:textColor="#FFFFFF"
-        android:textSize="37sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.139"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.331" />
+        app:layout_constraintVertical_bias="0.204" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_main_weather"
@@ -71,81 +31,13 @@
         android:background="#4285EC"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        tools:layout_editor_absoluteY="0dp" />
-
-    <TextView
-        android:id="@+id/sky_weather"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="날씨 하늘 형태"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.872"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar_main_weather"
-        app:layout_constraintVertical_bias="0.348" />
-
-    <TextView
-        android:id="@+id/detail_weather"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="날씨 상세 정보"
-        android:textColor="#051653"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.152"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="풍속 : "
-        android:textColor="#051653"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.104"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar_main_weather"
-        app:layout_constraintVertical_bias="0.588" />
-
-    <TextView
-        android:id="@+id/textView19"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="파고 :"
-        android:textColor="#051653"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.102"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar_main_weather"
-        app:layout_constraintVertical_bias="0.695" />
-
-    <TextView
-        android:id="@+id/textView20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="강수 형태 :"
-        android:textColor="#051653"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.117"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar_main_weather"
-        app:layout_constraintVertical_bias="0.801" />
+        app:layout_constraintVertical_bias="0.0"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <ImageButton
         android:id="@+id/btn_mainweather_continue"
@@ -162,59 +54,56 @@
         app:layout_constraintVertical_bias="0.966"
         app:srcCompat="@drawable/morning_night_button" />
 
-    <TextView
-        android:id="@+id/wind_weather_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="풍속 데이터 출력"
-        android:textColor="#051653"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.409"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar_main_weather"
-        app:layout_constraintVertical_bias="0.588" />
-
-    <TextView
-        android:id="@+id/wave_height_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="파고 데이터 출력"
-        android:textColor="#051653"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.409"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar_main_weather"
-        app:layout_constraintVertical_bias="0.695" />
-
-    <TextView
-        android:id="@+id/rain_weather_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="강수 형태 출력"
-        android:textColor="#051653"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.551"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar_main_weather"
-        app:layout_constraintVertical_bias="0.801" />
-
-    <Button
-        android:id="@+id/btn_weather_search"
-        android:layout_width="35dp"
-        android:layout_height="30dp"
+    <ImageView
+        android:id="@+id/imageView33"
+        android:layout_width="375dp"
+        android:layout_height="41dp"
         android:background="#00ffffff"
         android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintHorizontal_bias="0.039"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.428" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar_main_weather"
+        app:layout_constraintVertical_bias="0.102"
+        app:srcCompat="@drawable/notice_title" />
+
+    <TextView
+        android:id="@+id/text_weather_local"
+        android:layout_width="288dp"
+        android:layout_height="42dp"
+        android:fontFamily="@font/kopubworld_dotum_pro_medium"
+        android:gravity="center_vertical"
+        android:text="지역 선택"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView33"
+        app:layout_constraintEnd_toEndOf="@+id/imageView33"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="@+id/imageView33"
+        app:layout_constraintTop_toTopOf="@+id/imageView33"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Spinner
+        android:id="@+id/weather_spinner"
+        android:layout_width="44dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="324dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView33"
+        app:layout_constraintEnd_toEndOf="@+id/imageView33"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView33"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_weather"
+        android:layout_width="390dp"
+        android:layout_height="396dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar_main_weather"
+        app:layout_constraintVertical_bias="0.689" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

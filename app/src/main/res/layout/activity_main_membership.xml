@@ -91,6 +91,7 @@
         android:layout_height="52dp"
         android:background="#00ffffff"
         android:ems="10"
+        android:fontFamily="@font/kopubworld_dotum_pro_medium"
         android:hint="이름을 입력해주세요.(2글자이상)"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"
@@ -106,6 +107,7 @@
         android:layout_height="52dp"
         android:background="#00ffffff"
         android:ems="10"
+        android:fontFamily="@font/kopubworld_dotum_pro_medium"
         android:hint="아이디를 입력해주세요.(2글자이상)"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="@+id/imageView20"
@@ -119,6 +121,7 @@
         android:layout_height="52dp"
         android:background="#00ffffff"
         android:ems="10"
+        android:fontFamily="@font/kopubworld_dotum_pro_medium"
         android:hint="비밀번호를 입력해주세요(5글자이상)"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="@+id/imageView21"
@@ -132,6 +135,7 @@
         android:layout_height="52dp"
         android:background="#00ffffff"
         android:ems="10"
+        android:fontFamily="@font/kopubworld_dotum_pro_medium"
         android:hint="이메일을 입력해주세요."
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="@+id/imageView22"
@@ -143,8 +147,9 @@
         android:id="@+id/textView4"
         android:layout_width="409dp"
         android:layout_height="55dp"
+        android:fontFamily="@font/kopubworld_dotum_pro_medium"
         android:gravity="center"
-        android:text="아래 빈칸에 정보를 입력해주세요"
+        android:text="정보를 입력해주세요"
         android:textColor="#FF578DFF"
         android:textSize="28sp"
         android:textStyle="bold"
@@ -152,19 +157,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar_membership"
-        app:layout_constraintVertical_bias="0.073" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PM+에 오신것을 환영합니다!"
-        android:textColor="#3C3C3C"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_membership"
-        app:layout_constraintVertical_bias="0.029" />
+        app:layout_constraintVertical_bias="0.054" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

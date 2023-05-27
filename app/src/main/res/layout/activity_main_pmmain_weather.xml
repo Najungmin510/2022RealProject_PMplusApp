@@ -1,0 +1,943 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/gray_background"
+    tools:context=".MainActivity_pmmain_weather">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_miniweather"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="#F3F3F3"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <ImageView
+        android:id="@+id/imageView34"
+        android:layout_width="220dp"
+        android:layout_height="11dp"
+        android:background="#00ffffff"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.261"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.143"
+        app:srcCompat="@drawable/result_effect_ship" />
+
+    <TextView
+        android:id="@+id/textView57"
+        android:layout_width="311dp"
+        android:layout_height="32dp"
+        android:fontFamily="@font/kopubworld_dotum_pro_medium"
+        android:text="원하는 지역을 선택하세요!"
+        android:textColor="#353535"
+        android:textSize="27sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.102" />
+
+
+
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="411dp"
+        android:layout_height="580dp"
+        android:layout_marginTop="175dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_miniweather"
+        app:layout_constraintVertical_bias="0.604">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2600dp"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="2600dp">
+
+                <TextView
+                    android:id="@+id/textView78"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/kopubworld_dotum_pro_bold"
+                    android:text="서울·인천·경기도"
+                    android:textColor="#353535"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.029"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.014" />
+
+                <TextView
+                    android:id="@+id/textView79"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/kopubworld_dotum_pro_bold"
+                    android:text="부산·울산·경상남도"
+                    android:textColor="#353535"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.032"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.123" />
+
+                <TextView
+                    android:id="@+id/textView80"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/kopubworld_dotum_pro_bold"
+                    android:text="대구·경상북도"
+                    android:textColor="#353535"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.027"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.231" />
+
+                <TextView
+                    android:id="@+id/textView81"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/kopubworld_dotum_pro_bold"
+                    android:text="광주·전라남도"
+                    android:textColor="#353535"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.04"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.342" />
+
+                <TextView
+                    android:id="@+id/textView83"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/kopubworld_dotum_pro_bold"
+                    android:text="전라북도"
+                    android:textColor="#353535"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.038"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.453" />
+
+                <TextView
+                    android:id="@+id/textView85"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/kopubworld_dotum_pro_bold"
+                    android:text="대전·세종·충청남도"
+                    android:textColor="#353535"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.048"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.561" />
+
+                <TextView
+                    android:id="@+id/textView86"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1708dp"
+                    android:fontFamily="@font/kopubworld_dotum_pro_bold"
+                    android:text="충청북도"
+                    android:textColor="#353535"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.035"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView87"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/kopubworld_dotum_pro_bold"
+                    android:text="강원도"
+                    android:textColor="#353535"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.045"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.767" />
+
+                <TextView
+                    android:id="@+id/textView88"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/kopubworld_dotum_pro_bold"
+                    android:text="제주도"
+                    android:textColor="#353535"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.036"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.871" />
+
+                <ImageView
+                    android:id="@+id/imageView35"
+                    android:layout_width="387dp"
+                    android:layout_height="45dp"
+                    android:layout_marginBottom="284dp"
+                    android:background="#00ffffff"
+                    android:scaleType="fitXY"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView88"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/text_write" />
+
+                <ImageView
+                    android:id="@+id/imageView36"
+                    android:layout_width="387dp"
+                    android:layout_height="45dp"
+                    android:layout_marginBottom="1800dp"
+                    android:background="#00ffffff"
+                    android:scaleType="fitXY"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.333"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView78"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/text_write" />
+
+                <ImageView
+                    android:id="@+id/imageView37"
+                    android:layout_width="387dp"
+                    android:layout_height="146dp"
+                    android:layout_marginTop="112dp"
+                    android:background="#00ffffff"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.333"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/board_write_main" />
+
+                <ImageView
+                    android:id="@+id/imageView38"
+                    android:layout_width="387dp"
+                    android:layout_height="45dp"
+                    android:background="#00ffffff"
+                    android:scaleType="fitXY"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.333"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.135"
+                    app:srcCompat="@drawable/text_write" />
+
+                <TextView
+                    android:id="@+id/text_mini_seoul"
+                    android:layout_width="284dp"
+                    android:layout_height="44dp"
+                    android:fontFamily="@font/kopubworld_dotum_pro_medium"
+                    android:gravity="center"
+                    android:text="TextView"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView36"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView36"
+                    app:layout_constraintHorizontal_bias="0.147"
+                    app:layout_constraintStart_toStartOf="@+id/imageView36"
+                    app:layout_constraintTop_toTopOf="@+id/imageView36"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <Spinner
+                    android:id="@+id/spinner_miniweather_seoul"
+                    android:layout_width="76dp"
+                    android:layout_height="44dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView36"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.928"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/imageView36" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_mini_seoul"
+                    android:layout_width="387dp"
+                    android:layout_height="146dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView37"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView37"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/imageView37"
+                    app:layout_constraintTop_toTopOf="@+id/imageView37" />
+
+                <TextView
+                    android:id="@+id/text_mini_busan"
+                    android:layout_width="284dp"
+                    android:layout_height="44dp"
+                    android:fontFamily="@font/kopubworld_dotum_pro_medium"
+                    android:gravity="center"
+                    android:text="TextView"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView38"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView38"
+                    app:layout_constraintHorizontal_bias="0.116"
+                    app:layout_constraintStart_toStartOf="@+id/imageView38"
+                    app:layout_constraintTop_toTopOf="@+id/imageView38"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <ImageView
+                    android:id="@+id/imageView39"
+                    android:layout_width="387dp"
+                    android:layout_height="146dp"
+                    android:layout_marginBottom="1508dp"
+                    android:background="#00ffffff"
+                    android:scaleType="fitXY"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.333"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView38"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/board_write_main" />
+
+                <Spinner
+                    android:id="@+id/spinner_miniweather_busan"
+                    android:layout_width="76dp"
+                    android:layout_height="44dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView38"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView38"
+                    app:layout_constraintHorizontal_bias="0.951"
+                    app:layout_constraintStart_toStartOf="@+id/imageView38"
+                    app:layout_constraintTop_toTopOf="@+id/imageView38"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_mini_busan"
+                    android:layout_width="387dp"
+                    android:layout_height="146dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView39"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView39"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/imageView39"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView38"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <ImageView
+                    android:id="@+id/imageView40"
+                    android:layout_width="387dp"
+                    android:layout_height="45dp"
+                    android:layout_marginBottom="1420dp"
+                    android:background="#00ffffff"
+                    android:scaleType="fitXY"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.333"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView80"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/text_write" />
+
+                <ImageView
+                    android:id="@+id/imageView41"
+                    android:layout_width="387dp"
+                    android:layout_height="146dp"
+                    android:background="#00ffffff"
+                    android:scaleType="fitXY"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.541"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView35"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/board_write_main" />
+
+                <TextView
+                    android:id="@+id/text_mini_daegu"
+                    android:layout_width="284dp"
+                    android:layout_height="44dp"
+                    android:fontFamily="@font/kopubworld_dotum_pro_medium"
+                    android:gravity="center"
+                    android:text="TextView"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView40"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView40"
+                    app:layout_constraintHorizontal_bias="0.155"
+                    app:layout_constraintStart_toStartOf="@+id/imageView40"
+                    app:layout_constraintTop_toTopOf="@+id/imageView40"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <Spinner
+                    android:id="@+id/spinner_miniweather_daegu"
+                    android:layout_width="76dp"
+                    android:layout_height="44dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView40"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView40"
+                    app:layout_constraintHorizontal_bias="0.964"
+                    app:layout_constraintStart_toStartOf="@+id/imageView40"
+                    app:layout_constraintTop_toTopOf="@+id/imageView40" />
+
+                <ImageView
+                    android:id="@+id/imageView42"
+                    android:layout_width="387dp"
+                    android:layout_height="146dp"
+                    android:layout_marginTop="4dp"
+                    android:background="#00ffffff"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView40"
+                    app:srcCompat="@drawable/board_write_main" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_mini_daegu"
+                    android:layout_width="387dp"
+                    android:layout_height="146dp"
+                    android:layout_marginBottom="4dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView42"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView42"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/imageView42"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView40"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/text_mini_jeju"
+                    android:layout_width="284dp"
+                    android:layout_height="44dp"
+                    android:fontFamily="@font/kopubworld_dotum_pro_medium"
+                    android:gravity="center"
+                    android:text="TextView"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView35"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView35"
+                    app:layout_constraintHorizontal_bias="0.079"
+                    app:layout_constraintStart_toStartOf="@+id/textView88"
+                    app:layout_constraintTop_toTopOf="@+id/imageView35"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <Spinner
+                    android:id="@+id/spinner_miniweather_jeju"
+                    android:layout_width="76dp"
+                    android:layout_height="44dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView35"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView35"
+                    app:layout_constraintHorizontal_bias="0.954"
+                    app:layout_constraintStart_toStartOf="@+id/imageView35" />
+
+                <ImageView
+                    android:id="@+id/imageView43"
+                    android:layout_width="387dp"
+                    android:layout_height="45dp"
+                    android:background="#00ffffff"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView81"
+                    app:srcCompat="@drawable/text_write" />
+
+                <TextView
+                    android:id="@+id/text_mini_gwangju"
+                    android:layout_width="284dp"
+                    android:layout_height="44dp"
+                    android:fontFamily="@font/kopubworld_dotum_pro_medium"
+                    android:gravity="center"
+                    android:text="TextView"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView43"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView43"
+                    app:layout_constraintHorizontal_bias="0.127"
+                    app:layout_constraintStart_toStartOf="@+id/textView81"
+                    app:layout_constraintTop_toTopOf="@+id/imageView43"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <Spinner
+                    android:id="@+id/spinner_miniweather_gwangju"
+                    android:layout_width="76dp"
+                    android:layout_height="44dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView43"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView43"
+                    app:layout_constraintHorizontal_bias="0.948"
+                    app:layout_constraintStart_toStartOf="@+id/imageView43"
+                    app:layout_constraintTop_toTopOf="@+id/imageView43"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <ImageView
+                    android:id="@+id/imageView44"
+                    android:layout_width="387dp"
+                    android:layout_height="146dp"
+                    android:layout_marginBottom="948dp"
+                    android:background="#00ffffff"
+                    android:scaleType="fitXY"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView43"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/board_write_main" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_mini_gwangju"
+                    android:layout_width="387dp"
+                    android:layout_height="146dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView44"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView44"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/imageView44"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView43" />
+
+                <ImageView
+                    android:id="@+id/imageView45"
+                    android:layout_width="387dp"
+                    android:layout_height="45dp"
+                    android:background="#00ffffff"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView83"
+                    app:srcCompat="@drawable/text_write" />
+
+                <TextView
+                    android:id="@+id/text_mini_bukdo"
+                    android:layout_width="284dp"
+                    android:layout_height="44dp"
+                    android:fontFamily="@font/kopubworld_dotum_pro_medium"
+                    android:gravity="center"
+                    android:text="TextView"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView45"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView45"
+                    app:layout_constraintHorizontal_bias="0.135"
+                    app:layout_constraintStart_toStartOf="@+id/imageView45"
+                    app:layout_constraintTop_toTopOf="@+id/imageView45"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <Spinner
+                    android:id="@+id/spinner_miniweather_bukdo"
+                    android:layout_width="76dp"
+                    android:layout_height="44dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/text_mini_bukdo"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView45"
+                    app:layout_constraintHorizontal_bias="0.958"
+                    app:layout_constraintStart_toStartOf="@+id/imageView45"
+                    app:layout_constraintTop_toTopOf="@+id/imageView45"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <ImageView
+                    android:id="@+id/imageView46"
+                    android:layout_width="387dp"
+                    android:layout_height="146dp"
+                    android:background="#00ffffff"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.613"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView45"
+                    app:srcCompat="@drawable/board_write_main" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_mini_bukbo"
+                    android:layout_width="387dp"
+                    android:layout_height="146dp"
+                    android:layout_marginStart="4dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView46"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView46"
+                    app:layout_constraintHorizontal_bias="0.727"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView45" />
+
+                <ImageView
+                    android:id="@+id/imageView47"
+                    android:layout_width="387dp"
+                    android:layout_height="45dp"
+                    android:layout_marginBottom="480dp"
+                    android:background="#00ffffff"
+                    android:scaleType="fitXY"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView85"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/text_write" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_mini_jeju"
+                    android:layout_width="387dp"
+                    android:layout_height="146dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView41"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/imageView41"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView35"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/text_mini_daejeon"
+                    android:layout_width="284dp"
+                    android:layout_height="44dp"
+                    android:fontFamily="@font/kopubworld_dotum_pro_medium"
+                    android:gravity="center"
+                    android:text="TextView"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView47"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView47"
+                    app:layout_constraintHorizontal_bias="0.116"
+                    app:layout_constraintStart_toStartOf="@+id/imageView47"
+                    app:layout_constraintTop_toTopOf="@+id/imageView47"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <Spinner
+                    android:id="@+id/spinner_miniweather_daejeon"
+                    android:layout_width="76dp"
+                    android:layout_height="44dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView47"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView47"
+                    app:layout_constraintHorizontal_bias="0.951"
+                    app:layout_constraintStart_toStartOf="@+id/imageView47"
+                    app:layout_constraintTop_toTopOf="@+id/imageView47" />
+
+                <ImageView
+                    android:id="@+id/imageView48"
+                    android:layout_width="387dp"
+                    android:layout_height="146dp"
+                    android:layout_marginBottom="564dp"
+                    android:background="#00ffffff"
+                    android:scaleType="fitXY"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.583"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView47"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/board_write_main" />
+
+                <ImageView
+                    android:id="@+id/imageView49"
+                    android:layout_width="387dp"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:background="#00ffffff"
+                    android:scaleType="fitXY"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView86"
+                    app:srcCompat="@drawable/text_write" />
+
+                <ImageView
+                    android:id="@+id/imageView50"
+                    android:layout_width="387dp"
+                    android:layout_height="146dp"
+                    android:background="#00ffffff"
+                    android:scaleType="fitXY"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView41"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.666"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView49"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/board_write_main" />
+
+                <ImageView
+                    android:id="@+id/imageView51"
+                    android:layout_width="387dp"
+                    android:layout_height="45dp"
+                    android:background="#00ffffff"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView87"
+                    app:srcCompat="@drawable/text_write" />
+
+                <ImageView
+                    android:id="@+id/imageView52"
+                    android:layout_width="387dp"
+                    android:layout_height="146dp"
+                    android:background="#00ffffff"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.541"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView51"
+                    app:srcCompat="@drawable/board_write_main" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_mini_daejeon"
+                    android:layout_width="387dp"
+                    android:layout_height="146dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView48"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView48"
+                    app:layout_constraintStart_toStartOf="@+id/imageView48"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView47" />
+
+                <TextView
+                    android:id="@+id/text_mini_chungcheon"
+                    android:layout_width="284dp"
+                    android:layout_height="44dp"
+                    android:fontFamily="@font/kopubworld_dotum_pro_medium"
+                    android:gravity="center"
+                    android:text="TextView"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView49"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView49"
+                    app:layout_constraintHorizontal_bias="0.106"
+                    app:layout_constraintStart_toStartOf="@+id/imageView49"
+                    app:layout_constraintTop_toTopOf="@+id/imageView49"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/text_mini_gangwon"
+                    android:layout_width="284dp"
+                    android:layout_height="44dp"
+                    android:fontFamily="@font/kopubworld_dotum_pro_medium"
+                    android:gravity="center"
+                    android:text="TextView"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView51"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView51"
+                    app:layout_constraintHorizontal_bias="0.116"
+                    app:layout_constraintStart_toStartOf="@+id/imageView51"
+                    app:layout_constraintTop_toTopOf="@+id/imageView51"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <Spinner
+                    android:id="@+id/spinner_miniweather_chungcheon"
+                    android:layout_width="76dp"
+                    android:layout_height="44dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView49"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView49"
+                    app:layout_constraintHorizontal_bias="0.948"
+                    app:layout_constraintStart_toStartOf="@+id/imageView49"
+                    app:layout_constraintTop_toTopOf="@+id/imageView49"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <Spinner
+                    android:id="@+id/spinner_miniweather_gangwon"
+                    android:layout_width="76dp"
+                    android:layout_height="44dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView51"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView51"
+                    app:layout_constraintHorizontal_bias="0.954"
+                    app:layout_constraintStart_toStartOf="@+id/imageView51"
+                    app:layout_constraintTop_toTopOf="@+id/imageView51"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_mini_gangwon"
+                    android:layout_width="387dp"
+                    android:layout_height="146dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView52"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView52"
+                    app:layout_constraintStart_toStartOf="@+id/imageView52"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView51" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_mini_chungcheon"
+                    android:layout_width="387dp"
+                    android:layout_height="146dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView50"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView50"
+                    app:layout_constraintStart_toStartOf="@+id/imageView50"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView49" />
+
+                <Button
+                    android:id="@+id/btn_miniw_seoul"
+                    android:layout_width="130dp"
+                    android:layout_height="38dp"
+                    android:backgroundTint="#07247A"
+                    android:fontFamily="@font/kopubworld_dotum_pro_medium"
+                    android:text="메인에 적용"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.941"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView37" />
+
+                <Button
+                    android:id="@+id/btn_miniw_busan"
+                    android:layout_width="130dp"
+                    android:layout_height="38dp"
+                    android:backgroundTint="#07247A"
+                    android:fontFamily="@font/kopubworld_dotum_pro_medium"
+                    android:text="메인에 적용"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.943"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView39" />
+
+                <Button
+                    android:id="@+id/btn_miniw_daegu"
+                    android:layout_width="130dp"
+                    android:layout_height="38dp"
+                    android:backgroundTint="#07247A"
+                    android:fontFamily="@font/kopubworld_dotum_pro_medium"
+                    android:text="메인에 적용"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.962"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView42" />
+
+                <Button
+                    android:id="@+id/btn_miniw_gwangju"
+                    android:layout_width="130dp"
+                    android:layout_height="38dp"
+                    android:backgroundTint="#07247A"
+                    android:fontFamily="@font/kopubworld_dotum_pro_medium"
+                    android:text="메인에 적용"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.96"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView44" />
+
+                <Button
+                    android:id="@+id/btn_miniw_bukdo"
+                    android:layout_width="130dp"
+                    android:layout_height="38dp"
+                    android:backgroundTint="#07247A"
+                    android:fontFamily="@font/kopubworld_dotum_pro_medium"
+                    android:text="메인에 적용"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.96"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView46" />
+
+                <Button
+                    android:id="@+id/btn_miniw_jeju"
+                    android:layout_width="130dp"
+                    android:layout_height="38dp"
+                    android:backgroundTint="#07247A"
+                    android:fontFamily="@font/kopubworld_dotum_pro_medium"
+                    android:text="메인에 적용"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.957"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView41" />
+
+                <Button
+                    android:id="@+id/btn_miniw_daejeon"
+                    android:layout_width="130dp"
+                    android:layout_height="38dp"
+                    android:backgroundTint="#07247A"
+                    android:fontFamily="@font/kopubworld_dotum_pro_medium"
+                    android:text="메인에 적용"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.964"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView48" />
+
+                <Button
+                    android:id="@+id/btn_miniw_chungcheon"
+                    android:layout_width="130dp"
+                    android:layout_height="38dp"
+                    android:backgroundTint="#07247A"
+                    android:fontFamily="@font/kopubworld_dotum_pro_medium"
+                    android:text="메인에 적용"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.971"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView50" />
+
+                <Button
+                    android:id="@+id/btn_miniw_gangwon"
+                    android:layout_width="130dp"
+                    android:layout_height="38dp"
+                    android:backgroundTint="#07247A"
+                    android:fontFamily="@font/kopubworld_dotum_pro_medium"
+                    android:text="메인에 적용"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.957"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView52" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/textView122"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/kopubworld_dotum_pro_medium"
+        android:text="TIP!"
+        android:textColor="#222222"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar_miniweather"
+        app:layout_constraintVertical_bias="0.786" />
+
+    <TextView
+        android:id="@+id/textView123"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/kopubworld_dotum_pro_medium"
+        android:text="메인에 적용 버튼 클릭 시"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.037"
+        app:layout_constraintStart_toEndOf="@+id/textView122"
+        app:layout_constraintTop_toTopOf="@+id/toolbar_miniweather"
+        app:layout_constraintVertical_bias="0.786" />
+
+    <TextView
+        android:id="@+id/textView124"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/kopubworld_dotum_pro_medium"
+        android:text="메인화면의 날짜 표시 화면에 선택하신 지역의 날씨가 적용됩니다."
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar_miniweather"
+        app:layout_constraintVertical_bias="0.918" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

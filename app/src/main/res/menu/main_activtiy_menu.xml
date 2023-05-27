@@ -36,5 +36,10 @@
         android:title="환경 설정"
         android:icon="@drawable/baseline_settings_black_24dp"/>
 
+    <item
+        android:id="@+id/btn_logout"
+        android:title="로그아웃"/>
+
+
 
 </menu>

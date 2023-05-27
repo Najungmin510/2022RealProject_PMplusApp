@@ -6,13 +6,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.util.Objects;
 
 //메인화면 소스코드 작성하시면 됩니다.
@@ -34,6 +40,7 @@ public class MainActivity_PM_Main extends AppCompatActivity {
     ImageButton miniweather; //날씨 정보
     ImageButton gochatbot; //챗봇으로 이동
     ImageButton gonotice;//공지사항으로 이동
+    private FirebaseAuth mAuth;
 
     TextView weather_sky;
     TextView weather_rain;
@@ -67,36 +74,46 @@ public class MainActivity_PM_Main extends AppCompatActivity {
 
                         if (id == R.id.LoginandMembership) {
                             Intent membership = new Intent(getApplicationContext(), MainActivity_Login.class);
-
+                            membership.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); //이전 활동 지워주기
                             startActivity(membership); //로그인/회원가입
 
                         } else if (id == R.id.DatagetShip) {
                             Intent shipdata = new Intent(getApplicationContext(), MainActivity_ShipData.class);
-
+                            shipdata.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); //이전 활동 지워주기
                             startActivity(shipdata); //선별 입출항 현황
 
                         } else if (id == R.id.DataControlShip){
                             Intent controlData = new Intent(getApplicationContext(), MainActivity_MshipData.class);
-
+                            controlData.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); //이전 활동 지워주기
                             startActivity(controlData); //선별 관제 현황
 
                         } else if (id == R.id.WeatherData){
                             Intent weather = new Intent(getApplicationContext(), MainActivity_Weather.class);
-
+                            weather.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(weather);
 
                         } else if (id == R.id.GoTochatbot){
                             Intent chatbot = new Intent(getApplicationContext(), MainActivity_ChatBot.class);
-
+                            chatbot.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(chatbot);
                         } else if(id == R.id.informboard){
-                            Intent inform = new Intent(getApplicationContext(), MainActivity_message_board.class);
+                           // Intent inform = new Intent(getApplicationContext(), MainActivity_message_board.class);
+                            //startActivity(inform);
 
-                            startActivity(inform);
                         } else if(id == R.id.Setting){
                             Intent setting = new Intent(getApplicationContext(), MainActivity_Setting.class);
-
+                            setting.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(setting);
+
+                        } else if(id == R.id.btn_logout){
+                            mAuth = FirebaseAuth.getInstance(); // firebase 인스턴스 초기화 해주고
+
+                            if(mAuth.getCurrentUser() != null) { //로그인 상태일때만 로그아웃 활성하ㅗ
+                                FirebaseAuth.getInstance().signOut(); //로그아웃시
+                                message("로그아웃 되었습니다.");
+                            } else {
+                                message("로그인 상태가 아닙니다.");
+                            }
                         }
 
                         return true;
@@ -105,8 +122,9 @@ public class MainActivity_PM_Main extends AppCompatActivity {
 
         miniweather = (ImageButton)findViewById(R.id.btn_mini_weather);
         miniweather.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), MainActivity_Weather.class);
-            startActivity(intent);
+            Intent intent = new Intent(getApplicationContext(), MainActivity_pmmain_weather.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent); //육상 기상 현황을 보여줌
         });
 
         gochatbot =(ImageButton)findViewById(R.id.btn_go_chatbot);
@@ -121,12 +139,17 @@ public class MainActivity_PM_Main extends AppCompatActivity {
             startActivity(intent);
         });
 
+        
+
 
         weather_sky = (TextView)findViewById(R.id.text_miniweather_sky);
         weather_rain = (TextView)findViewById(R.id.text_miniweather_rain);
+        
 
+    }
 
-
+    public void message(String msg){
+        Toast.makeText(this,msg,Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -147,8 +170,6 @@ public class MainActivity_PM_Main extends AppCompatActivity {
             }
         }
 
-
-
-    }
+}
 
 

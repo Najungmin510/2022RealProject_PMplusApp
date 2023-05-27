@@ -1,5 +1,8 @@
 package com.example.a2022realproject_pmplusapp;
+import android.annotation.SuppressLint;
 import android.content.Intent;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -9,10 +12,17 @@ import android.text.InputFilter;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton; //버튼도 동일함
 import android.widget.Toast; //토스트 메세지를 이용하여, 회원가입이 완료되었습니다 메세지를 출력
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Objects;
 
@@ -36,6 +46,9 @@ import retrofit2.Response;
 
 public class MainActivity_Membership extends AppCompatActivity {
 
+    private FirebaseAuth mAuth; //firebase 인스턴스 선언
+    private static final String TAG = "SignActivity";
+
     EditText userid; //아이디 입력받은 것 저장할 변수
     EditText userpass; //비밀번호 입력받은 것 저장할 변수
     EditText username; //사용자 이름 입력받은 것 저장할 변수
@@ -50,7 +63,7 @@ public class MainActivity_Membership extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_membership);
 
-        service = RetrofitClient.getClient().create(ServiceApi.class);
+        mAuth = FirebaseAuth.getInstance(); // firebase 인스턴스 초기화 해주고
 
         toolbar = (Toolbar)findViewById(R.id.toolbar_membership);
         setSupportActionBar(toolbar); //툴바를 불러오고
@@ -77,88 +90,67 @@ public class MainActivity_Membership extends AppCompatActivity {
         useremail = (EditText) findViewById(R.id.et_userEM);
         useremail.getText().toString();
 
+
         MemberShipBtn = (ImageButton) findViewById(R.id.btn_go_membership); //회원가입 버튼
+        MemberShipBtn.setOnClickListener(onClickListener);
 
+    }
 
-        useremail.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+    @Override
+    public void onStart(){ //로그인 활동 초기화 할 때 사용자가 현재 로그인 되어있는지 확인하는 메소드
+        super.onStart();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        //updateUI(currentUser);
+    }
+
+    View.OnClickListener onClickListener = new View.OnClickListener() {
+        @SuppressLint("NonConstantResourceId")
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()){
+                case R.id.btn_go_membership:
+                    signUp();
+                    break;
             }
+        }
+    };
 
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-            }
+    private void signUp(){ //회원가입 관리 함수
+        String name = ((EditText)findViewById(R.id.et_username)).getText().toString();
+        String id = ((EditText)findViewById(R.id.et_userID)).getText().toString();
+        String email = ((EditText)findViewById(R.id.et_userEM)).getText().toString();
+        String password  = ((EditText)findViewById(R.id.et_userPW)).getText().toString();
 
-            @Override
-            public void afterTextChanged(Editable s) {
+        if(email.length() > 0 && password.length() > 0 && name.length() > 0 && id.length() > 0 ){
+            mAuth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if(task.isSuccessful()){
+                                Log.d(TAG, "이메일을 성공적으로 생성했습니다.");
+                                FirebaseUser user = mAuth.getCurrentUser();
+                                signup_success("회원가입이 완료되었습니다.");
 
-                MemberShipBtn.setOnClickListener(v -> {
-                    if (!android.util.Patterns.EMAIL_ADDRESS.matcher(s.toString()).matches()) {
-                        Toast.makeText(getApplicationContext(), "이메일 형식에 맞춰주세요.", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(getApplicationContext(),MainActivity_Success_membership.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(intent);
 
-                    } else if (useremail.length() == 0){
-                        Toast.makeText(getApplicationContext(), "이메일을 입력해주세요.", Toast.LENGTH_SHORT).show();
-                    }
-
-                    else if(username.length() == 0){
-                        Toast.makeText(getApplicationContext(), "이름을 입력해주세요.", Toast.LENGTH_SHORT).show();
-
-                    } else if(userid.length() == 0){
-                        Toast.makeText(getApplicationContext(), "아이디를 입력해주세요.", Toast.LENGTH_SHORT).show();
-
-                    } else if(userpass.length() == 0){
-                        Toast.makeText(getApplicationContext(), "비밀번호를 입력해주세요.", Toast.LENGTH_SHORT).show();
-
-                    } else if(username.length() < 1){
-                        Toast.makeText(getApplicationContext(), "이름을 두글자 이상 입력해주세요.", Toast.LENGTH_SHORT).show();
-
-                    } else if(userid.length() < 1){
-                        Toast.makeText(getApplicationContext(), "아이디를 두글자 이상 입력해주세요.", Toast.LENGTH_SHORT).show();
-
-                    } else if(userpass.length() < 4){
-                        Toast.makeText(getApplicationContext(), "비밀번호를 다섯글자 이상 입력해주세요.", Toast.LENGTH_SHORT).show();
-
-                    } else if(useremail.length() == 0 && userid.length() == 0 && userpass.length() == 0 && username.length() == 0){
-                        Toast.makeText(getApplicationContext(), "정보를 입력해주세요.", Toast.LENGTH_SHORT).show();
-                    }
-
-                    else{
-
-                        String name = username.getText().toString();
-                        String id = userid.getText().toString();
-                        String pass = userpass.getText().toString();
-                        String mail = useremail.getText().toString();
-
-                        startJoin(new JoinData(id,name,mail,pass));
-
-                        //서버로부터 ok 신호가 오면 그 때 회원가입이 완료되었습니다 토스트메세지 출력
-                    }
-                });
-
-            }// afterTextChanged()..
-        });
+                            } else{
+                                if(task.getException() != null){
+                                    signup_success(task.getException().toString());
+                                }
+                            }
+                        }
+                    });
+        } else {
+            signup_success("빈칸이 없도록 입력해주세요.");
+        }
 
 
     }
 
-    private void startJoin(JoinData data) {
-        service.userJoin(data).enqueue(new Callback<JoinResponse>() {
-            @Override
-            public void onResponse(Call<JoinResponse> call, Response<JoinResponse> response) {
-                JoinResponse result = response.body();
-                Toast.makeText(MainActivity_Membership.this, result.getMessage(), Toast.LENGTH_SHORT).show();
-
-                if (result.getCode() == 200) {
-                    finish();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<JoinResponse> call, Throwable t) {
-                Toast.makeText(MainActivity_Membership.this, "회원가입 에러 발생", Toast.LENGTH_SHORT).show();
-                Log.e("회원가입 에러 발생", t.getMessage());
-            }
-        });
+    private void signup_success(String msg){
+        Toast.makeText(this,msg,Toast.LENGTH_SHORT).show();
     }
 
     @Override
